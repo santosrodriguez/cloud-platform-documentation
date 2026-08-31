@@ -16,7 +16,7 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - Identity and access
 - Certificates and Key Vault
 - Monitoring and logging
-- GitHub and CI/CD
+- [GitHub, Azure DevOps, and CI/CD](../ci-cd/README.md)
 - AKS
 - API Management
 - Storage
