@@ -23,6 +23,7 @@ This knowledge base brings together Azure platform architecture, standards, shar
 - [Hub-and-Spoke Network](architecture/hub-and-spoke-network.md)
 - [Azure Services](azure-services/README.md)
 - [Networking](networking/README.md)
+- [Private DNS Zone Management](networking/private-dns-zone-management.md)
 - [Platform Services](platform-services/README.md)
 - [Design Patterns](design-patterns/README.md)
 - [Architecture Decisions](adr/README.md)

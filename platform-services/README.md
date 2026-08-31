@@ -2,6 +2,10 @@
 
 Document shared services as implemented and operated by the Cloud Platform team.
 
+## Documented Shared Management
+
+[Private DNS Zone Management](../networking/private-dns-zone-management.md) records the centrally managed model for all private DNS zones. Specific ownership contacts and consumer request procedures remain pending.
+
 ## Planned Pages
 
 - Azure Kubernetes Service
