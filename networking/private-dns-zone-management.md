@@ -1,26 +1,26 @@
 # Private DNS Zone Management
 
-**Status:** User-confirmed management model. Detailed implementation and operational validation are pending.
+**Status:** User-confirmed management model and owning team. Detailed implementation and operational validation are pending.
 
-**Source:** Platform description supplied by the user on 2026-08-31.
+**Source:** Platform description and ownership supplied by the user on 2026-08-31.
 
-**Owner:** Central management is confirmed; the named owning team and contact have not yet been supplied.
+**Owner:** **Cloud Platform Solutions and Services** team.
 
 ## Confirmed Management Model
 
-All private DNS zones in our Azure platform are centrally managed.
+The **Cloud Platform Solutions and Services** team centrally manages all private DNS zones in our Azure platform.
 
-Central management describes responsibility for the zones. It does not establish their subscription or resource group locations, virtual network links, or the DNS resolution paths used by clients. The management model for public DNS zones has not been supplied.
+This confirmed responsibility covers central management of the private DNS zones. It does not establish their subscription or resource group locations, virtual network links, the DNS resolution paths used by clients, or ownership of workload-specific DNS configuration. The management model for public DNS zones has not been supplied.
 
 ## Guidance for Consuming Teams
 
-Use centrally managed private DNS zones as the documented management model when describing workload DNS integration. The processes for requesting zones, records, or network links, and any permissions delegated to consuming teams, remain to be documented.
+Use centrally managed private DNS zones as the documented management model when describing workload DNS integration. The Cloud Platform Solutions and Services team is the confirmed managing team. Contacts, processes for requesting zones, records, or network links, and any permissions delegated to consuming teams remain to be documented.
 
 ## Details to Confirm
 
 | Area | Information needed |
 | --- | --- |
-| Ownership | Named owning team, contacts, and operational responsibilities |
+| Ownership boundaries | Team contacts, service boundaries, decision and approval responsibilities, and escalation procedures |
 | Zone inventory | Zone names, subscriptions, resource groups, and supported uses |
 | Access and changes | Access controls, any delegated permissions, and request and approval procedures |
 | Records and integrations | Record lifecycle, registration settings, and any private endpoint DNS integration or automation in use |

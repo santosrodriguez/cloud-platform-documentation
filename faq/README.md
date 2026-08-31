@@ -28,7 +28,7 @@ We use Azure ExpressRoute for on-premises access. Specific destinations, allowed
 
 ### How are private DNS zones managed?
 
-All private DNS zones are centrally managed. The named owning team, zone locations, DNS resolution paths, and change request procedures have not yet been documented. See [Private DNS Zone Management](../networking/private-dns-zone-management.md).
+The **Cloud Platform Solutions and Services** team centrally manages all private DNS zones. Team contacts, ownership boundaries, zone locations, DNS resolution paths, and change request procedures remain to be documented. See [Private DNS Zone Management](../networking/private-dns-zone-management.md).
 
 ## Security
 
