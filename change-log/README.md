@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-08-31: Public Access Exemption Process
+
+[PR #11](https://github.com/santosrodriguez/cloud-platform-documentation/pull/11) records the [Public Access Exemption Process](../security/public-access-exemption-process.md): the requester submits a resource-specific exemption request, the Cyber Defense team in Security reviews it, and, after approval, Cyber Defense sends it to the Cloud Platform team to create the Azure Policy exemption for that resource. Request mechanics, approval criteria, validation, lifecycle, and other decision paths remain undocumented; no exemption or Azure configuration is created or changed.
+
 ## 2026-08-31: Terraform Platform Implementation
 
 [PR #10](https://github.com/santosrodriguez/cloud-platform-documentation/pull/10) records the confirmed [Terraform Platform](../infrastructure-as-code/terraform-platform.md): Artifactory is the Terraform registry, Azure Storage Accounts store Terraform state files, and GitHub Actions runs workflows. Detailed configuration, identities, component ownership, and operating procedures remain undocumented; no infrastructure, workflow, access, or repository settings are changed.
