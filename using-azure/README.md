@@ -16,6 +16,7 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - Identity and access
 - Certificates and Key Vault
 - Monitoring and logging
+- [Terraform platform: registry, state, and workflows](../infrastructure-as-code/terraform-platform.md)
 - [GitHub, Azure DevOps, and CI/CD](../ci-cd/README.md)
 - AKS
 - API Management

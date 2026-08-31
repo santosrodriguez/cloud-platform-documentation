@@ -17,6 +17,7 @@
   "security/resource-security-baseline.md": "Resource-Security-Baseline.md",
   "governance/README.md": "Governance.md",
   "infrastructure-as-code/README.md": "Infrastructure-as-Code.md",
+  "infrastructure-as-code/terraform-platform.md": "Terraform-Platform.md",
   "ci-cd/README.md": "CI-CD.md",
   "platform-services/README.md": "Platform-Services.md",
   "standards-and-guidelines/README.md": "Standards-and-Guidelines.md",

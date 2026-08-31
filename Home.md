@@ -32,6 +32,7 @@ This knowledge base brings together Azure platform architecture, standards, shar
 ## Engineering and Governance
 
 - [Infrastructure as Code](infrastructure-as-code/README.md)
+- [Terraform Platform](infrastructure-as-code/terraform-platform.md)
 - [CI/CD](ci-cd/README.md)
 - [Security](security/README.md)
 - [Zero Trust Policy](security/zero-trust-policy.md)

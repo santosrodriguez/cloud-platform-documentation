@@ -2,6 +2,12 @@
 
 Document how infrastructure and platform changes move from reviewed source code to deployment.
 
+## Workflow Platform
+
+We use [GitHub Actions](../infrastructure-as-code/terraform-platform.md#github-actions-workflows) for our workflows.
+
+This confirms the workflow platform, not a repository or workflow inventory. Runner types, identities, permissions, triggers, approvals, secrets handling, deployment environments, validation, and rollback procedures remain to be documented.
+
 ## Environment Responsibilities
 
 The **DevOps Engineering Team** is responsible for the **GitHub** and **Azure DevOps** environments.
@@ -13,7 +19,7 @@ The environment inventory, administrative boundaries, contact details, access-re
 ## Planned Pages
 
 - GitHub and Azure DevOps environment administration
-- GitHub Actions workflows and reusable workflows
+- GitHub Actions workflow inventory and reusable workflow standards
 - GitHub runners and network dependencies
 - Workload identity and deployment permissions
 - Environment strategy and promotion
@@ -25,6 +31,7 @@ Workflow names, identities, permissions, and approval requirements are pending c
 ## Related Sections
 
 - [Infrastructure as Code](../infrastructure-as-code/README.md)
+- [Terraform Platform](../infrastructure-as-code/terraform-platform.md)
 - [Security](../security/README.md)
 - [Known Service Responsibilities](../reference/README.md#confirmed-service-responsibilities)
 - [GitHub and Azure DevOps FAQ](../faq/README.md#github-and-azure-devops)
