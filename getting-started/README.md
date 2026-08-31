@@ -1,0 +1,25 @@
+# Getting Started
+
+Start here to understand the platform, its audiences, and how to find documentation.
+
+## Planned Pages
+
+- Cloud Platform overview and service boundaries
+- Platform architecture overview
+- Engineering onboarding and required access
+- Terminology and acronyms
+- Important platform links and support contacts
+
+## Find Your Next Step
+
+| Audience or task | Section |
+| --- | --- |
+| Application teams consuming Azure | [Using Azure](../using-azure/README.md) |
+| Common platform questions | [FAQ](../faq/README.md) |
+| Platform design and dependencies | [Architecture](../architecture/README.md) |
+| Contribution and review workflow | [Contributing](../Contributing.md) |
+| Environment and ownership references | [Reference](../reference/README.md) |
+
+Organization-specific onboarding and access instructions are pending owner review.
+
+[Home](../Home.md)
