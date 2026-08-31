@@ -18,7 +18,7 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - Monitoring and logging
 - [Terraform platform: registry, state, and workflows](../infrastructure-as-code/terraform-platform.md)
 - [GitHub, Azure DevOps, and CI/CD](../ci-cd/README.md)
-- AKS
+- [AKS ingress with Application Gateway Ingress Controller](../platform-services/aks.md)
 - API Management
 - Storage
 - Disaster recovery

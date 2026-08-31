@@ -48,6 +48,12 @@ Submit a public-access exemption request for the resource. The Cyber Defense tea
 
 TLS 1.2 is the required minimum. Later versions meet this minimum; earlier versions must not be permitted. See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
 
+## AKS
+
+### Which ingress controller do our AKS clusters use?
+
+We use Application Gateway Ingress Controller (AGIC) for ingress to our AKS clusters. Controller deployment mode, Application Gateway topology, ingress configuration, ownership, and operations remain to be documented. See [Azure Kubernetes Service (AKS)](../platform-services/aks.md).
+
 ## Terraform
 
 ### What tools make up our Terraform platform?

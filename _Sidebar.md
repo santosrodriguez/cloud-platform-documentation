@@ -19,6 +19,7 @@
 - [Terraform Platform](infrastructure-as-code/terraform-platform.md)
 - [CI/CD](ci-cd/README.md)
 - [Platform Services](platform-services/README.md)
+- [Azure Kubernetes Service (AKS)](platform-services/aks.md)
 - [Standards and Guidelines](standards-and-guidelines/README.md)
 - [Architecture Decisions](adr/README.md)
 - [Design Patterns](design-patterns/README.md)
