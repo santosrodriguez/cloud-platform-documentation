@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-08-31: Firewall Management Responsibility
+
+[PR #8](https://github.com/santosrodriguez/cloud-platform-documentation/pull/8) records the **Cyber Defense Engineering** team's responsibility for [managing the Palo Alto firewall and its rules](../architecture/hub-and-spoke-network.md#firewall-management). Related guidance, the FAQ, and the service-responsibility reference link to this confirmed scope. Contacts and request, approval, and escalation procedures remain undocumented; no access grants or infrastructure settings are changed.
+
 ## 2026-08-31: Zero Trust and ExpressRoute
 
 [PR #7](https://github.com/santosrodriguez/cloud-platform-documentation/pull/7) records the user-confirmed [Zero Trust Policy](../security/zero-trust-policy.md) and [ExpressRoute Connectivity](../networking/expressroute-connectivity.md) for on-premises access, with FAQs and related navigation. Reference definitions are distinguished from organization-specific facts. Detailed controls and connectivity configuration remain unconfirmed; no Azure, firewall, or on-premises settings are changed.
