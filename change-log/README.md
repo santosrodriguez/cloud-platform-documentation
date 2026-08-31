@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-08-31: AKS Ingress Controller
+
+[PR #12](https://github.com/santosrodriguez/cloud-platform-documentation/pull/12) records [Application Gateway Ingress Controller (AGIC)](../platform-services/aks.md#confirmed-ingress-implementation) as the ingress controller used for our AKS clusters. The AKS service page applies the existing public-access and TLS requirements while leaving controller deployment mode, Application Gateway topology, ingress configuration, ownership, and operations unconfirmed; no AKS, Application Gateway, ingress, network, or security configuration is changed.
+
 ## 2026-08-31: Public Access Exemption Process
 
 [PR #11](https://github.com/santosrodriguez/cloud-platform-documentation/pull/11) records the [Public Access Exemption Process](../security/public-access-exemption-process.md): the requester submits a resource-specific exemption request, the Cyber Defense team in Security reviews it, and, after approval, Cyber Defense sends it to the Cloud Platform team to create the Azure Policy exemption for that resource. Request mechanics, approval criteria, validation, lifecycle, and other decision paths remain undocumented; no exemption or Azure configuration is created or changed.
