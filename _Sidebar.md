@@ -8,6 +8,7 @@
 - [Azure Services](azure-services/README.md)
 - [Networking](networking/README.md)
 - [Hub-and-Spoke Network](architecture/hub-and-spoke-network.md)
+- [Private DNS Zone Management](networking/private-dns-zone-management.md)
 - [Security](security/README.md)
 - [Resource Security Baseline](security/resource-security-baseline.md)
 - [Governance](governance/README.md)

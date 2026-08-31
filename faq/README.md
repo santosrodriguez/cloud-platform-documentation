@@ -16,6 +16,12 @@ The Palo Alto firewall is the first hop for all traffic egressing workload spoke
 
 See [Workload-Spoke Egress](../architecture/hub-and-spoke-network.md#workload-spoke-egress).
 
+## DNS
+
+### How are private DNS zones managed?
+
+All private DNS zones are centrally managed. The named owning team, zone locations, DNS resolution paths, and change request procedures have not yet been documented. See [Private DNS Zone Management](../networking/private-dns-zone-management.md).
+
 ## Security
 
 ### Should public access be enabled by default?

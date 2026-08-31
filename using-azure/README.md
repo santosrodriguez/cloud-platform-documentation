@@ -11,7 +11,7 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - Requesting Azure resources
 - [Network connectivity and workload-spoke egress](../architecture/hub-and-spoke-network.md)
 - Private Endpoints
-- DNS
+- [Private DNS zone management](../networking/private-dns-zone-management.md)
 - Identity and access
 - Certificates and Key Vault
 - Monitoring and logging

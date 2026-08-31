@@ -63,6 +63,7 @@ These details must come from platform records or owner confirmation. This page d
 
 - [Architecture](README.md)
 - [Networking](../networking/README.md)
+- [Private DNS Zone Management](../networking/private-dns-zone-management.md)
 - [Using Azure](../using-azure/README.md)
 - [FAQ](../faq/README.md)
 
