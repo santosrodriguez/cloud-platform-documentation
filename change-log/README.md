@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-08-31: Monitoring Platform Standard
+
+[PR #13](https://github.com/santosrodriguez/cloud-platform-documentation/pull/13) records [Dynatrace as the standard monitoring platform](../monitoring-and-observability/README.md#confirmed-platform-approach), with Azure-native monitoring solutions used as needed or where appropriate. Coverage, Azure-native service inventory, selection criteria, telemetry routing, integrations, alert ownership, retention, and operations remain undocumented; no monitoring, alerting, telemetry, Azure, or Dynatrace configuration is changed.
+
 ## 2026-08-31: AKS Ingress Controller
 
 [PR #12](https://github.com/santosrodriguez/cloud-platform-documentation/pull/12) records [Application Gateway Ingress Controller (AGIC)](../platform-services/aks.md#confirmed-ingress-implementation) as the ingress controller used for our AKS clusters. The AKS service page applies the existing public-access and TLS requirements while leaving controller deployment mode, Application Gateway topology, ingress configuration, ownership, and operations unconfirmed; no AKS, Application Gateway, ingress, network, or security configuration is changed.
