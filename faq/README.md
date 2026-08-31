@@ -16,6 +16,10 @@ All workload VNet traffic is routed through and inspected by the Palo Alto firew
 
 See [Workload VNet Traffic Routing and Inspection](../architecture/hub-and-spoke-network.md#workload-vnet-traffic-routing-and-inspection).
 
+### Who manages the Palo Alto firewall and its rules?
+
+The **Cyber Defense Engineering** team manages the Palo Alto firewall and its rules. See [Firewall Management](../architecture/hub-and-spoke-network.md#firewall-management). Contact details and request procedures remain to be documented.
+
 ### How do we access the on-premises environment?
 
 We use Azure ExpressRoute for on-premises access. Specific destinations, allowed flows, and routing configuration still need to be documented. See [ExpressRoute Connectivity](../networking/expressroute-connectivity.md).

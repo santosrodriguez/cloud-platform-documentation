@@ -24,7 +24,7 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - [Security requirements: public access and minimum TLS](../security/resource-security-baseline.md)
 - [Zero Trust policy](../security/zero-trust-policy.md)
 - Supported architecture patterns
-- Platform responsibilities
+- [Known service responsibilities](../reference/README.md#confirmed-service-responsibilities)
 - Getting help
 
 ## Documentation Goal
