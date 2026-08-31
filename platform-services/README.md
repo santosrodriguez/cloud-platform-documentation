@@ -6,6 +6,8 @@ Document shared platform services, including their confirmed implementation, own
 
 [Azure Kubernetes Service (AKS)](aks.md) records Application Gateway Ingress Controller (AGIC) as the confirmed ingress controller used for our AKS clusters. Cluster architecture, Application Gateway topology, configuration, ownership, and operations remain to be documented.
 
+[Monitoring and Observability](../monitoring-and-observability/README.md) records Dynatrace as the standard monitoring platform, with Azure-native monitoring solutions used as needed or where appropriate. Detailed architecture, integrations, service inventory, ownership, and operations remain to be documented.
+
 ## Documented Shared Management
 
 [Private DNS Zone Management](../networking/private-dns-zone-management.md) records the centrally managed model for all private DNS zones. Specific ownership contacts and consumer request procedures remain pending.
@@ -16,7 +18,7 @@ Document shared platform services, including their confirmed implementation, own
 - API Management
 - Key Vault
 - Application Gateway
-- Shared monitoring and Log Analytics
+- Detailed Dynatrace and Azure-native monitoring integrations
 - Other shared platform services
 
 Use the [service template](../templates/service.md) to document ownership, dependencies, access, deployment, operations, and recovery. List only confirmed services as available to consumers.
