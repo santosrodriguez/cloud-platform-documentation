@@ -9,6 +9,7 @@ The responsibilities below were supplied by the user on 2026-08-31. This is a pa
 | Responsibility | Team | Details |
 | --- | --- | --- |
 | Palo Alto firewall and rule management | Cyber Defense Engineering | [Firewall Management](../architecture/hub-and-spoke-network.md#firewall-management) |
+| Central management of all private DNS zones | Cloud Platform Solutions and Services | [Private DNS Zone Management](../networking/private-dns-zone-management.md) |
 | Public-access exemption review and approval | Cyber Defense team in Security | [Exemption Responsibilities](../security/public-access-exemption-process.md#responsibilities) |
 | Approved resource-specific Azure Policy exemption creation | Cloud Platform team | [Exemption Responsibilities](../security/public-access-exemption-process.md#responsibilities) |
 | GitHub environments | DevOps Engineering Team | [Environment Responsibilities](../ci-cd/README.md#environment-responsibilities) |

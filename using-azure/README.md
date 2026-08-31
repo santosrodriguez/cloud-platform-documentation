@@ -12,7 +12,7 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - [Workload VNet traffic routing and inspection](../architecture/hub-and-spoke-network.md)
 - [ExpressRoute access to on-premises](../networking/expressroute-connectivity.md)
 - Private Endpoints
-- [Private DNS zone management](../networking/private-dns-zone-management.md)
+- [Private DNS zone management by Cloud Platform Solutions and Services](../networking/private-dns-zone-management.md)
 - Identity and access
 - Certificates and Key Vault
 - [Monitoring and logging: Dynatrace and Azure-native solutions](../monitoring-and-observability/README.md)

@@ -10,7 +10,7 @@ Document shared platform services, including their confirmed implementation, own
 
 ## Documented Shared Management
 
-[Private DNS Zone Management](../networking/private-dns-zone-management.md) records the centrally managed model for all private DNS zones. Specific ownership contacts and consumer request procedures remain pending.
+[Private DNS Zone Management](../networking/private-dns-zone-management.md) records that the **Cloud Platform Solutions and Services** team centrally manages all private DNS zones. Team contacts, ownership boundaries, and consumer request procedures remain pending.
 
 ## Planned Pages
 
