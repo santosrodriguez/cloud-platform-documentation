@@ -1,6 +1,10 @@
 # Platform Services
 
-Document shared services as implemented and operated by the Cloud Platform team.
+Document shared platform services, including their confirmed implementation, ownership, dependencies, and operations.
+
+## Documented Services
+
+[Azure Kubernetes Service (AKS)](aks.md) records Application Gateway Ingress Controller (AGIC) as the confirmed ingress controller used for our AKS clusters. Cluster architecture, Application Gateway topology, configuration, ownership, and operations remain to be documented.
 
 ## Documented Shared Management
 
@@ -8,7 +12,7 @@ Document shared services as implemented and operated by the Cloud Platform team.
 
 ## Planned Pages
 
-- Azure Kubernetes Service
+- Detailed AKS architecture, operations, and recovery guidance
 - API Management
 - Key Vault
 - Application Gateway

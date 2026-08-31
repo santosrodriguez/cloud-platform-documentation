@@ -21,6 +21,7 @@
   "infrastructure-as-code/terraform-platform.md": "Terraform-Platform.md",
   "ci-cd/README.md": "CI-CD.md",
   "platform-services/README.md": "Platform-Services.md",
+  "platform-services/aks.md": "Azure-Kubernetes-Service.md",
   "standards-and-guidelines/README.md": "Standards-and-Guidelines.md",
   "adr/README.md": "Architecture-Decisions.md",
   "design-patterns/README.md": "Design-Patterns.md",
