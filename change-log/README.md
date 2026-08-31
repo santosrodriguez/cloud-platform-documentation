@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-08-31: Terraform Platform Implementation
+
+[PR #10](https://github.com/santosrodriguez/cloud-platform-documentation/pull/10) records the confirmed [Terraform Platform](../infrastructure-as-code/terraform-platform.md): Artifactory is the Terraform registry, Azure Storage Accounts store Terraform state files, and GitHub Actions runs workflows. Detailed configuration, identities, component ownership, and operating procedures remain undocumented; no infrastructure, workflow, access, or repository settings are changed.
+
 ## 2026-08-31: DevOps Environment Responsibilities
 
 [PR #9](https://github.com/santosrodriguez/cloud-platform-documentation/pull/9) records the **DevOps Engineering Team** as responsible for the [GitHub and Azure DevOps environments](../ci-cd/README.md#environment-responsibilities). The service-responsibility reference, FAQ, and consumer guidance reflect this scope. Detailed administrative boundaries, access and approval procedures, and support contacts remain undocumented; no access grants or environment settings are changed.

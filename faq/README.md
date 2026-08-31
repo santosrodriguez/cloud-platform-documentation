@@ -44,6 +44,12 @@ No. Public access must be disabled by default for all resources. See the [Resour
 
 TLS 1.2 is the required minimum. Later versions meet this minimum; earlier versions must not be permitted. See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
 
+## Terraform
+
+### What tools make up our Terraform platform?
+
+We use Artifactory as the Terraform registry, Azure Storage Accounts for Terraform state files, and GitHub Actions for workflows. Detailed configuration, identities, ownership, and operating procedures remain to be documented. See [Terraform Platform](../infrastructure-as-code/terraform-platform.md).
+
 ## GitHub and Azure DevOps
 
 ### Who is responsible for the GitHub and Azure DevOps environments?
