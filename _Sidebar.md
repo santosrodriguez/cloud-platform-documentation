@@ -13,6 +13,7 @@
 - [Security](security/README.md)
 - [Zero Trust Policy](security/zero-trust-policy.md)
 - [Resource Security Baseline](security/resource-security-baseline.md)
+- [Public Access Exemption Process](security/public-access-exemption-process.md)
 - [Governance](governance/README.md)
 - [Infrastructure as Code](infrastructure-as-code/README.md)
 - [Terraform Platform](infrastructure-as-code/terraform-platform.md)

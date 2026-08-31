@@ -6,8 +6,9 @@ Authoritative Azure platform security standards, requirements, and implementatio
 
 - [Zero Trust Policy](zero-trust-policy.md): the platform's confirmed security policy, with detailed controls and enforcement still to be documented.
 - [Resource Security Baseline](resource-security-baseline.md): public access disabled by default for all resources and TLS 1.2 as the required minimum.
+- [Public Access Exemption Process](public-access-exemption-process.md): the Cyber Defense team in Security reviews resource-specific public-access exemption requests, and Cloud Platform creates the Azure Policy exemption after approval.
 
-These requirements are confirmed by the user. Service-specific configuration, enforcement, and compliance evidence remain to be documented.
+These requirements and the exemption workflow are confirmed by the user. Request mechanics, service-specific configuration, enforcement, exemption lifecycle, and compliance evidence remain to be documented.
 
 ## Firewall Management
 
@@ -24,4 +25,4 @@ The **Cyber Defense Engineering** team is responsible for managing the Palo Alto
 - Key Vault and secrets
 - Defender for Cloud
 - Security monitoring
-- Security exceptions
+- Additional security exceptions
