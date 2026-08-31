@@ -7,6 +7,7 @@
 - [Architecture](architecture/README.md)
 - [Azure Services](azure-services/README.md)
 - [Networking](networking/README.md)
+- [Hub-and-Spoke Network](architecture/hub-and-spoke-network.md)
 - [Security](security/README.md)
 - [Governance](governance/README.md)
 - [Infrastructure as Code](infrastructure-as-code/README.md)
