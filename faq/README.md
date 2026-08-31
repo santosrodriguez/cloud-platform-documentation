@@ -44,6 +44,12 @@ No. Public access must be disabled by default for all resources. See the [Resour
 
 TLS 1.2 is the required minimum. Later versions meet this minimum; earlier versions must not be permitted. See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
 
+## GitHub and Azure DevOps
+
+### Who is responsible for the GitHub and Azure DevOps environments?
+
+The **DevOps Engineering Team** is responsible for both environments. See [Environment Responsibilities](../ci-cd/README.md#environment-responsibilities). Contact details and access, approval, and support procedures remain to be documented.
+
 ## Categories
 
 - Getting started
@@ -54,6 +60,7 @@ TLS 1.2 is the required minimum. Later versions meet this minimum; earlier versi
 - Private Endpoints
 - Terraform
 - GitHub Actions
+- Azure DevOps
 - AKS
 - API Management
 - Monitoring

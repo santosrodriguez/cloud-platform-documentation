@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-08-31: DevOps Environment Responsibilities
+
+[PR #9](https://github.com/santosrodriguez/cloud-platform-documentation/pull/9) records the **DevOps Engineering Team** as responsible for the [GitHub and Azure DevOps environments](../ci-cd/README.md#environment-responsibilities). The service-responsibility reference, FAQ, and consumer guidance reflect this scope. Detailed administrative boundaries, access and approval procedures, and support contacts remain undocumented; no access grants or environment settings are changed.
+
 ## 2026-08-31: Firewall Management Responsibility
 
 [PR #8](https://github.com/santosrodriguez/cloud-platform-documentation/pull/8) records the **Cyber Defense Engineering** team's responsibility for [managing the Palo Alto firewall and its rules](../architecture/hub-and-spoke-network.md#firewall-management). Related guidance, the FAQ, and the service-responsibility reference link to this confirmed scope. Contacts and request, approval, and escalation procedures remain undocumented; no access grants or infrastructure settings are changed.
