@@ -2,7 +2,7 @@
 
 **Status:** Recorded architecture baseline. Detailed configuration and operational validation are pending.
 
-**Source:** Platform description and traffic-scope clarification supplied by the user on 2026-08-31.
+**Source:** Platform descriptions and clarifications supplied by the user on 2026-08-31.
 
 ## Confirmed Architecture
 
@@ -47,6 +47,12 @@ The firewall is shown separately to describe its role in the flow. Its physical 
 Use the Palo Alto routing and inspection model as the baseline when describing workload VNet connectivity. The hub's transit role does not by itself document which destinations are permitted; firewall rules, supported flows, and the connectivity request process still need to be supplied.
 
 For a concise answer to common questions, see the [networking FAQ](../faq/README.md#networking).
+
+## On-Premises Connectivity
+
+We use [ExpressRoute](../networking/expressroute-connectivity.md) for access to the on-premises environment. The specific circuit attachment, gateway placement, and end-to-end routing path remain to be documented.
+
+The platform follows a [Zero Trust policy](../security/zero-trust-policy.md). Connectivity does not by itself establish which application flows or access requests are approved.
 
 ## Implementation Details to Confirm
 

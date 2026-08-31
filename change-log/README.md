@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-08-31: Zero Trust and ExpressRoute
+
+[PR #7](https://github.com/santosrodriguez/cloud-platform-documentation/pull/7) records the user-confirmed [Zero Trust Policy](../security/zero-trust-policy.md) and [ExpressRoute Connectivity](../networking/expressroute-connectivity.md) for on-premises access, with FAQs and related navigation. Reference definitions are distinguished from organization-specific facts. Detailed controls and connectivity configuration remain unconfirmed; no Azure, firewall, or on-premises settings are changed.
+
 ## 2026-08-31: Workload VNet Traffic Clarification
 
 [PR #6](https://github.com/santosrodriguez/cloud-platform-documentation/pull/6) clarifies the [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md): all workload VNet traffic is routed through and inspected by the Palo Alto firewall. The network page, diagram, FAQ, and related summaries use the clarified wording. Detailed routing and inspection configuration remain unconfirmed; no Azure or firewall settings are changed.

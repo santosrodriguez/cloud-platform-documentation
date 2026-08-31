@@ -10,6 +10,7 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - Application onboarding
 - Requesting Azure resources
 - [Workload VNet traffic routing and inspection](../architecture/hub-and-spoke-network.md)
+- [ExpressRoute access to on-premises](../networking/expressroute-connectivity.md)
 - Private Endpoints
 - [Private DNS zone management](../networking/private-dns-zone-management.md)
 - Identity and access
@@ -21,6 +22,7 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - Storage
 - Disaster recovery
 - [Security requirements: public access and minimum TLS](../security/resource-security-baseline.md)
+- [Zero Trust policy](../security/zero-trust-policy.md)
 - Supported architecture patterns
 - Platform responsibilities
 - Getting help

@@ -16,6 +16,10 @@ All workload VNet traffic is routed through and inspected by the Palo Alto firew
 
 See [Workload VNet Traffic Routing and Inspection](../architecture/hub-and-spoke-network.md#workload-vnet-traffic-routing-and-inspection).
 
+### How do we access the on-premises environment?
+
+We use Azure ExpressRoute for on-premises access. Specific destinations, allowed flows, and routing configuration still need to be documented. See [ExpressRoute Connectivity](../networking/expressroute-connectivity.md).
+
 ## DNS
 
 ### How are private DNS zones managed?
@@ -23,6 +27,10 @@ See [Workload VNet Traffic Routing and Inspection](../architecture/hub-and-spoke
 All private DNS zones are centrally managed. The named owning team, zone locations, DNS resolution paths, and change request procedures have not yet been documented. See [Private DNS Zone Management](../networking/private-dns-zone-management.md).
 
 ## Security
+
+### What security policy does the platform follow?
+
+The platform follows a Zero Trust policy. Detailed control requirements, enforcement, and compliance remain unverified. See [Zero Trust Policy](../security/zero-trust-policy.md).
 
 ### Should public access be enabled by default?
 
