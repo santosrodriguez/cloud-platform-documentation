@@ -1,0 +1,15 @@
+# Cloud Platform
+
+- [Home](Home.md)
+- [Using Azure](using-azure/README.md)
+- [FAQ](faq/README.md)
+- [Architecture](architecture/README.md)
+- [Azure Services](azure-services/README.md)
+- [Security](security/README.md)
+- [Governance](governance/README.md)
+- [Infrastructure as Code](infrastructure-as-code/README.md)
+- [Operations](operations/README.md)
+- [Runbooks](runbooks/README.md)
+- [Troubleshooting](troubleshooting/README.md)
+- [Architecture Decisions](adr/README.md)
+- [Reference](reference/README.md)
