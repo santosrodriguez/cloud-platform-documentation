@@ -10,11 +10,11 @@ FAQ answers should be concise and link to authoritative documentation rather tha
 
 The hub is the transit network for all spokes in our hub-and-spoke architecture. See [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md).
 
-### What is the first hop for traffic leaving a workload spoke?
+### How is workload VNet traffic routed and inspected?
 
-The Palo Alto firewall is the first hop for all traffic egressing workload spokes. This scope includes all traffic leaving those spokes, not only internet-bound traffic. Destination-specific paths and routing configuration still need to be documented.
+All workload VNet traffic is routed through and inspected by the Palo Alto firewall. Detailed routing and inspection configuration still need to be documented.
 
-See [Workload-Spoke Egress](../architecture/hub-and-spoke-network.md#workload-spoke-egress).
+See [Workload VNet Traffic Routing and Inspection](../architecture/hub-and-spoke-network.md#workload-vnet-traffic-routing-and-inspection).
 
 ## DNS
 
