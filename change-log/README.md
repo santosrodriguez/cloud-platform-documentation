@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-08-31: Centralized Private DNS Zone Management
+
+[PR #5](https://github.com/santosrodriguez/cloud-platform-documentation/pull/5) records the user-confirmed [Private DNS Zone Management](../networking/private-dns-zone-management.md) model: all private DNS zones are centrally managed. DNS FAQs and related navigation link to the page. Zone locations, resolution paths, and operational procedures remain unconfirmed; no Azure DNS configuration is changed.
+
 ## 2026-08-31: Resource Security Baseline
 
 [PR #4](https://github.com/santosrodriguez/cloud-platform-documentation/pull/4) records the user-confirmed [Resource Security Baseline](../security/resource-security-baseline.md): public access disabled by default for all resources and TLS 1.2 as the required minimum. Security FAQs and navigation link to the standard. Enforcement and compliance have not been verified; no Azure configuration is changed.
