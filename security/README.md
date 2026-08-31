@@ -9,6 +9,10 @@ Authoritative Azure platform security standards, requirements, and implementatio
 
 These requirements are confirmed by the user. Service-specific configuration, enforcement, and compliance evidence remain to be documented.
 
+## Firewall Management
+
+The **Cyber Defense Engineering** team is responsible for managing the Palo Alto firewall and its rules. See [Firewall Management](../architecture/hub-and-spoke-network.md#firewall-management). Team contacts, request channels, and approval procedures remain to be documented.
+
 ## Intended Content
 
 - Identity and access management

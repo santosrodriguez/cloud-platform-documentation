@@ -22,6 +22,8 @@ The service overview is reference context, not a description of our specific cir
 
 The [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md) remains the documented network model: the hub provides transit for all spokes, and all workload VNet traffic is routed through and inspected by the Palo Alto firewall.
 
+For the firewall and rule-management responsibility, see [Firewall Management](../architecture/hub-and-spoke-network.md#firewall-management). The ExpressRoute service owner remains unconfirmed.
+
 The detailed path connecting workload VNets, the hub, Palo Alto, ExpressRoute, and on-premises destinations still needs to be documented. No gateway placement or hop sequence is inferred here.
 
 See the [Zero Trust Policy](../security/zero-trust-policy.md) and [Resource Security Baseline](../security/resource-security-baseline.md) for the recorded security policy and requirements. Connectivity alone is not an access approval or evidence that security requirements are met.

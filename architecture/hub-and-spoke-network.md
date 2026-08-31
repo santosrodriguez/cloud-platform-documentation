@@ -16,6 +16,7 @@ Our Azure network uses a hub-and-spoke topology. The hub is the transit network 
 | Hub | Transit network for all spokes |
 | Palo Alto firewall | Routing and traffic inspection |
 | Traffic scope | All workload VNet traffic |
+| Firewall and rule management | Cyber Defense Engineering team |
 
 The hub provides shared transit, and the firewall provides the routing and inspection point for workload VNet traffic. The additional business and design rationale has not yet been captured.
 
@@ -42,6 +43,12 @@ The diagram summarizes the confirmed routing and inspection model for all worklo
 
 The firewall is shown separately to describe its role in the flow. Its physical placement, deployment product, and forwarding endpoint have not been confirmed. The dashed path represents onward routing that still needs documentation.
 
+## Firewall Management
+
+The **Cyber Defense Engineering** team is responsible for managing the **Palo Alto firewall and its rules**.
+
+This responsibility is confirmed by the user. Team contact details, firewall and rule-change request channels, approval responsibilities, and escalation procedures remain to be documented. This statement does not assign responsibility for other network services or the overall security policy.
+
 ## Guidance for Consuming Teams
 
 Use the Palo Alto routing and inspection model as the baseline when describing workload VNet connectivity. The hub's transit role does not by itself document which destinations are permitted; firewall rules, supported flows, and the connectivity request process still need to be supplied.
@@ -64,7 +71,7 @@ The platform follows a [Zero Trust policy](../security/zero-trust-policy.md). Co
 | Inspection | Applied inspection policies and features, and any decryption configuration |
 | Destination paths | Onward paths to applicable destinations, such as other spokes, the internet, on-premises networks, or private services |
 | Return traffic and NAT | Return-path routing and any address translation performed |
-| Policy and operations | Approved flows, any confirmed exceptions, logging, monitoring, ownership, and change procedures |
+| Policy and operations | Approved flows, any confirmed exceptions, logging, monitoring, contact details, and change procedures |
 
 These details must come from platform records or owner confirmation. This page does not provide deployment commands or an executable operational procedure.
 

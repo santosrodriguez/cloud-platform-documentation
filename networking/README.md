@@ -10,6 +10,8 @@ Start with the [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md)
 
 ## Documented Management Model
 
+The **Cyber Defense Engineering** team manages the Palo Alto firewall and its rules. See [Firewall Management](../architecture/hub-and-spoke-network.md#firewall-management) for the confirmed responsibility and remaining procedural details.
+
 [Private DNS Zone Management](private-dns-zone-management.md) records central management of all private DNS zones. Zone inventory, access procedures, and resolution paths remain to be documented.
 
 ## Implementation Details to Document
