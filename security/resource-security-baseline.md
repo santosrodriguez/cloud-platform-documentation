@@ -39,6 +39,7 @@ No Azure configuration has been changed by recording these requirements. Service
 ## Related Documentation
 
 - [Security](README.md)
+- [Zero Trust Policy](zero-trust-policy.md)
 - [Standards and Guidelines](../standards-and-guidelines/README.md)
 - [Governance](../governance/README.md)
 - [Networking](../networking/README.md)

@@ -4,6 +4,7 @@ Authoritative Azure platform security standards, requirements, and implementatio
 
 ## Documented Requirements
 
+- [Zero Trust Policy](zero-trust-policy.md): the platform's confirmed security policy, with detailed controls and enforcement still to be documented.
 - [Resource Security Baseline](resource-security-baseline.md): public access disabled by default for all resources and TLS 1.2 as the required minimum.
 
 These requirements are confirmed by the user. Service-specific configuration, enforcement, and compliance evidence remain to be documented.
