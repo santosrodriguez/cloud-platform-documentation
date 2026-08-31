@@ -9,7 +9,7 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - Getting started in Azure
 - Application onboarding
 - Requesting Azure resources
-- [Network connectivity and workload-spoke egress](../architecture/hub-and-spoke-network.md)
+- [Workload VNet traffic routing and inspection](../architecture/hub-and-spoke-network.md)
 - Private Endpoints
 - [Private DNS zone management](../networking/private-dns-zone-management.md)
 - Identity and access

@@ -4,7 +4,7 @@ Document the platform's connectivity, routing, DNS, and network security impleme
 
 ## Documented Architecture
 
-Start with the [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md) baseline. The hub provides transit for all spokes, and Palo Alto is the first hop for all traffic leaving workload spokes.
+Start with the [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md) baseline. The hub provides transit for all spokes. All workload VNet traffic is routed through and inspected by the Palo Alto firewall.
 
 ## Documented Management Model
 
@@ -13,7 +13,7 @@ Start with the [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md)
 ## Implementation Details to Document
 
 - Hub and spoke inventory and connection mechanism
-- Palo Alto deployment, availability, and failover
+- Palo Alto deployment, inspection policies, availability, and failover
 - Routing configuration, next-hop values, and subnet coverage
 - Onward destination paths, return routing, and address translation
 - IP addressing and network security controls
