@@ -4,6 +4,18 @@ This section captures commonly asked questions from teams that consume or depend
 
 FAQ answers should be concise and link to authoritative documentation rather than duplicating entire technical pages.
 
+## Networking
+
+### What does the hub network do?
+
+The hub is the transit network for all spokes in our hub-and-spoke architecture. See [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md).
+
+### What is the first hop for traffic leaving a workload spoke?
+
+The Palo Alto firewall is the first hop for all traffic egressing workload spokes. This scope includes all traffic leaving those spokes, not only internet-bound traffic. Destination-specific paths and routing configuration still need to be documented.
+
+See [Workload-Spoke Egress](../architecture/hub-and-spoke-network.md#workload-spoke-egress).
+
 ## Categories
 
 - Getting started

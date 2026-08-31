@@ -4,7 +4,7 @@ Welcome to the Cloud Platform Engineering knowledge base.
 
 This knowledge base brings together Azure platform architecture, standards, shared services, operational procedures, design decisions, troubleshooting guidance, and self-service information for teams that consume Azure.
 
-> **Status: starter documentation.** Section pages currently describe planned coverage. Organization-specific configuration, ownership, and operational procedures still need to be supplied and reviewed.
+> **Status: documentation in progress.** Recorded architecture is identified on individual pages. Many sections still describe planned coverage, and detailed configuration, ownership, and operational procedures remain pending.
 
 ## Start Here
 
@@ -20,6 +20,7 @@ This knowledge base brings together Azure platform architecture, standards, shar
 ## Architecture and Services
 
 - [Architecture](architecture/README.md)
+- [Hub-and-Spoke Network](architecture/hub-and-spoke-network.md)
 - [Azure Services](azure-services/README.md)
 - [Networking](networking/README.md)
 - [Platform Services](platform-services/README.md)

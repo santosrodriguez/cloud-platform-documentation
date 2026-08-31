@@ -7,6 +7,7 @@
   "using-azure/README.md": "Using-Azure.md",
   "faq/README.md": "FAQ.md",
   "architecture/README.md": "Architecture.md",
+  "architecture/hub-and-spoke-network.md": "Hub-and-Spoke-Network.md",
   "azure-services/README.md": "Azure-Services.md",
   "networking/README.md": "Networking.md",
   "security/README.md": "Security.md",

@@ -2,17 +2,20 @@
 
 Document the platform's connectivity, routing, DNS, and network security implementation.
 
-## Planned Pages
+## Documented Architecture
 
-- Virtual WAN and virtual hubs
-- ExpressRoute and VPN connectivity
-- Azure Firewall and Palo Alto integration
-- Virtual networks, subnets, IP addressing, and network security groups
-- Routing and connectivity patterns
-- Private Endpoints and Private DNS
-- DNS Private Resolver
+Start with the [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md) baseline. The hub provides transit for all spokes, and Palo Alto is the first hop for all traffic leaving workload spokes.
 
-Topology, address ranges, DNS configuration, and firewall requirements must come from verified platform records.
+## Implementation Details to Document
+
+- Hub and spoke inventory and connection mechanism
+- Palo Alto deployment, availability, and failover
+- Routing configuration, next-hop values, and subnet coverage
+- Onward destination paths, return routing, and address translation
+- IP addressing and network security controls
+- Private connectivity and DNS, where applicable
+
+Address ranges, DNS configuration, firewall rules, and routing implementation must come from verified platform records. The hub implementation has not yet been identified as a hub VNet, Virtual WAN, or another arrangement.
 
 ## Related Sections
 
