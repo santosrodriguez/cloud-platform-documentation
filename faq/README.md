@@ -38,7 +38,11 @@ The platform follows a Zero Trust policy. Detailed control requirements, enforce
 
 ### Should public access be enabled by default?
 
-No. Public access must be disabled by default for all resources. See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
+No. Public access must be disabled by default for all resources. A specific resource may receive public access only through the [Public Access Exemption Process](../security/public-access-exemption-process.md). See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
+
+### How do I request public access for a resource?
+
+Submit a public-access exemption request for the resource. The Cyber Defense team in Security reviews the request. If Cyber Defense approves it, Cyber Defense sends the approved request to the Cloud Platform team, which creates the Azure Policy exemption for that resource. The request channel, required information, review criteria, validation, and exemption lifecycle remain to be documented. See the [Public Access Exemption Process](../security/public-access-exemption-process.md).
 
 ### What is the minimum TLS version?
 

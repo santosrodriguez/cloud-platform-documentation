@@ -37,6 +37,7 @@ This knowledge base brings together Azure platform architecture, standards, shar
 - [Security](security/README.md)
 - [Zero Trust Policy](security/zero-trust-policy.md)
 - [Resource Security Baseline](security/resource-security-baseline.md)
+- [Public Access Exemption Process](security/public-access-exemption-process.md)
 - [Governance](governance/README.md)
 - [Standards and Guidelines](standards-and-guidelines/README.md)
 

@@ -15,6 +15,7 @@
   "security/README.md": "Security.md",
   "security/zero-trust-policy.md": "Zero-Trust-Policy.md",
   "security/resource-security-baseline.md": "Resource-Security-Baseline.md",
+  "security/public-access-exemption-process.md": "Public-Access-Exemption-Process.md",
   "governance/README.md": "Governance.md",
   "infrastructure-as-code/README.md": "Infrastructure-as-Code.md",
   "infrastructure-as-code/terraform-platform.md": "Terraform-Platform.md",

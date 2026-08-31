@@ -23,6 +23,7 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - Storage
 - Disaster recovery
 - [Security requirements: public access and minimum TLS](../security/resource-security-baseline.md)
+- [Requesting a public-access exemption](../security/public-access-exemption-process.md)
 - [Zero Trust policy](../security/zero-trust-policy.md)
 - Supported architecture patterns
 - [Known service responsibilities](../reference/README.md#confirmed-service-responsibilities)
