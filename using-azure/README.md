@@ -15,7 +15,7 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - [Private DNS zone management](../networking/private-dns-zone-management.md)
 - Identity and access
 - Certificates and Key Vault
-- Monitoring and logging
+- [Monitoring and logging: Dynatrace and Azure-native solutions](../monitoring-and-observability/README.md)
 - [Terraform platform: registry, state, and workflows](../infrastructure-as-code/terraform-platform.md)
 - [GitHub, Azure DevOps, and CI/CD](../ci-cd/README.md)
 - [AKS ingress with Application Gateway Ingress Controller](../platform-services/aks.md)

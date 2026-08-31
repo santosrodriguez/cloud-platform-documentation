@@ -7,6 +7,10 @@ Use this section to find approved requirements and recommended engineering pract
 - [Zero Trust Policy](../security/zero-trust-policy.md): the user-confirmed security policy; detailed policy requirements and enforcement remain to be documented.
 - [Resource Security Baseline](../security/resource-security-baseline.md): mandatory public-access defaults and minimum TLS version, as confirmed by the user.
 
+## Documented Platform Standards
+
+- [Monitoring and Observability](../monitoring-and-observability/README.md): Dynatrace is the standard monitoring platform; Azure-native monitoring solutions are used as needed or where appropriate. Selection criteria and implementation details remain to be documented.
+
 ## Planned Coverage
 
 - Architecture and infrastructure standards

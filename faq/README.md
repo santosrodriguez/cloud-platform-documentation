@@ -66,6 +66,12 @@ We use Artifactory as the Terraform registry, Azure Storage Accounts for Terrafo
 
 The **DevOps Engineering Team** is responsible for both environments. See [Environment Responsibilities](../ci-cd/README.md#environment-responsibilities). Contact details and access, approval, and support procedures remain to be documented.
 
+## Monitoring and Observability
+
+### What is our standard monitoring platform?
+
+Dynatrace is our standard monitoring platform. Azure-native monitoring solutions are also used as needed or where appropriate. The Azure-native service inventory, selection criteria, coverage, integrations, alert routing, and operating ownership remain to be documented. See [Monitoring and Observability](../monitoring-and-observability/README.md).
+
 ## Categories
 
 - Getting started
