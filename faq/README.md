@@ -16,6 +16,16 @@ The Palo Alto firewall is the first hop for all traffic egressing workload spoke
 
 See [Workload-Spoke Egress](../architecture/hub-and-spoke-network.md#workload-spoke-egress).
 
+## Security
+
+### Should public access be enabled by default?
+
+No. Public access must be disabled by default for all resources. See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
+
+### What is the minimum TLS version?
+
+TLS 1.2 is the required minimum. Later versions meet this minimum; earlier versions must not be permitted. See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
+
 ## Categories
 
 - Getting started

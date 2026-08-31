@@ -11,6 +11,7 @@
   "azure-services/README.md": "Azure-Services.md",
   "networking/README.md": "Networking.md",
   "security/README.md": "Security.md",
+  "security/resource-security-baseline.md": "Resource-Security-Baseline.md",
   "governance/README.md": "Governance.md",
   "infrastructure-as-code/README.md": "Infrastructure-as-Code.md",
   "ci-cd/README.md": "CI-CD.md",

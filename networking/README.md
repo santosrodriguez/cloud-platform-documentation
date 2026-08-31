@@ -20,6 +20,7 @@ Address ranges, DNS configuration, firewall rules, and routing implementation mu
 ## Related Sections
 
 - [Architecture](../architecture/README.md)
+- [Resource Security Baseline](../security/resource-security-baseline.md)
 - [Design Patterns](../design-patterns/README.md)
 - [Using Azure](../using-azure/README.md)
 - [Troubleshooting](../troubleshooting/README.md)

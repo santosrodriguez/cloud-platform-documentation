@@ -9,6 +9,7 @@
 - [Networking](networking/README.md)
 - [Hub-and-Spoke Network](architecture/hub-and-spoke-network.md)
 - [Security](security/README.md)
+- [Resource Security Baseline](security/resource-security-baseline.md)
 - [Governance](governance/README.md)
 - [Infrastructure as Code](infrastructure-as-code/README.md)
 - [CI/CD](ci-cd/README.md)

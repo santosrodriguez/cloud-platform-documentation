@@ -20,7 +20,7 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - API Management
 - Storage
 - Disaster recovery
-- Security requirements
+- [Security requirements: public access and minimum TLS](../security/resource-security-baseline.md)
 - Supported architecture patterns
 - Platform responsibilities
 - Getting help
