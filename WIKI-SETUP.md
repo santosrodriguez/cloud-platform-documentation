@@ -10,9 +10,9 @@ Last checked: 2026-08-31.
 - Initial setup: [PR #1](https://github.com/santosrodriguez/cloud-platform-documentation/pull/1), branch `docs/initial-wiki-structure`.
 - This project folder is now a standalone checkout of that repository.
 - GitHub's native Wiki feature is enabled, verified through `has_wiki: true` after the account owner enabled it.
-- The Wiki Git endpoint is not available yet. The initial Home page needs to be saved in GitHub before publication can proceed.
-- No documentation has been published to the native Wiki from this task.
-- The in-app browser is not signed in to GitHub, so it cannot currently create the initial page for the account owner.
+- The Wiki repository is initialized and accessible. Its default branch is `master`, independently of the source repository's `main` branch.
+- The local Wiki checkout is `.wiki-checkout/`, inside this project directory and excluded from the source repository.
+- Live destination: [Cloud Platform Wiki](https://github.com/santosrodriguez/cloud-platform-documentation/wiki). Its page history records publications; a local build alone does not publish anything.
 
 GitHub permits wikis on public repositories with GitHub Free. A private repository owned by a personal account requires GitHub Pro; organization repositories require a suitable paid organization plan. See [GitHub's Wiki availability rules](https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis).
 
@@ -20,7 +20,7 @@ Do not change repository visibility to work around the plan requirement. The Mar
 
 ## Initialize the Wiki Repository
 
-Wiki enablement is complete. The remaining initialization step must happen on GitHub:
+Initialization is complete for this repository. When setting up another Wiki, the first page must be created on GitHub:
 
 1. Open the repository's [Wiki tab](https://github.com/santosrodriguez/cloud-platform-documentation/wiki) while signed in.
 2. If GitHub displays **Create the first page**, create a page titled **Home** with a neutral notice that reviewed documentation is being prepared, then save it.
