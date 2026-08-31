@@ -4,7 +4,7 @@ Welcome to the Cloud Platform Engineering knowledge base.
 
 This knowledge base brings together Azure platform architecture, standards, shared services, operational procedures, design decisions, troubleshooting guidance, and self-service information for teams that consume Azure.
 
-> **Status: documentation in progress.** Recorded architecture is identified on individual pages. Many sections still describe planned coverage, and detailed configuration, ownership, and operational procedures remain pending.
+> **Status: documentation in progress.** Recorded architecture and requirements are identified on individual pages. Many sections still describe planned coverage, and detailed configuration, ownership, and operational procedures remain pending.
 
 ## Start Here
 
@@ -32,6 +32,7 @@ This knowledge base brings together Azure platform architecture, standards, shar
 - [Infrastructure as Code](infrastructure-as-code/README.md)
 - [CI/CD](ci-cd/README.md)
 - [Security](security/README.md)
+- [Resource Security Baseline](security/resource-security-baseline.md)
 - [Governance](governance/README.md)
 - [Standards and Guidelines](standards-and-guidelines/README.md)
 

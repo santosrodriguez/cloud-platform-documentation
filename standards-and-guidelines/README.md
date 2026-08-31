@@ -2,6 +2,10 @@
 
 Use this section to find approved requirements and recommended engineering practices.
 
+## Documented Requirements
+
+- [Resource Security Baseline](../security/resource-security-baseline.md): mandatory public-access defaults and minimum TLS version, as confirmed by the user.
+
 ## Planned Coverage
 
 - Architecture and infrastructure standards
