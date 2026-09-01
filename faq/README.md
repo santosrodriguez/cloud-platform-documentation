@@ -48,6 +48,16 @@ Submit a public-access exemption request for the resource. The Cyber Defense tea
 
 TLS 1.2 is the required minimum. Later versions meet this minimum; earlier versions must not be permitted. See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
 
+## Key Vault and Storage
+
+### Is purge protection required for Azure Key Vault?
+
+Yes. Purge protection must be enabled for every Azure Key Vault. Current compliance, retention configuration, validation, and recovery and purge procedures remain to be documented. See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
+
+### Is soft delete required for Azure Storage Accounts?
+
+Yes. Soft delete must be enabled for every Azure Storage Account. The applicable storage services and data types, required settings, retention periods, recovery procedures, and current compliance remain to be documented. See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
+
 ## AKS
 
 ### Which ingress controller do our AKS clusters use?
@@ -80,6 +90,8 @@ Dynatrace is our standard monitoring platform. Azure-native monitoring solutions
 - Identity and access
 - Security
 - Private Endpoints
+- Key Vault
+- Storage
 - Terraform
 - GitHub Actions
 - Azure DevOps
