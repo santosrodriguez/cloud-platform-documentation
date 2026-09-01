@@ -1,34 +1,51 @@
 # Cloud Platform
 
+## Start Here
+
 - [Home](Home.md)
 - [Getting Started](getting-started/README.md)
 - [Using Azure](using-azure/README.md)
 - [FAQ](faq/README.md)
+
+## Architecture and Networking
+
 - [Architecture](architecture/README.md)
-- [Azure Services](azure-services/README.md)
-- [Networking](networking/README.md)
 - [Hub-and-Spoke Network](architecture/hub-and-spoke-network.md)
+- [Networking](networking/README.md)
 - [ExpressRoute Connectivity](networking/expressroute-connectivity.md)
 - [Private DNS Zone Management](networking/private-dns-zone-management.md)
+- [Design Patterns](design-patterns/README.md)
+- [Architecture Decisions](adr/README.md)
+
+## Security and Governance
+
 - [Security](security/README.md)
 - [Zero Trust Policy](security/zero-trust-policy.md)
 - [Azure Identity and Access Requirements](security/identity-and-access-requirements.md)
 - [Resource Security Baseline](security/resource-security-baseline.md)
 - [Public Access Exemption Process](security/public-access-exemption-process.md)
 - [Governance](governance/README.md)
+- [Standards and Guidelines](standards-and-guidelines/README.md)
+
+## Engineering and Services
+
+- [Azure Services](azure-services/README.md)
+- [Platform Services](platform-services/README.md)
+- [Azure Kubernetes Service (AKS)](platform-services/aks.md)
 - [Infrastructure as Code](infrastructure-as-code/README.md)
 - [Terraform Platform](infrastructure-as-code/terraform-platform.md)
 - [CI/CD](ci-cd/README.md)
-- [Platform Services](platform-services/README.md)
-- [Azure Kubernetes Service (AKS)](platform-services/aks.md)
-- [Standards and Guidelines](standards-and-guidelines/README.md)
-- [Architecture Decisions](adr/README.md)
-- [Design Patterns](design-patterns/README.md)
+
+## Operations and Reliability
+
 - [Operations](operations/README.md)
+- [Monitoring and Observability](monitoring-and-observability/README.md)
+- [Disaster Recovery](disaster-recovery/README.md)
 - [Runbooks](runbooks/README.md)
 - [Troubleshooting](troubleshooting/README.md)
-- [Disaster Recovery](disaster-recovery/README.md)
-- [Monitoring and Observability](monitoring-and-observability/README.md)
+
+## Reference and Maintenance
+
 - [Reference](reference/README.md)
 - [Page Templates](templates/README.md)
 - [Contributing](Contributing.md)
