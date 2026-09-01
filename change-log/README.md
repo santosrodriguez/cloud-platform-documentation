@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-09-01: Resource Security Requirement Scope
+
+[PR #18](https://github.com/santosrodriguez/cloud-platform-documentation/pull/18) separates the Resource Security Baseline into [General Requirements](../security/resource-security-baseline.md#general-requirements) for public access and TLS and [Resource-Specific Requirements](../security/resource-security-baseline.md#resource-specific-requirements) for Azure Key Vault, Azure Storage Accounts, and AKS clusters. Resource-specific controls are explicitly additional to applicable general controls; no requirement or Azure configuration is added, removed, or changed.
+
 ## 2026-09-01: Azure Administrative Accounts and MFA
 
 [PR #17](https://github.com/santosrodriguez/cloud-platform-documentation/pull/17) adds mandatory [Azure Identity and Access Requirements](../security/identity-and-access-requirements.md#mandatory-requirements): MFA must be used for Azure user access, elevated permissions must be exercised through designated administrative accounts, and regular user accounts must not be used for elevated permissions. Definitions, account lifecycle, MFA methods, enforcement, emergency access, exceptions, ownership, workload identities, and compliance remain undocumented; no Azure account, role assignment, MFA setting, identity policy, or privileged-access configuration is changed.
