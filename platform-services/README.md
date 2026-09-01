@@ -4,13 +4,13 @@ Document shared platform services, including their confirmed implementation, own
 
 ## Documented Services
 
-[Azure Kubernetes Service (AKS)](aks.md) records Application Gateway Ingress Controller (AGIC) as the confirmed ingress controller used for our AKS clusters. Cluster architecture, Application Gateway topology, configuration, ownership, and operations remain to be documented.
+[Azure Kubernetes Service (AKS)](aks.md) records Application Gateway Ingress Controller (AGIC) as the confirmed ingress controller and requires local accounts to be disabled on every AKS cluster. Current compliance, cluster architecture, Application Gateway topology, configuration, ownership, and operations remain to be documented.
 
 [Monitoring and Observability](../monitoring-and-observability/README.md) records Dynatrace as the standard monitoring platform, with Azure-native monitoring solutions used as needed or where appropriate. Detailed architecture, integrations, service inventory, ownership, and operations remain to be documented.
 
 ## Documented Resource Requirements
 
-The [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements) requires purge protection for every Azure Key Vault and soft delete for every Azure Storage Account. Service-specific settings, retention periods, recovery procedures, enforcement, ownership, and compliance remain to be documented.
+The [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements) requires purge protection for every Azure Key Vault, soft delete for every Azure Storage Account, and disabled local accounts on every AKS cluster. Service-specific settings, retention periods, recovery procedures, AKS access configuration, enforcement, ownership, and compliance remain to be documented.
 
 ## Documented Shared Management
 

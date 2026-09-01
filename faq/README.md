@@ -64,6 +64,10 @@ Yes. Soft delete must be enabled for every Azure Storage Account. The applicable
 
 We use Application Gateway Ingress Controller (AGIC) for ingress to our AKS clusters. Controller deployment mode, Application Gateway topology, ingress configuration, ownership, and operations remain to be documented. See [Azure Kubernetes Service (AKS)](../platform-services/aks.md).
 
+### Are local accounts permitted on AKS clusters?
+
+No. Local accounts must be disabled on every AKS cluster. Current compliance, enforcement, the replacement authentication and authorization model, administrative and break-glass access, exceptions, and validation evidence remain to be documented. See the [AKS local-account requirement](../platform-services/aks.md#mandatory-local-account-requirement) and [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
+
 ## Terraform
 
 ### What tools make up our Terraform platform?
