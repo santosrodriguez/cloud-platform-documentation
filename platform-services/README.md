@@ -10,7 +10,7 @@ Document shared platform services, including their confirmed implementation, own
 
 ## Documented Resource Requirements
 
-The [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements) requires purge protection for every Azure Key Vault, soft delete for every Azure Storage Account, and disabled local accounts on every AKS cluster. Service-specific settings, retention periods, recovery procedures, AKS access configuration, enforcement, ownership, and compliance remain to be documented.
+The [resource-specific Resource Security Baseline requirements](../security/resource-security-baseline.md#resource-specific-requirements) require purge protection for every Azure Key Vault, soft delete for every Azure Storage Account, and disabled local accounts on every AKS cluster. Service-specific settings, retention periods, recovery procedures, AKS access configuration, enforcement, ownership, and compliance remain to be documented.
 
 ## Documented Shared Management
 
