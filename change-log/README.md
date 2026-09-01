@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-09-01: AKS Local Accounts
+
+[PR #16](https://github.com/santosrodriguez/cloud-platform-documentation/pull/16) adds a mandatory [AKS local-account requirement](../platform-services/aks.md#mandatory-local-account-requirement): local accounts must be disabled on every AKS cluster. Current compliance, enforcement, replacement authentication and authorization, administrative and break-glass access, exceptions, and validation remain undocumented; no AKS cluster, identity, access, policy, or authentication configuration is changed.
+
 ## 2026-09-01: Key Vault and Storage Deletion Protection
 
 [PR #15](https://github.com/santosrodriguez/cloud-platform-documentation/pull/15) adds mandatory [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements) controls: purge protection enabled for every Azure Key Vault and soft delete enabled for every Azure Storage Account. Storage service and data-type scope, retention, recovery, enforcement, ownership, and compliance remain undocumented; no Key Vault, Storage Account, policy, retention, recovery, or access configuration is changed.
