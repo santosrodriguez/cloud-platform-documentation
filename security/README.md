@@ -5,6 +5,7 @@ Authoritative Azure platform security standards, requirements, and implementatio
 ## Documented Requirements
 
 - [Zero Trust Policy](zero-trust-policy.md): the platform's confirmed security policy, with detailed controls and enforcement still to be documented.
+- [Azure Identity and Access Requirements](identity-and-access-requirements.md): MFA required for Azure user access and designated administrative accounts required when exercising elevated permissions.
 - [Resource Security Baseline](resource-security-baseline.md): public access disabled by default for all resources, TLS 1.2 as the required minimum, Key Vault purge protection enabled, Storage Account soft delete enabled, and AKS local accounts disabled.
 - [Public Access Exemption Process](public-access-exemption-process.md): the Cyber Defense team in Security reviews resource-specific public-access exemption requests, and Cloud Platform creates the Azure Policy exemption after approval.
 
@@ -16,8 +17,8 @@ The **Cyber Defense Engineering** team is responsible for managing the Palo Alto
 
 ## Intended Content
 
-- Identity and access management
-- RBAC and privileged access
+- Detailed identity and access implementation guidance
+- RBAC and privileged access operating procedures
 - Network security
 - Private connectivity
 - Service-specific public access controls

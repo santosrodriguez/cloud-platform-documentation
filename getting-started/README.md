@@ -17,6 +17,7 @@ Start here to understand the platform, its audiences, and how to find documentat
 | Application teams consuming Azure | [Using Azure](../using-azure/README.md) |
 | Common platform questions | [FAQ](../faq/README.md) |
 | Platform design and dependencies | [Architecture](../architecture/README.md) |
+| Azure account and MFA requirements | [Azure Identity and Access Requirements](../security/identity-and-access-requirements.md) |
 | Contribution and review workflow | [Contributing](../Contributing.md) |
 | Environment and ownership references | [Reference](../reference/README.md) |
 

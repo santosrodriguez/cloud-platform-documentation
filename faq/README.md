@@ -36,6 +36,14 @@ The **Cloud Platform Solutions and Services** team centrally manages all private
 
 The platform follows a Zero Trust policy. Detailed control requirements, enforcement, and compliance remain unverified. See [Zero Trust Policy](../security/zero-trust-policy.md).
 
+### Is MFA required for Azure access?
+
+Yes. Multi-factor authentication (MFA) must be used for Azure user access. Approved MFA methods, authentication strength, covered access paths, session behavior, emergency access, enforcement, exceptions, and current compliance remain to be documented. See [Azure Identity and Access Requirements](../security/identity-and-access-requirements.md#mandatory-requirements).
+
+### Which account must I use for elevated permissions in Azure?
+
+Use your designated administrative account. A regular user account must not be used to exercise elevated permissions in Azure, and MFA is still required. The definition of elevated permissions, account provisioning and naming, privileged-access workflow, emergency access, exceptions, and current compliance remain to be documented. See [Azure Identity and Access Requirements](../security/identity-and-access-requirements.md#mandatory-requirements).
+
 ### Should public access be enabled by default?
 
 No. Public access must be disabled by default for all resources. A specific resource may receive public access only through the [Public Access Exemption Process](../security/public-access-exemption-process.md). See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
