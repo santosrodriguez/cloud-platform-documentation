@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-09-01: Key Vault and Storage Deletion Protection
+
+[PR #15](https://github.com/santosrodriguez/cloud-platform-documentation/pull/15) adds mandatory [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements) controls: purge protection enabled for every Azure Key Vault and soft delete enabled for every Azure Storage Account. Storage service and data-type scope, retention, recovery, enforcement, ownership, and compliance remain undocumented; no Key Vault, Storage Account, policy, retention, recovery, or access configuration is changed.
+
 ## 2026-08-31: Private DNS Management Ownership
 
 [PR #14](https://github.com/santosrodriguez/cloud-platform-documentation/pull/14) identifies the **Cloud Platform Solutions and Services** team as the central manager of [all private DNS zones](../networking/private-dns-zone-management.md#confirmed-management-model). Team contacts, ownership boundaries, request and approval procedures, zone inventory, resolution architecture, and operations remain undocumented; no DNS resource, zone, record, link, access, or resolution configuration is changed.

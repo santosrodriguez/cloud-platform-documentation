@@ -14,15 +14,15 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - Private Endpoints
 - [Private DNS zone management by Cloud Platform Solutions and Services](../networking/private-dns-zone-management.md)
 - Identity and access
-- Certificates and Key Vault
+- [Certificates and Key Vault: purge protection requirement](../security/resource-security-baseline.md#mandatory-requirements)
 - [Monitoring and logging: Dynatrace and Azure-native solutions](../monitoring-and-observability/README.md)
 - [Terraform platform: registry, state, and workflows](../infrastructure-as-code/terraform-platform.md)
 - [GitHub, Azure DevOps, and CI/CD](../ci-cd/README.md)
 - [AKS ingress with Application Gateway Ingress Controller](../platform-services/aks.md)
 - API Management
-- Storage
+- [Storage Accounts: soft-delete requirement](../security/resource-security-baseline.md#mandatory-requirements)
 - Disaster recovery
-- [Security requirements: public access and minimum TLS](../security/resource-security-baseline.md)
+- [Security requirements: public access, TLS, and deletion protection](../security/resource-security-baseline.md)
 - [Requesting a public-access exemption](../security/public-access-exemption-process.md)
 - [Zero Trust policy](../security/zero-trust-policy.md)
 - Supported architecture patterns

@@ -8,6 +8,10 @@ Document shared platform services, including their confirmed implementation, own
 
 [Monitoring and Observability](../monitoring-and-observability/README.md) records Dynatrace as the standard monitoring platform, with Azure-native monitoring solutions used as needed or where appropriate. Detailed architecture, integrations, service inventory, ownership, and operations remain to be documented.
 
+## Documented Resource Requirements
+
+The [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements) requires purge protection for every Azure Key Vault and soft delete for every Azure Storage Account. Service-specific settings, retention periods, recovery procedures, enforcement, ownership, and compliance remain to be documented.
+
 ## Documented Shared Management
 
 [Private DNS Zone Management](../networking/private-dns-zone-management.md) records that the **Cloud Platform Solutions and Services** team centrally manages all private DNS zones. Team contacts, ownership boundaries, and consumer request procedures remain pending.
@@ -16,7 +20,7 @@ Document shared platform services, including their confirmed implementation, own
 
 - Detailed AKS architecture, operations, and recovery guidance
 - API Management
-- Key Vault
+- Key Vault and Storage implementation guidance
 - Application Gateway
 - Detailed Dynatrace and Azure-native monitoring integrations
 - Other shared platform services
