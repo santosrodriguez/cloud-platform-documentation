@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-09-01: Wiki Right Sidebar Navigation
+
+[PR #19](https://github.com/santosrodriguez/cloud-platform-documentation/pull/19) organizes the native right-side Wiki contents panel into Start Here, Architecture and Networking, Security and Governance, Engineering and Services, Operations and Reliability, and Reference and Maintenance. All 33 existing sidebar destinations are preserved; no documentation requirement, architecture statement, or Azure configuration is changed.
+
 ## 2026-09-01: Resource Security Requirement Scope
 
 [PR #18](https://github.com/santosrodriguez/cloud-platform-documentation/pull/18) separates the Resource Security Baseline into [General Requirements](../security/resource-security-baseline.md#general-requirements) for public access and TLS and [Resource-Specific Requirements](../security/resource-security-baseline.md#resource-specific-requirements) for Azure Key Vault, Azure Storage Accounts, and AKS clusters. Resource-specific controls are explicitly additional to applicable general controls; no requirement or Azure configuration is added, removed, or changed.
