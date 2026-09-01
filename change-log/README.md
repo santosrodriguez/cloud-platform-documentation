@@ -12,7 +12,7 @@ Record meaningful changes to this documentation. Link entries to their pull requ
 
 ## 2026-09-01: Key Vault and Storage Deletion Protection
 
-[PR #15](https://github.com/santosrodriguez/cloud-platform-documentation/pull/15) adds mandatory [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements) controls: purge protection enabled for every Azure Key Vault and soft delete enabled for every Azure Storage Account. Storage service and data-type scope, retention, recovery, enforcement, ownership, and compliance remain undocumented; no Key Vault, Storage Account, policy, retention, recovery, or access configuration is changed.
+[PR #15](https://github.com/santosrodriguez/cloud-platform-documentation/pull/15) adds mandatory [resource-specific Resource Security Baseline](../security/resource-security-baseline.md#resource-specific-requirements) controls: purge protection enabled for every Azure Key Vault and soft delete enabled for every Azure Storage Account. Storage service and data-type scope, retention, recovery, enforcement, ownership, and compliance remain undocumented; no Key Vault, Storage Account, policy, retention, recovery, or access configuration is changed.
 
 ## 2026-08-31: Private DNS Management Ownership
 

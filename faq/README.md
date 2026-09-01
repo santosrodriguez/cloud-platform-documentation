@@ -46,7 +46,7 @@ Use your designated administrative account. A regular user account must not be u
 
 ### Should public access be enabled by default?
 
-No. Public access must be disabled by default for all resources. A specific resource may receive public access only through the [Public Access Exemption Process](../security/public-access-exemption-process.md). See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
+No. Public access must be disabled by default for all resources. A specific resource may receive public access only through the [Public Access Exemption Process](../security/public-access-exemption-process.md). See the [general Resource Security Baseline requirements](../security/resource-security-baseline.md#general-requirements).
 
 ### How do I request public access for a resource?
 
@@ -54,17 +54,17 @@ Submit a public-access exemption request for the resource. The Cyber Defense tea
 
 ### What is the minimum TLS version?
 
-TLS 1.2 is the required minimum. Later versions meet this minimum; earlier versions must not be permitted. See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
+TLS 1.2 is the required minimum. Later versions meet this minimum; earlier versions must not be permitted. See the [general Resource Security Baseline requirements](../security/resource-security-baseline.md#general-requirements).
 
 ## Key Vault and Storage
 
 ### Is purge protection required for Azure Key Vault?
 
-Yes. Purge protection must be enabled for every Azure Key Vault. Current compliance, retention configuration, validation, and recovery and purge procedures remain to be documented. See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
+Yes. Purge protection must be enabled for every Azure Key Vault. Current compliance, retention configuration, validation, and recovery and purge procedures remain to be documented. See the [resource-specific Resource Security Baseline requirements](../security/resource-security-baseline.md#resource-specific-requirements).
 
 ### Is soft delete required for Azure Storage Accounts?
 
-Yes. Soft delete must be enabled for every Azure Storage Account. The applicable storage services and data types, required settings, retention periods, recovery procedures, and current compliance remain to be documented. See the [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
+Yes. Soft delete must be enabled for every Azure Storage Account. The applicable storage services and data types, required settings, retention periods, recovery procedures, and current compliance remain to be documented. See the [resource-specific Resource Security Baseline requirements](../security/resource-security-baseline.md#resource-specific-requirements).
 
 ## AKS
 
@@ -74,7 +74,7 @@ We use Application Gateway Ingress Controller (AGIC) for ingress to our AKS clus
 
 ### Are local accounts permitted on AKS clusters?
 
-No. Local accounts must be disabled on every AKS cluster. Current compliance, enforcement, the replacement authentication and authorization model, administrative and break-glass access, exceptions, and validation evidence remain to be documented. See the [AKS local-account requirement](../platform-services/aks.md#mandatory-local-account-requirement) and [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements).
+No. Local accounts must be disabled on every AKS cluster. Current compliance, enforcement, the replacement authentication and authorization model, administrative and break-glass access, exceptions, and validation evidence remain to be documented. See the [AKS local-account requirement](../platform-services/aks.md#mandatory-local-account-requirement) and [resource-specific Resource Security Baseline requirements](../security/resource-security-baseline.md#resource-specific-requirements).
 
 ## Terraform
 

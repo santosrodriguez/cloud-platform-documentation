@@ -6,7 +6,7 @@ Use this section to find approved requirements and recommended engineering pract
 
 - [Zero Trust Policy](../security/zero-trust-policy.md): the user-confirmed security policy; detailed policy requirements and enforcement remain to be documented.
 - [Azure Identity and Access Requirements](../security/identity-and-access-requirements.md): mandatory MFA for Azure user access and administrative-account use for elevated permissions, as confirmed by the user.
-- [Resource Security Baseline](../security/resource-security-baseline.md): mandatory public-access defaults, minimum TLS version, Key Vault purge protection, Storage Account soft delete, and disabled AKS local accounts, as confirmed by the user.
+- [Resource Security Baseline](../security/resource-security-baseline.md): general public-access and minimum TLS requirements separated from resource-specific Key Vault purge protection, Storage Account soft delete, and disabled AKS local accounts, as confirmed by the user.
 
 ## Documented Platform Standards
 

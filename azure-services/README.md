@@ -10,4 +10,4 @@ Each service page should explain purpose, architecture, dependencies, networking
 
 ## Cross-Service Requirements
 
-The [Resource Security Baseline](../security/resource-security-baseline.md#mandatory-requirements) requires purge protection for Azure Key Vault, soft delete for Azure Storage Accounts, and disabled local accounts on AKS clusters. Detailed service configuration and compliance remain unverified.
+The [resource-specific Resource Security Baseline requirements](../security/resource-security-baseline.md#resource-specific-requirements) require purge protection for Azure Key Vault, soft delete for Azure Storage Accounts, and disabled local accounts on AKS clusters. Detailed service configuration and compliance remain unverified.

@@ -1,6 +1,6 @@
 # Resource Security Baseline
 
-**Status:** User-confirmed security, deletion-protection, and AKS local-account requirements, plus the public-access exemption workflow. Enforcement and compliance have not been verified.
+**Status:** User-confirmed general and resource-specific security requirements, plus the public-access exemption workflow. Enforcement and compliance have not been verified.
 
 **Source:** Platform requirements supplied by the user on 2026-08-31 and 2026-09-01.
 
@@ -8,23 +8,34 @@
 
 ## Purpose and Scope
 
-This standard records the shared public-access default, its approved exemption path, the minimum TLS version, service-specific deletion-protection requirements, and the AKS local-account requirement for our Azure resources. It defines required behavior, not a claim that existing resources already comply.
+This standard records general security requirements for Azure resources, including the shared public-access default and minimum TLS version, plus resource-specific deletion-protection and AKS local-account requirements. It defines required behavior, not a claim that existing resources already comply.
 
 All resources are in scope for the public-access default. The TLS requirement applies to endpoints and connections that use TLS. The purge-protection requirement applies to Azure Key Vault resources, the soft-delete requirement applies to Azure Storage Accounts, and the local-account requirement applies to every AKS cluster.
 
 ## Mandatory Requirements
 
-| Control | Requirement |
-| --- | --- |
-| Public access | Public access **MUST** be disabled by default for all resources. |
-| Minimum TLS version | TLS 1.2 or later is **REQUIRED**. TLS versions earlier than 1.2 **MUST NOT** be permitted. |
-| Key Vault purge protection | Purge protection **MUST** be enabled for every Azure Key Vault. |
-| Storage Account soft delete | Soft delete **MUST** be enabled for every Azure Storage Account. |
-| AKS local accounts | Local accounts **MUST** be disabled on every AKS cluster. |
+Requirements are grouped by applicability. General requirements apply across Azure resource types. Resource-specific requirements apply only to the named resource type and are additional to all applicable general requirements.
+
+### General Requirements
+
+| Control | Applicability | Requirement |
+| --- | --- | --- |
+| Public access | Every Azure resource | Public access **MUST** be disabled by default. |
+| Minimum TLS version | Every endpoint and connection that uses TLS | TLS 1.2 or later is **REQUIRED**. TLS versions earlier than 1.2 **MUST NOT** be permitted. |
 
 TLS 1.2 is the minimum, not a requirement to use exactly that version. Disabling public access does not remove the minimum TLS requirement.
 
-## Service-Specific Security Controls
+### Resource-Specific Requirements
+
+| Resource type | Control | Requirement |
+| --- | --- | --- |
+| Azure Key Vault | Purge protection | Purge protection **MUST** be enabled for every Azure Key Vault. |
+| Azure Storage Account | Soft delete | Soft delete **MUST** be enabled for every Azure Storage Account. |
+| Azure Kubernetes Service (AKS) cluster | Local accounts | Local accounts **MUST** be disabled on every AKS cluster. |
+
+Each named resource must also satisfy all applicable [General Requirements](#general-requirements).
+
+## Resource-Specific Control Details
 
 ### Deletion Protection
 
@@ -69,7 +80,7 @@ The resource **MUST NOT** be treated as exempt from the public-access default un
 
 The entries above identify information to collect, not controls or processes already deployed. Service limitations do not establish an exception, and this page does not authorize public access, a lower TLS minimum, disabled Key Vault purge protection, disabled Storage Account soft delete, or AKS local accounts to be enabled.
 
-No Azure configuration has been changed by recording these requirements. Service-specific implementation instructions and operational validation remain pending.
+No Azure configuration has been changed by recording these requirements. Resource-specific implementation instructions and operational validation remain pending.
 
 ## Related Documentation
 
