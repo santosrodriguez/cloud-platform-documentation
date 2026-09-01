@@ -14,6 +14,7 @@
   "networking/private-dns-zone-management.md": "Private-DNS-Zone-Management.md",
   "security/README.md": "Security.md",
   "security/zero-trust-policy.md": "Zero-Trust-Policy.md",
+  "security/identity-and-access-requirements.md": "Azure-Identity-and-Access-Requirements.md",
   "security/resource-security-baseline.md": "Resource-Security-Baseline.md",
   "security/public-access-exemption-process.md": "Public-Access-Exemption-Process.md",
   "governance/README.md": "Governance.md",

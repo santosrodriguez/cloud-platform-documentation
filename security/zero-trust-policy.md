@@ -22,14 +22,14 @@ This reference explains the security model; it does not confirm which identity, 
 
 Use Zero Trust as the stated security policy when documenting workload access needs. Connectivity through [ExpressRoute](../networking/expressroute-connectivity.md) is not, by itself, evidence that an access request is approved or that the required controls are implemented.
 
-The [Resource Security Baseline](resource-security-baseline.md) and [workload VNet routing and inspection model](../architecture/hub-and-spoke-network.md) record separately confirmed requirements and architecture. They are not a complete inventory of Zero Trust controls.
+The [Azure Identity and Access Requirements](identity-and-access-requirements.md), [Resource Security Baseline](resource-security-baseline.md), and [workload VNet routing and inspection model](../architecture/hub-and-spoke-network.md) record separately confirmed requirements and architecture. The identity standard requires MFA for Azure user access and designated administrative accounts for elevated permissions. These pages are not a complete inventory of Zero Trust controls.
 
 ## Policy Details to Confirm
 
 | Area | Information needed |
 | --- | --- |
 | Policy authority | Internal policy document, version, scope, and accountable owner |
-| Access controls | Authentication, authorization, privilege boundaries, and any identity or device conditions required by the policy |
+| Access controls | Implementation and validation of the confirmed MFA and administrative-account requirements, plus remaining authentication, authorization, privilege-boundary, and identity or device conditions required by the policy |
 | Workload and network controls | Service boundaries, permitted flows, and how policy requirements map to workload and on-premises access |
 | Enforcement and validation | Configured controls, monitoring, evidence of enforcement, and compliance review procedures |
 | Exceptions and changes | Approval ownership, exception criteria, any approved deviations, and review procedures |
@@ -39,6 +39,7 @@ These entries are documentation gaps, not claims that particular products or con
 ## Related Documentation
 
 - [Security](README.md)
+- [Azure Identity and Access Requirements](identity-and-access-requirements.md)
 - [Standards and Guidelines](../standards-and-guidelines/README.md)
 - [Governance](../governance/README.md)
 - [Using Azure](../using-azure/README.md)

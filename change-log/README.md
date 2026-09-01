@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-09-01: Azure Administrative Accounts and MFA
+
+[PR #17](https://github.com/santosrodriguez/cloud-platform-documentation/pull/17) adds mandatory [Azure Identity and Access Requirements](../security/identity-and-access-requirements.md#mandatory-requirements): MFA must be used for Azure user access, elevated permissions must be exercised through designated administrative accounts, and regular user accounts must not be used for elevated permissions. Definitions, account lifecycle, MFA methods, enforcement, emergency access, exceptions, ownership, workload identities, and compliance remain undocumented; no Azure account, role assignment, MFA setting, identity policy, or privileged-access configuration is changed.
+
 ## 2026-09-01: AKS Local Accounts
 
 [PR #16](https://github.com/santosrodriguez/cloud-platform-documentation/pull/16) adds a mandatory [AKS local-account requirement](../platform-services/aks.md#mandatory-local-account-requirement): local accounts must be disabled on every AKS cluster. Current compliance, enforcement, replacement authentication and authorization, administrative and break-glass access, exceptions, and validation remain undocumented; no AKS cluster, identity, access, policy, or authentication configuration is changed.
