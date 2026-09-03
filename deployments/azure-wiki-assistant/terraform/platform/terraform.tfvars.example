@@ -1,0 +1,64 @@
+subscription_id     = "00000000-0000-0000-0000-000000000000"
+tenant_id           = "00000000-0000-0000-0000-000000000000"
+resource_group_name = "REPLACE_WITH_RESOURCE_GROUP_NAME"
+
+name_prefix = "wiki"
+environment = "prod"
+instance    = "001"
+
+app_service_integration_subnet_id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/REPLACE/providers/Microsoft.Network/virtualNetworks/REPLACE/subnets/REPLACE"
+private_endpoint_subnet_id         = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/REPLACE/providers/Microsoft.Network/virtualNetworks/REPLACE/subnets/REPLACE"
+
+manage_private_dns_zone_groups = true
+private_dns_zone_ids = {
+  app_service                = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/REPLACE/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+  automation_agentsvc        = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/REPLACE/providers/Microsoft.Network/privateDnsZones/privatelink.agentsvc.azure-automation.net"
+  azure_monitor              = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/REPLACE/providers/Microsoft.Network/privateDnsZones/privatelink.monitor.azure.com"
+  blob                       = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/REPLACE/providers/Microsoft.Network/privateDnsZones/privatelink.blob.core.windows.net"
+  foundry_ai_services        = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/REPLACE/providers/Microsoft.Network/privateDnsZones/privatelink.services.ai.azure.com"
+  foundry_cognitive_services = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/REPLACE/providers/Microsoft.Network/privateDnsZones/privatelink.cognitiveservices.azure.com"
+  foundry_openai             = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/REPLACE/providers/Microsoft.Network/privateDnsZones/privatelink.openai.azure.com"
+  key_vault                  = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/REPLACE/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+  log_analytics_ods          = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/REPLACE/providers/Microsoft.Network/privateDnsZones/privatelink.ods.opinsights.azure.com"
+  log_analytics_oms          = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/REPLACE/providers/Microsoft.Network/privateDnsZones/privatelink.oms.opinsights.azure.com"
+  search                     = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/REPLACE/providers/Microsoft.Network/privateDnsZones/privatelink.search.windows.net"
+}
+
+entra_client_id = "00000000-0000-0000-0000-000000000000"
+# Export TF_VAR_entra_client_secret from a protected secret; never add it here.
+
+github_organization = "REPLACE_WITH_GITHUB_ORGANIZATION"
+github_repository   = "REPLACE_WITH_APPLICATION_REPOSITORY"
+
+app_runtime = {
+  python_version = "3.12"
+}
+
+chat_model = {
+  deployment_name = "chat"
+  model_name       = "REPLACE_WITH_APPROVED_CHAT_MODEL"
+  model_version    = "REPLACE_WITH_APPROVED_MODEL_VERSION"
+  sku_name         = "REPLACE_WITH_APPROVED_DEPLOYMENT_SKU"
+  capacity         = 1
+}
+
+embedding_model = {
+  deployment_name = "embedding"
+  model_name       = "REPLACE_WITH_APPROVED_EMBEDDING_MODEL"
+  model_version    = "REPLACE_WITH_APPROVED_MODEL_VERSION"
+  sku_name         = "REPLACE_WITH_APPROVED_DEPLOYMENT_SKU"
+  capacity         = 1
+}
+
+embedding_dimensions = 1536 # Replace when the approved embedding model uses a different dimension.
+
+app_service_sku_name     = "P1v3"
+search_sku               = "standard"
+search_replica_count     = 1
+search_partition_count   = 1
+storage_replication_type = "ZRS"
+
+tags = {
+  Owner      = "REPLACE_WITH_OWNER"
+  CostCenter = "REPLACE_WITH_COST_CENTER"
+}

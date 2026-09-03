@@ -1,0 +1,63 @@
+name: Validate Azure Wiki Assistant Terraform
+
+on:
+  pull_request:
+    paths:
+      - "deployments/azure-wiki-assistant/terraform/**"
+      - "deployments/azure-wiki-assistant/github-actions/**"
+  push:
+    branches:
+      - main
+    paths:
+      - "deployments/azure-wiki-assistant/terraform/**"
+      - "deployments/azure-wiki-assistant/github-actions/**"
+
+permissions:
+  contents: read
+
+env:
+  TF_ROOT: deployments/azure-wiki-assistant/terraform
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        stack:
+          - bootstrap
+          - identity
+          - platform
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Configure the approved Artifactory provider mirror
+        env:
+          TERRAFORM_CLI_CONFIG: ${{ secrets.TERRAFORM_CLI_CONFIG }}
+        run: |
+          if [ -z "$TERRAFORM_CLI_CONFIG" ]; then
+            echo "TERRAFORM_CLI_CONFIG is required; refusing a public-registry fallback."
+            exit 1
+          fi
+          printf '%s' "$TERRAFORM_CLI_CONFIG" > "$RUNNER_TEMP/terraform.rc"
+          echo "TF_CLI_CONFIG_FILE=$RUNNER_TEMP/terraform.rc" >> "$GITHUB_ENV"
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.6.6"
+
+      - name: Check formatting
+        run: terraform fmt -check -recursive "$TF_ROOT"
+
+      - name: Initialize without a backend
+        run: terraform -chdir="$TF_ROOT/${{ matrix.stack }}" init -backend=false -input=false
+
+      - name: Validate
+        run: terraform -chdir="$TF_ROOT/${{ matrix.stack }}" validate
+
+      - name: Remove temporary registry configuration
+        if: ${{ always() }}
+        run: rm -f "$RUNNER_TEMP/terraform.rc"
