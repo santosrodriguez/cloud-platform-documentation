@@ -80,7 +80,11 @@ We use Application Gateway Ingress Controller (AGIC) for ingress to our AKS clus
 
 ### Are local accounts permitted on AKS clusters?
 
-No. Local accounts must be disabled on every AKS cluster. Current compliance, enforcement, the replacement authentication and authorization model, administrative and break-glass access, exceptions, and validation evidence remain to be documented. See the [AKS local-account requirement](../platform-services/aks.md#mandatory-local-account-requirement) and [resource-specific Resource Security Baseline requirements](../security/resource-security-baseline.md#resource-specific-requirements).
+No. Local accounts must be disabled on every AKS cluster. Current compliance, enforcement, authentication configuration, administrative and break-glass access, exceptions, and validation evidence remain to be documented. See the [AKS local-account requirement](../platform-services/aks.md#mandatory-local-account-requirement) and [resource-specific Resource Security Baseline requirements](../security/resource-security-baseline.md#resource-specific-requirements).
+
+### Must Azure RBAC be enabled on AKS clusters?
+
+Yes. Azure RBAC for Kubernetes Authorization must be enabled on every AKS cluster. Current compliance, Microsoft Entra integration, Azure role definitions, assignments and scopes, privileged-access workflow, any remaining Kubernetes RBAC usage, enforcement, exceptions, and validation evidence remain to be documented. See the [mandatory Azure RBAC requirement](../platform-services/aks.md#mandatory-azure-rbac-requirement) and [resource-specific Resource Security Baseline requirements](../security/resource-security-baseline.md#resource-specific-requirements).
 
 ## Terraform
 
