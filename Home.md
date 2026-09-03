@@ -15,6 +15,7 @@ This knowledge base brings together Azure platform architecture, standards, shar
 | Find an answer to a recurring question | [FAQ](faq/README.md) |
 | Follow an operational procedure | [Runbooks](runbooks/README.md) |
 | Diagnose a problem | [Troubleshooting](troubleshooting/README.md) |
+| Find a common Terraform, Bash, Azure CLI, or PowerShell command | [Command Cheat Sheets](command-cheat-sheets/README.md) |
 | Find ownership and environment reference information | [Reference](reference/README.md) |
 
 ## Architecture and Services
@@ -50,6 +51,13 @@ This knowledge base brings together Azure platform architecture, standards, shar
 - [Disaster Recovery](disaster-recovery/README.md)
 - [Runbooks](runbooks/README.md)
 - [Troubleshooting](troubleshooting/README.md)
+
+## Command Cheat Sheets
+
+- [Terraform](command-cheat-sheets/terraform.md)
+- [Bash](command-cheat-sheets/bash.md)
+- [Azure CLI](command-cheat-sheets/azure-cli.md)
+- [PowerShell](command-cheat-sheets/powershell.md)
 
 ## Maintain This Knowledge Base
 

@@ -51,6 +51,7 @@ The entries above identify information to collect. They do not describe configur
 
 ## Related Documentation
 
+- [Terraform Command Cheat Sheet](../command-cheat-sheets/terraform.md)
 - [Infrastructure as Code](README.md)
 - [CI/CD](../ci-cd/README.md)
 - [Resource Security Baseline](../security/resource-security-baseline.md)

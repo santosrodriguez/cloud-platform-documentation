@@ -26,6 +26,7 @@ The technologies are confirmed. Their detailed configuration, access model, owne
 
 ## Related Sections
 
+- [Terraform Command Cheat Sheet](../command-cheat-sheets/terraform.md)
 - [CI/CD](../ci-cd/README.md)
 - [Resource Security Baseline](../security/resource-security-baseline.md)
 - [Standards and Guidelines](../standards-and-guidelines/README.md)

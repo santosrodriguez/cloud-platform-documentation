@@ -2,6 +2,8 @@
 
 Fast-reference information for the Azure environment.
 
+For common tool commands, use the [Command Cheat Sheets](../command-cheat-sheets/README.md).
+
 ## Confirmed Service Responsibilities
 
 The responsibilities below were supplied by the user on 2026-08-31. This is a partial list; it does not assign responsibility for other services or policies.

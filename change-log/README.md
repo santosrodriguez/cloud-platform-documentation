@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-09-03: Command Cheat Sheets
+
+[PR #23](https://github.com/santosrodriguez/cloud-platform-documentation/pull/23) adds a published [Command Cheat Sheets](../command-cheat-sheets/README.md) section with separate Terraform, Bash, Azure CLI, and PowerShell references. The pages distinguish read-only, local, Azure, and Terraform state-changing actions; reinforce the documented admin-account, MFA, private-access, and no-secret requirements; and direct infrastructure changes to reviewed Terraform and GitHub Actions workflows unless an approved runbook authorizes another method. The examples are general references and do not establish organization-specific procedures, grant access, run commands, or change Azure resources.
+
 ## 2026-09-01: Wiki Right Sidebar Navigation
 
 [PR #19](https://github.com/santosrodriguez/cloud-platform-documentation/pull/19) organizes the native right-side Wiki contents panel into Start Here, Architecture and Networking, Security and Governance, Engineering and Services, Operations and Reliability, and Reference and Maintenance. All 33 existing sidebar destinations are preserved; no documentation requirement, architecture statement, or Azure configuration is changed.

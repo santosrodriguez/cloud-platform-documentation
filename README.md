@@ -41,6 +41,12 @@ github-wiki/
 |-- troubleshooting/
 |-- disaster-recovery/
 |-- monitoring-and-observability/
+|-- command-cheat-sheets/
+|   |-- README.md
+|   |-- terraform.md
+|   |-- bash.md
+|   |-- azure-cli.md
+|   `-- powershell.md
 |-- reference/
 |-- change-log/
 |-- templates/
