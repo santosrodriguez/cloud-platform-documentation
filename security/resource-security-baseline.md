@@ -35,6 +35,26 @@ TLS 1.2 is the minimum, not a requirement to use exactly that version. Disabling
 
 Each named resource must also satisfy all applicable [General Requirements](#general-requirements).
 
+## Requirement Applicability
+
+```mermaid
+flowchart LR
+    resource["Azure resource"] --> public["Public access disabled by default"]
+    resource --> tlsCheck{"Does an endpoint or connection use TLS?"}
+    tlsCheck -->|"Yes"| tls["Require TLS 1.2 or later"]
+    tlsCheck -->|"No"| tlsNA["TLS requirement is not applicable to that path"]
+    resource --> type{"Is a listed resource-specific control applicable?"}
+    type -->|"Key Vault"| purge["Enable purge protection"]
+    type -->|"Storage Account"| softDelete["Enable soft delete"]
+    type -->|"AKS cluster"| localAccounts["Disable local accounts"]
+    type -->|"Other resource type"| generalOnly["Apply all applicable general requirements"]
+    public --> exception{"Is public access required?"}
+    exception -->|"No"| keepPrivate["Keep public access disabled"]
+    exception -->|"Yes"| exemption["Follow the public-access exemption process"]
+```
+
+The branches are cumulative, not alternatives. A Key Vault, Storage Account, or AKS cluster must satisfy its resource-specific control and every applicable general requirement. The diagram states required outcomes; it does not verify compliance or define service-specific implementation settings.
+
 ## Resource-Specific Control Details
 
 ### Deletion Protection

@@ -34,7 +34,7 @@ Spoke A and Spoke B are illustrative labels, not an inventory. These connections
 ## Workload VNet Traffic Routing and Inspection
 
 ```mermaid
-flowchart LR
+flowchart TD
     workload["All workload VNet traffic"] -->|"Routed through"| firewall["Palo Alto firewall: traffic inspection"]
     firewall -.-> onward["Onward path: details pending"]
 ```

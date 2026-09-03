@@ -28,6 +28,18 @@ The detailed path connecting workload VNets, the hub, Palo Alto, ExpressRoute, a
 
 See the [Zero Trust Policy](../security/zero-trust-policy.md) and [Resource Security Baseline](../security/resource-security-baseline.md) for the recorded security policy and requirements. Connectivity alone is not an access approval or evidence that security requirements are met.
 
+## Logical Connectivity View
+
+```mermaid
+flowchart TD
+    workload["Workload VNets"] -->|"All workload traffic is routed and inspected"| firewall["Palo Alto firewall"]
+    firewall -.-> attachment["Azure attachment and hop sequence: pending"]
+    attachment -.-> expressRoute["ExpressRoute"]
+    expressRoute -->|"Confirmed access purpose"| onPrem["On-premises environment"]
+```
+
+The diagram combines the separately confirmed workload inspection model and ExpressRoute purpose without asserting an undocumented gateway placement or complete hop sequence. Solid arrows show confirmed relationships. Dashed arrows show the Azure attachment and routing details that still require validated platform records.
+
 ## Implementation Details to Confirm
 
 | Area | Information needed |

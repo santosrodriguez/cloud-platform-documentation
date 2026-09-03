@@ -20,7 +20,7 @@ This page records the confirmed review, approval, handoff, and implementation pa
 4. The Cloud Platform team creates the Azure Policy exemption for the specified resource.
 
 ```mermaid
-flowchart LR
+flowchart TD
     Request["Requester submits resource-specific exemption request"] --> Review["Cyber Defense reviews request"]
     Review -->|Approved| Handoff["Cyber Defense sends approved request to Cloud Platform"]
     Handoff --> Exemption["Cloud Platform creates Azure Policy exemption for the resource"]

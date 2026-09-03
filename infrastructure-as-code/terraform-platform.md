@@ -14,6 +14,19 @@
 
 These facts identify the technologies in use. They do not establish endpoints, repository or account names, authentication methods, workflow inventories, or operating procedures.
 
+## Confirmed Toolchain Relationship
+
+```mermaid
+flowchart TD
+    source["Reviewed Terraform source"] --> workflows["GitHub Actions workflows"]
+    workflows --> terraform["Terraform execution"]
+    terraform -->|"Registry retrieval"| artifactory["Artifactory Terraform registry"]
+    terraform -->|"Read and write state"| state["Azure Storage Account state"]
+    terraform -->|"Planned and approved changes"| azure["Azure resources"]
+```
+
+The diagram shows how the confirmed technologies fit into the Terraform workflow. It does not define repository names, workflow triggers, runner placement, authentication, Artifactory contents, state layout, approval gates, or deployment permissions; those implementation details remain to be documented.
+
 ## Artifactory Terraform Registry
 
 We use Artifactory as our Terraform registry.

@@ -34,6 +34,19 @@ terraform plan -help
 
 ## Standard Review Workflow
 
+```mermaid
+flowchart TD
+    format["Format"] --> init["Initialize"]
+    init --> validate["Validate"]
+    validate --> plan["Create saved plan"]
+    plan --> review{"Plan approved?"}
+    review -->|"Yes"| apply["Apply the reviewed plan"]
+    review -->|"No"| revise["Revise configuration"]
+    revise --> format
+```
+
+The diagram summarizes the routine command sequence. Formatting changes local files, initialization prepares the working directory and backend, planning creates a sensitive review artifact, and applying the approved plan can change Azure resources and Terraform state.
+
 ### Format
 
 **Local change:** The first command rewrites Terraform files. The second only checks formatting.
