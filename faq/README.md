@@ -72,6 +72,10 @@ Yes. Purge protection must be enabled for every Azure Key Vault. Current complia
 
 Yes. Soft delete must be enabled for every Azure Storage Account. The applicable storage services and data types, required settings, retention periods, recovery procedures, and current compliance remain to be documented. See the [resource-specific Resource Security Baseline requirements](../security/resource-security-baseline.md#resource-specific-requirements).
 
+### Can Storage Account containers allow public access?
+
+No. Container public access must be disabled on every Azure Storage Account, and blob containers must not permit anonymous public access. This control is separate from public network access. A request to enable container public access must follow the [Public Access Exemption Process](../security/public-access-exemption-process.md); whether such a request can be approved remains to be documented. Current compliance, enforcement, exact settings, and validation evidence also remain unverified. See the [Storage Container Public Access requirement](../security/resource-security-baseline.md#storage-container-public-access).
+
 ## AKS
 
 ### Which ingress controller do our AKS clusters use?

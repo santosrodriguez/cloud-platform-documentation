@@ -21,9 +21,9 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - [GitHub, Azure DevOps, and CI/CD](../ci-cd/README.md)
 - [AKS ingress, local-account, and Azure RBAC requirements](../platform-services/aks.md)
 - API Management
-- [Storage Accounts: soft-delete requirement](../security/resource-security-baseline.md#resource-specific-requirements)
+- [Storage Accounts: soft-delete and container-public-access requirements](../security/resource-security-baseline.md#resource-specific-requirements)
 - Disaster recovery
-- [Security requirements: public access, TLS, deletion protection, AKS local accounts, and Azure RBAC](../security/resource-security-baseline.md)
+- [Security requirements: public access, TLS, deletion protection, Storage Account container public access, AKS local accounts, and Azure RBAC](../security/resource-security-baseline.md)
 - [Requesting a public-access exemption](../security/public-access-exemption-process.md)
 - [Zero Trust policy](../security/zero-trust-policy.md)
 - Supported architecture patterns
