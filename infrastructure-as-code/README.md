@@ -7,10 +7,13 @@ Standards and guidance for deploying Azure infrastructure through code.
 Our [Terraform Platform](terraform-platform.md) uses:
 
 - Artifactory as the Terraform registry
+- Reusable Terraform modules built by the Cloud Platform team and published to Artifactory
 - Azure Storage Accounts for Terraform state files
 - GitHub Actions for workflows
 
 The technologies are confirmed. Their detailed configuration, access model, ownership, and operating procedures remain to be documented.
+
+Use the [Validate a Terraform Change Runbook](../runbooks/validate-terraform-change.md) before implementation and [Troubleshoot Terraform Workflows](../troubleshooting/terraform.md) for module, initialization, state, plan, or GitHub Actions failures.
 
 ## Additional Content to Document
 
@@ -27,6 +30,8 @@ The technologies are confirmed. Their detailed configuration, access model, owne
 ## Related Sections
 
 - [Terraform Command Cheat Sheet](../command-cheat-sheets/terraform.md)
+- [Validate a Terraform Change Runbook](../runbooks/validate-terraform-change.md)
+- [Troubleshoot Terraform Workflows](../troubleshooting/terraform.md)
 - [CI/CD](../ci-cd/README.md)
 - [Resource Security Baseline](../security/resource-security-baseline.md)
 - [Standards and Guidelines](../standards-and-guidelines/README.md)

@@ -8,9 +8,9 @@
 
 ## Purpose and Scope
 
-This standard records general security requirements for Azure resources, including the shared public-access default and minimum TLS version, plus resource-specific deletion-protection, Storage Account container-public-access, AKS local-account, and AKS Azure RBAC requirements. It defines required behavior, not a claim that existing resources already comply.
+This standard records general security requirements for Azure resources, including the shared public-access default and minimum TLS version, the recommended Private Endpoint access pattern, and resource-specific deletion-protection, Storage Account container-public-access, AKS local-account, and AKS Azure RBAC requirements. It records required behavior and recommended guidance, not a claim that existing resources already comply.
 
-All resources are in scope for the public-access default. The TLS requirement applies to endpoints and connections that use TLS. The purge-protection requirement applies to Azure Key Vault resources; the soft-delete and container-public-access requirements apply to Azure Storage Accounts; and the local-account and Azure RBAC requirements apply to every AKS cluster.
+All resources are in scope for the public-access default. Private Endpoints should be used when the service supports Private Link and private service access is applicable. The TLS requirement applies to endpoints and connections that use TLS. The purge-protection requirement applies to Azure Key Vault resources; the soft-delete and container-public-access requirements apply to Azure Storage Accounts; and the local-account and Azure RBAC requirements apply to every AKS cluster.
 
 ## Mandatory Requirements
 
@@ -37,11 +37,18 @@ TLS 1.2 is the minimum, not a requirement to use exactly that version. Disabling
 
 Each named resource must also satisfy all applicable [General Requirements](#general-requirements).
 
+## Private Access Recommendation
+
+For resources that support Private Link where private service access is applicable, Private Endpoints **SHOULD** be used.
+
+This is a recommended access pattern rather than an unconditional requirement for every resource type. A Private Endpoint does not by itself disable a service's public endpoint, configure DNS, grant application access, or prove that routing and inspection are correct. See [Private Endpoints](../networking/private-endpoints.md).
+
 ## Requirement Applicability
 
 ```mermaid
 flowchart LR
     resource["Azure resource"] --> public["Public access disabled by default"]
+    resource --> privateEndpoint["Use Private Endpoints where supported and applicable"]
     resource --> tlsCheck{"Does an endpoint or connection use TLS?"}
     tlsCheck -->|"Yes"| tls["Require TLS 1.2 or later"]
     tlsCheck -->|"No"| tlsNA["TLS requirement is not applicable to that path"]
@@ -59,7 +66,7 @@ flowchart LR
     exception -->|"Yes"| exemption["Follow the public-access exemption process"]
 ```
 
-The branches are cumulative, not alternatives. A Key Vault must satisfy its resource-specific control and every applicable general requirement. A Storage Account must satisfy both Storage Account controls and every applicable general requirement. An AKS cluster must satisfy both AKS access controls and every applicable general requirement. The diagram states required outcomes; it does not verify compliance or define service-specific implementation settings.
+The branches are cumulative, not alternatives. The Private Endpoint branch shows the recommended private-access pattern; the other branches show mandatory requirements. A Key Vault must satisfy its resource-specific control and every applicable general requirement. A Storage Account must satisfy both Storage Account controls and every applicable general requirement. An AKS cluster must satisfy both AKS access controls and every applicable general requirement. The diagram does not verify compliance or define service-specific implementation settings.
 
 ## Resource-Specific Control Details
 
@@ -107,6 +114,7 @@ The resource **MUST NOT** be treated as exempt from the public-access default un
 | Area | Details still needed |
 | --- | --- |
 | Public-access configuration | Resource inventory, the controls that disable public access for each resource type, and the configured defaults |
+| Private Endpoint usage | Service coverage, applicability criteria, endpoint and DNS inventory, environment mapping, routing and inspection, implementation standards, approved alternatives, and validation evidence |
 | TLS configuration | Applicable endpoints and TLS termination points, service-specific settings, and any configuration limitations |
 | Key Vault purge protection | Key Vault inventory, configured purge-protection state, retention configuration, recovery and purge procedures, and validation evidence |
 | Storage Account soft delete | Storage Account inventory, applicable services and data types, configured soft-delete settings, retention periods, recovery procedures, and validation evidence |
@@ -114,7 +122,7 @@ The resource **MUST NOT** be treated as exempt from the public-access default un
 | AKS local accounts | Cluster inventory, configured local-account state, implementation and validation method, supported administrative access path, break-glass process, and validation evidence |
 | AKS Azure RBAC | Cluster inventory, configured Azure RBAC state, Microsoft Entra integration, Azure role definitions, assignments and scopes, privileged-access workflow, any remaining Kubernetes RBAC usage, implementation method, and validation evidence |
 | Enforcement | How the requirements are enforced, including any Azure Policy assignments, infrastructure-as-code defaults, or deployment checks actually in use |
-| Validation evidence | Evidence that public access is disabled by default, applicable TLS endpoints reject versions below 1.2, Key Vault purge protection is enabled, Storage Account soft delete is enabled, Storage Account container public access is disabled, local accounts are disabled on every AKS cluster, and Azure RBAC for Kubernetes Authorization is enabled on every AKS cluster |
+| Validation evidence | Evidence that public access is disabled by default, Private Endpoint use has been assessed against the recommendation, applicable TLS endpoints reject versions below 1.2, Key Vault purge protection is enabled, Storage Account soft delete is enabled, Storage Account container public access is disabled, local accounts are disabled on every AKS cluster, and Azure RBAC for Kubernetes Authorization is enabled on every AKS cluster |
 | Existing resources | Current compliance findings, any remediation work, and responsible owners |
 | Exceptions | Request channel, approval criteria, required evidence, implementation validation, expiration, renewal, revocation, and exception inventory |
 | Deletion-protection exceptions | Any approved exception criteria or process for Key Vault purge protection or Storage Account soft delete; none has been supplied for this documentation |
@@ -134,6 +142,7 @@ No Azure configuration has been changed by recording these requirements. Resourc
 - [Standards and Guidelines](../standards-and-guidelines/README.md)
 - [Governance](../governance/README.md)
 - [Networking](../networking/README.md)
+- [Private Endpoints](../networking/private-endpoints.md)
 - [Azure Kubernetes Service (AKS)](../platform-services/aks.md)
 - [Using Azure](../using-azure/README.md)
 - [Security FAQ](../faq/README.md#security)

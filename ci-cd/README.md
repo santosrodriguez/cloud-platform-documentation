@@ -16,6 +16,15 @@ The **DevOps Engineering Team** is responsible for the **GitHub** and **Azure De
 
 The environment inventory, administrative boundaries, contact details, access-request channels, approval responsibilities, and support procedures remain to be documented. This responsibility does not by itself identify owners of individual repositories, application code, pipeline definitions, or deployed Azure resources.
 
+## Deployment Guardrails
+
+- The Azure platform environments are DEV, INT, CRT, and PRD, and they are not cross-connected. These Azure environment boundaries are distinct from the GitHub and Azure DevOps environments described above.
+- Workflow configuration, state, variables, and resource references must preserve [Environment Isolation](../architecture/environment-isolation.md).
+- The Cloud Platform team builds reusable Terraform modules and publishes them to the Artifactory Terraform registry.
+- A production-impacting deployment **MUST NOT** begin until its ServiceNow change request is approved by the Change Board.
+
+Repository-specific workflow gates, environment promotion, artifact controls, and the technical enforcement of Change Board approval remain to be documented.
+
 ## Planned Pages
 
 - GitHub and Azure DevOps environment administration
@@ -32,6 +41,8 @@ Workflow names, identities, permissions, and approval requirements are pending c
 
 - [Infrastructure as Code](../infrastructure-as-code/README.md)
 - [Terraform Platform](../infrastructure-as-code/terraform-platform.md)
+- [Environment Isolation](../architecture/environment-isolation.md)
+- [Production Change Management](../governance/production-change-management.md)
 - [Security](../security/README.md)
 - [Known Service Responsibilities](../reference/README.md#confirmed-service-responsibilities)
 - [GitHub and Azure DevOps FAQ](../faq/README.md#github-and-azure-devops)

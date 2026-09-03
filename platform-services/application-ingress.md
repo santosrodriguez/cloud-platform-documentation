@@ -43,13 +43,19 @@ The [Azure Kubernetes Service (AKS)](aks.md) page separately confirms Applicatio
 
 The mapping between Fastly configurations, Application Gateways, application environments, and individual AKS clusters has not been documented. The confirmed general ingress path does not prove that every Fastly route targets AKS or that every application is hosted on AKS.
 
+## Relationship to API Management
+
+We use [Azure API Management](api-management.md) for APIs. The relationship between APIM, Fastly, Application Gateway, and backend APIs has not been supplied, so APIM is not added to the confirmed ingress sequence on this page.
+
 ## Security and Network Requirements
 
-Azure resources in this path are subject to the [Resource Security Baseline](../security/resource-security-baseline.md): public access must be disabled by default, and TLS 1.2 or later is required for applicable TLS endpoints.
+Azure resources in this path are subject to the [Resource Security Baseline](../security/resource-security-baseline.md): public access must be disabled by default, Private Endpoints should be used where supported and applicable, and TLS 1.2 or later is required for applicable TLS endpoints.
 
 This page does not confirm whether Application Gateway uses a public or private frontend or how Fastly reaches it. If an Azure resource requires public access, the resource-specific request must follow the [Public Access Exemption Process](../security/public-access-exemption-process.md).
 
 Workload VNet traffic remains subject to the documented [Palo Alto routing and inspection baseline](../architecture/hub-and-spoke-network.md). The exact interaction between the ingress path, the hub-and-spoke network, and the firewall has not been documented.
+
+DEV, INT, CRT, and PRD are not cross-connected. Ingress and backend designs must preserve the documented [Environment Isolation](../architecture/environment-isolation.md).
 
 ## Implementation Details to Document
 
@@ -70,6 +76,9 @@ These entries identify information to collect. They do not describe configuratio
 ## Related Documentation
 
 - [Azure Kubernetes Service (AKS)](aks.md)
+- [Azure API Management](api-management.md)
+- [Environment Isolation](../architecture/environment-isolation.md)
+- [Private Endpoints](../networking/private-endpoints.md)
 - [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md)
 - [Networking](../networking/README.md)
 - [Resource Security Baseline](../security/resource-security-baseline.md)

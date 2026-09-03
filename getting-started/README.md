@@ -17,10 +17,13 @@ Start here to understand the platform, its audiences, and how to find documentat
 | Application teams consuming Azure | [Using Azure](../using-azure/README.md) |
 | Common platform questions | [FAQ](../faq/README.md) |
 | Platform design and dependencies | [Architecture](../architecture/README.md) |
+| DEV, INT, CRT, and PRD boundaries | [Environment Isolation](../architecture/environment-isolation.md) |
 | Azure account and MFA requirements | [Azure Identity and Access Requirements](../security/identity-and-access-requirements.md) |
 | Common command-line references | [Command Cheat Sheets](../command-cheat-sheets/README.md) |
 | Contribution and review workflow | [Contributing](../Contributing.md) |
 | Environment and ownership references | [Reference](../reference/README.md) |
+| Diagnose a platform issue | [Troubleshooting](../troubleshooting/README.md) |
+| Follow a repeatable operational check | [Runbooks](../runbooks/README.md) |
 
 Organization-specific onboarding and access instructions are pending owner review.
 

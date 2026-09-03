@@ -6,7 +6,9 @@ Use this section to find approved requirements and recommended engineering pract
 
 - [Zero Trust Policy](../security/zero-trust-policy.md): the user-confirmed security policy; detailed policy requirements and enforcement remain to be documented.
 - [Azure Identity and Access Requirements](../security/identity-and-access-requirements.md): mandatory MFA for Azure user access and administrative-account use for elevated permissions, as confirmed by the user.
-- [Resource Security Baseline](../security/resource-security-baseline.md): general public-access and minimum TLS requirements separated from resource-specific Key Vault purge protection, Storage Account soft delete, disabled Storage Account container public access, disabled AKS local accounts, and enabled Azure RBAC for Kubernetes Authorization, as confirmed by the user.
+- [Resource Security Baseline](../security/resource-security-baseline.md): general public-access and minimum TLS requirements, a Private Endpoint recommendation, and resource-specific Key Vault purge protection, Storage Account soft delete, disabled Storage Account container public access, disabled AKS local accounts, and enabled Azure RBAC for Kubernetes Authorization, as confirmed by the user.
+- [Environment Isolation](../architecture/environment-isolation.md): DEV, INT, CRT, and PRD are not cross-connected.
+- [Production Change Management](../governance/production-change-management.md): production-impacting changes require an approved ServiceNow change request before implementation.
 
 ## Documented Platform Standards
 
