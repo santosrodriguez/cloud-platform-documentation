@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-09-03: AT&T NetBond ExpressRoute Provider
+
+[PR #26](https://github.com/santosrodriguez/cloud-platform-documentation/pull/26) records AT&T NetBond as the confirmed connectivity provider for our [ExpressRoute connections](../networking/expressroute-connectivity.md). The hub-and-spoke and ExpressRoute Mermaid diagrams show NetBond as a provider relationship rather than a packet hop, and the architecture, networking, FAQ, and source-only Azure Wiki assistant deployment summaries now use consistent wording. NetBond service configuration, ExpressRoute circuit mapping, contractual and support responsibilities, escalation, and resiliency remain unverified; no NetBond, Azure, network, firewall, or deployment configuration is changed.
+
 ## 2026-09-03: Virtual WAN and Hub VNet Topology
 
 [PR #25](https://github.com/santosrodriguez/cloud-platform-documentation/pull/25) records the confirmed [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md): ExpressRoute connects to a virtual hub in Azure Virtual WAN; that vHub has a VNet connection to the hub VNet; the hub VNet contains the Palo Alto firewall and is VNet peered to all spokes; and all workload VNet traffic is routed through and inspected by Palo Alto. The architecture, ExpressRoute, networking, FAQ, and source-only Azure Wiki assistant deployment pages now use the same terminology and revised Mermaid diagrams. Circuit and gateway inventory, BGP, route tables, route propagation, addresses, resiliency, and complete forward and return paths remain unverified; no Azure, network, firewall, or deployment configuration is changed.
