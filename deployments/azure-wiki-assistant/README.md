@@ -2,7 +2,7 @@
 
 This package provisions the Azure application platform for a private, team-facing assistant that can use the Cloud Platform Wiki as grounded content. It is an implementation template: no Azure resources are deployed merely by adding these files to the repository.
 
-The deployment assumes the organization already provides the Azure subscriptions and connected network topology: ExpressRoute to a Virtual WAN vHub, a VNet connection from that vHub to the hub VNet, the Palo Alto firewall in the hub VNet, VNet peering from the hub VNet to all spokes, and centrally managed private DNS zones.
+The deployment assumes the organization already provides the Azure subscriptions and connected network topology: ExpressRoute through AT&T NetBond to a Virtual WAN vHub, a VNet connection from that vHub to the hub VNet, the Palo Alto firewall in the hub VNet, VNet peering from the hub VNet to all spokes, and centrally managed private DNS zones.
 
 ## Scope
 
@@ -26,7 +26,7 @@ Terraform does not create or change:
 - Hub or spoke virtual networks
 - VNet peering, Virtual WAN, route tables, or user-defined routes
 - Palo Alto firewalls, policies, or rules
-- ExpressRoute circuits, gateways, peerings, or connections
+- AT&T NetBond services or Azure ExpressRoute circuits, gateways, peerings, or connections
 - Private DNS zones or VNet links
 - Azure Policy assignments or public-access exemptions
 - Dynatrace environments, agents, credentials, or integrations
@@ -52,7 +52,7 @@ flowchart TD
     runner["Approved private GitHub Actions runner"] --> resolution
 ```
 
-The diagram shows the intended logical boundaries of the Terraform package. The dashed user path is deliberately unspecified because the end-user network path has not been supplied. Terraform creates the private application services and endpoints but consumes the existing subnets, routing, firewall path, Virtual WAN and VNet connectivity, ExpressRoute, and centrally managed Private DNS zones.
+The diagram shows the intended logical boundaries of the Terraform package. The dashed user path is deliberately unspecified because the end-user network path has not been supplied. Terraform creates the private application services and endpoints but consumes the existing subnets, routing, firewall path, Virtual WAN and VNet connectivity, ExpressRoute through AT&T NetBond, and centrally managed Private DNS zones.
 
 ## Existing Network Contract
 
@@ -65,12 +65,13 @@ Provide two existing subnet resource IDs:
 
 The organization-level network relationships consumed by this package are:
 
+- The existing ExpressRoute connections use AT&T NetBond.
 - ExpressRoute connects to a vHub in the existing Virtual WAN.
 - The vHub has an existing VNet connection to the hub VNet.
 - The hub VNet contains the Palo Alto firewall.
 - The hub VNet has existing VNet peering to all spokes.
 
-The existing route table on the integration subnet remains responsible for routing workload egress through the Palo Alto firewall in the hub VNet. The template enables App Service route-all behavior but does not create or modify Virtual WAN resources, VNet connections, VNet peerings, routes, or firewall configuration.
+The existing route table on the integration subnet remains responsible for routing workload egress through the Palo Alto firewall in the hub VNet. The template enables App Service route-all behavior but does not create or modify AT&T NetBond service, ExpressRoute, Virtual WAN resources, VNet connections, VNet peerings, routes, or firewall configuration.
 
 Any required outbound destinations must be allowed by the existing Palo Alto policy. The Cyber Defense Engineering team remains responsible for firewall administration and rule review; this template does not assume or create a request path that has not been documented.
 

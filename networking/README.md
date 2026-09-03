@@ -4,9 +4,9 @@ Document the platform's connectivity, routing, DNS, and network security impleme
 
 ## Documented Architecture
 
-Start with the [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md) baseline. ExpressRoute connects to a virtual hub (vHub) in Azure Virtual WAN. The vHub has a VNet connection to the hub virtual network (hub VNet), which contains the Palo Alto firewall and is VNet peered to all spokes. All workload VNet traffic is routed through and inspected by the firewall.
+Start with the [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md) baseline. Our ExpressRoute connections use AT&T NetBond and connect to a virtual hub (vHub) in Azure Virtual WAN. The vHub has a VNet connection to the hub virtual network (hub VNet), which contains the Palo Alto firewall and is VNet peered to all spokes. All workload VNet traffic is routed through and inspected by the firewall.
 
-[ExpressRoute Connectivity](expressroute-connectivity.md) documents our use of ExpressRoute for access to the on-premises environment and its relationship to the Virtual WAN vHub and hub VNet. Circuit, gateway, peering, routing, and availability details remain unconfirmed.
+[ExpressRoute Connectivity](expressroute-connectivity.md) documents our use of AT&T NetBond for ExpressRoute access to the on-premises environment and its relationship to the Virtual WAN vHub and hub VNet. NetBond service configuration, circuit, gateway, peering, routing, and availability details remain unconfirmed.
 
 The **Virtual WAN vHub** and **hub VNet** are separate components: the vHub is the confirmed ExpressRoute connection point, while the hub VNet contains the firewall and peers with the spokes.
 
@@ -20,6 +20,7 @@ The **Cloud Platform Solutions and Services** team centrally manages all private
 
 - Virtual WAN, vHub, hub VNet, spoke VNet, connection, and peering inventory
 - Palo Alto deployment, inspection policies, availability, and failover
+- AT&T NetBond service configuration, ExpressRoute circuit mapping, support ownership, and escalation
 - ExpressRoute circuits, gateways, peerings, and resilience
 - VNet and vHub route tables, route propagation, BGP configuration, next-hop values, and subnet coverage
 - Onward destination paths, return routing, and address translation

@@ -4,7 +4,7 @@ Authoritative architecture documentation for the Azure platform.
 
 ## Documented Architecture
 
-- [Hub-and-Spoke Network](hub-and-spoke-network.md): ExpressRoute connectivity to a Virtual WAN vHub, the vHub's VNet connection to the hub VNet, VNet peering from the hub VNet to all spokes, and routing and inspection of all workload VNet traffic through Palo Alto in the hub VNet.
+- [Hub-and-Spoke Network](hub-and-spoke-network.md): ExpressRoute connectivity through AT&T NetBond to a Virtual WAN vHub, the vHub's VNet connection to the hub VNet, VNet peering from the hub VNet to all spokes, and routing and inspection of all workload VNet traffic through Palo Alto in the hub VNet.
 
 This baseline is based on the supplied platform description. Detailed configuration and operational validation remain pending.
 

@@ -6,13 +6,14 @@
 
 ## Confirmed Architecture
 
-Our Azure network combines Azure Virtual WAN with a hub-and-spoke VNet topology. ExpressRoute connects to a virtual hub (vHub) in our Virtual WAN. The vHub has a VNet connection to the hub virtual network (hub VNet), which contains the Palo Alto firewall and is VNet peered to all spokes.
+Our Azure network combines Azure Virtual WAN with a hub-and-spoke VNet topology. We use AT&T NetBond for our ExpressRoute connections. ExpressRoute connects to a virtual hub (vHub) in our Virtual WAN. The vHub has a VNet connection to the hub virtual network (hub VNet), which contains the Palo Alto firewall and is VNet peered to all spokes.
 
 **All workload VNet traffic is routed through and inspected by the Palo Alto firewall.**
 
 | Component or scope | Confirmed role |
 | --- | --- |
 | Network topology | Azure Virtual WAN connected to a hub-and-spoke VNet topology |
+| ExpressRoute connectivity provider | AT&T NetBond |
 | ExpressRoute | Connects to the vHub in our Virtual WAN for on-premises access |
 | Virtual WAN vHub | Has a VNet connection to the hub VNet |
 | Hub VNet | Transit network that contains the Palo Alto firewall |
@@ -21,13 +22,14 @@ Our Azure network combines Azure Virtual WAN with a hub-and-spoke VNet topology.
 | Traffic scope | All workload VNet traffic |
 | Firewall and rule management | Cyber Defense Engineering team |
 
-The **Virtual WAN vHub** and **hub VNet** are separate components. The vHub provides the confirmed ExpressRoute attachment relationship and connects to the hub VNet. The hub VNet provides shared transit to the VNet-peered spokes, and its Palo Alto firewall provides the routing and inspection point for workload VNet traffic. The additional business and design rationale has not yet been captured.
+AT&T NetBond is the confirmed provider for our ExpressRoute connections. The **Virtual WAN vHub** and **hub VNet** are separate components. The vHub provides the confirmed ExpressRoute attachment relationship and connects to the hub VNet. The hub VNet provides shared transit to the VNet-peered spokes, and its Palo Alto firewall provides the routing and inspection point for workload VNet traffic. The additional business and design rationale has not yet been captured.
 
 ## Logical Topology
 
 ```mermaid
 flowchart TD
-    onPrem["On-premises environment"] --- expressRoute["ExpressRoute"]
+    onPrem["On-premises environment"] --- expressRoute["Azure ExpressRoute"]
+    netBond["AT&T NetBond"] -.->|"Connectivity provider"| expressRoute
     expressRoute --- vhub["Virtual WAN virtual hub (vHub)"]
     vhub ---|"VNet connection"| hubVnet["Hub virtual network (hub VNet)"]
     hubVnet -->|"Contains"| firewall["Palo Alto firewall"]
@@ -35,7 +37,7 @@ flowchart TD
     spokes -->|"Workload VNet traffic routed for inspection"| firewall
 ```
 
-The solid undirected lines show confirmed connectivity relationships; the directional arrows show containment and the confirmed workload-routing requirement. **All spoke VNets** is a scope statement, not a resource inventory. The diagram does not infer gateway resource types, BGP settings, route tables, addresses, resiliency, or return-path behavior.
+The solid undirected lines show confirmed network connections. The dashed arrow identifies AT&T NetBond as the ExpressRoute connectivity provider rather than presenting it as a packet hop or support boundary. The solid directional arrows show containment and the confirmed workload-routing requirement. **All spoke VNets** is a scope statement, not a resource inventory. The diagram does not infer gateway resource types, BGP settings, route tables, addresses, resiliency, or return-path behavior.
 
 ## Workload VNet Traffic Routing and Inspection
 
@@ -63,7 +65,7 @@ For a concise answer to common questions, see the [networking FAQ](../faq/README
 
 ## On-Premises Connectivity
 
-We use [ExpressRoute](../networking/expressroute-connectivity.md) for access to the on-premises environment. ExpressRoute connects to the Virtual WAN vHub, and that vHub has a VNet connection to the hub VNet. The specific circuits, gateway resources, peerings, route propagation, and end-to-end forward and return paths remain to be documented.
+We use [ExpressRoute](../networking/expressroute-connectivity.md) through AT&T NetBond for access to the on-premises environment. ExpressRoute connects to the Virtual WAN vHub, and that vHub has a VNet connection to the hub VNet. The specific NetBond service configuration, circuits, gateway resources, peerings, route propagation, and end-to-end forward and return paths remain to be documented.
 
 The platform follows a [Zero Trust policy](../security/zero-trust-policy.md). Connectivity does not by itself establish which application flows or access requests are approved.
 
@@ -72,6 +74,7 @@ The platform follows a [Zero Trust policy](../security/zero-trust-policy.md). Co
 | Area | Information needed |
 | --- | --- |
 | Network inventory | Virtual WAN, vHub, hub VNet, spoke VNet, ExpressRoute, gateway, connection, subscription, region, subnet, and address-space inventory |
+| AT&T NetBond | Service configuration, ExpressRoute circuit mapping, redundancy, support ownership, and escalation path |
 | Connectivity configuration | vHub-to-hub-VNet connection and hub-VNet-to-spoke peering names, settings, status, and resiliency |
 | Firewall deployment | Palo Alto product, subnet and forwarding endpoints, instance count, availability design, and failover behavior |
 | Routing | VNet and vHub route tables, route propagation, user-defined routes, next-hop values, BGP configuration, and workload subnet coverage |

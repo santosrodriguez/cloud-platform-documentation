@@ -22,7 +22,7 @@ The **Cyber Defense Engineering** team manages the Palo Alto firewall and its ru
 
 ### How do we access the on-premises environment?
 
-We use Azure ExpressRoute for on-premises access. ExpressRoute connects to a vHub in our Virtual WAN, and the vHub has a VNet connection to the hub VNet. The hub VNet contains Palo Alto and is VNet peered to all spokes. Specific circuits, gateways, destinations, allowed flows, and routing configuration still need to be documented. See [ExpressRoute Connectivity](../networking/expressroute-connectivity.md).
+We use Azure ExpressRoute through AT&T NetBond for on-premises access. ExpressRoute connects to a vHub in our Virtual WAN, and the vHub has a VNet connection to the hub VNet. The hub VNet contains Palo Alto and is VNet peered to all spokes. NetBond service configuration, specific circuits, gateways, destinations, allowed flows, support procedures, and routing configuration still need to be documented. See [ExpressRoute Connectivity](../networking/expressroute-connectivity.md).
 
 ## DNS
 
