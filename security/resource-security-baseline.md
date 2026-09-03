@@ -8,9 +8,9 @@
 
 ## Purpose and Scope
 
-This standard records general security requirements for Azure resources, including the shared public-access default and minimum TLS version, plus resource-specific deletion-protection, AKS local-account, and AKS Azure RBAC requirements. It defines required behavior, not a claim that existing resources already comply.
+This standard records general security requirements for Azure resources, including the shared public-access default and minimum TLS version, plus resource-specific deletion-protection, Storage Account container-public-access, AKS local-account, and AKS Azure RBAC requirements. It defines required behavior, not a claim that existing resources already comply.
 
-All resources are in scope for the public-access default. The TLS requirement applies to endpoints and connections that use TLS. The purge-protection requirement applies to Azure Key Vault resources, the soft-delete requirement applies to Azure Storage Accounts, and the local-account and Azure RBAC requirements apply to every AKS cluster.
+All resources are in scope for the public-access default. The TLS requirement applies to endpoints and connections that use TLS. The purge-protection requirement applies to Azure Key Vault resources; the soft-delete and container-public-access requirements apply to Azure Storage Accounts; and the local-account and Azure RBAC requirements apply to every AKS cluster.
 
 ## Mandatory Requirements
 
@@ -31,6 +31,7 @@ TLS 1.2 is the minimum, not a requirement to use exactly that version. Disabling
 | --- | --- | --- |
 | Azure Key Vault | Purge protection | Purge protection **MUST** be enabled for every Azure Key Vault. |
 | Azure Storage Account | Soft delete | Soft delete **MUST** be enabled for every Azure Storage Account. |
+| Azure Storage Account | Container public access | Container public access **MUST** be disabled on every Azure Storage Account. |
 | Azure Kubernetes Service (AKS) cluster | Local accounts | Local accounts **MUST** be disabled on every AKS cluster. |
 | Azure Kubernetes Service (AKS) cluster | Azure RBAC for Kubernetes Authorization | Azure RBAC for Kubernetes Authorization **MUST** be enabled on every AKS cluster. |
 
@@ -46,7 +47,9 @@ flowchart LR
     tlsCheck -->|"No"| tlsNA["TLS requirement is not applicable to that path"]
     resource --> type{"Is a listed resource-specific control applicable?"}
     type -->|"Key Vault"| purge["Enable purge protection"]
-    type -->|"Storage Account"| softDelete["Enable soft delete"]
+    type -->|"Storage Account"| storageControls["Apply Storage Account controls"]
+    storageControls --> softDelete["Enable soft delete"]
+    storageControls --> containerAccess["Disable container public access"]
     type -->|"AKS cluster"| aksControls["Apply AKS access controls"]
     aksControls --> localAccounts["Disable local accounts"]
     aksControls --> azureRbac["Enable Azure RBAC for Kubernetes Authorization"]
@@ -56,7 +59,7 @@ flowchart LR
     exception -->|"Yes"| exemption["Follow the public-access exemption process"]
 ```
 
-The branches are cumulative, not alternatives. A Key Vault or Storage Account must satisfy its resource-specific control and every applicable general requirement. An AKS cluster must satisfy both AKS access controls and every applicable general requirement. The diagram states required outcomes; it does not verify compliance or define service-specific implementation settings.
+The branches are cumulative, not alternatives. A Key Vault must satisfy its resource-specific control and every applicable general requirement. A Storage Account must satisfy both Storage Account controls and every applicable general requirement. An AKS cluster must satisfy both AKS access controls and every applicable general requirement. The diagram states required outcomes; it does not verify compliance or define service-specific implementation settings.
 
 ## Resource-Specific Control Details
 
@@ -65,6 +68,14 @@ The branches are cumulative, not alternatives. A Key Vault or Storage Account mu
 Azure Key Vault purge protection and Azure Storage Account soft delete are mandatory controls. They are requirements, not claims that existing resources currently comply.
 
 The Storage Account requirement is confirmed at the account level. The applicable storage services and data types, required soft-delete settings, retention periods, recovery procedures, and permanent-deletion procedures remain to be documented.
+
+### Storage Container Public Access
+
+Container public access **MUST** be disabled on every Azure Storage Account. Blob containers **MUST NOT** permit anonymous public access. This is a required end state, not a claim that existing Storage Accounts currently comply.
+
+Container public access and public network access are separate controls. Disabling container public access prevents anonymous access to blob data; it does not by itself establish network reachability or define access for authenticated identities. The exact account-level and container-level settings, inventory, enforcement, validation evidence, and current compliance remain to be documented.
+
+A request to enable container public access is a request for public access and **MUST** follow the [Public Access Exemption Process](public-access-exemption-process.md). The approval criteria and whether such a request can be approved remain to be documented.
 
 ### AKS Local Accounts
 
@@ -99,17 +110,19 @@ The resource **MUST NOT** be treated as exempt from the public-access default un
 | TLS configuration | Applicable endpoints and TLS termination points, service-specific settings, and any configuration limitations |
 | Key Vault purge protection | Key Vault inventory, configured purge-protection state, retention configuration, recovery and purge procedures, and validation evidence |
 | Storage Account soft delete | Storage Account inventory, applicable services and data types, configured soft-delete settings, retention periods, recovery procedures, and validation evidence |
+| Storage Account container public access | Storage Account and container inventory, configured anonymous-access settings, enforcement method, exemption status, and validation evidence |
 | AKS local accounts | Cluster inventory, configured local-account state, implementation and validation method, supported administrative access path, break-glass process, and validation evidence |
 | AKS Azure RBAC | Cluster inventory, configured Azure RBAC state, Microsoft Entra integration, Azure role definitions, assignments and scopes, privileged-access workflow, any remaining Kubernetes RBAC usage, implementation method, and validation evidence |
 | Enforcement | How the requirements are enforced, including any Azure Policy assignments, infrastructure-as-code defaults, or deployment checks actually in use |
-| Validation evidence | Evidence that public access is disabled by default, applicable TLS endpoints reject versions below 1.2, Key Vault purge protection is enabled, Storage Account soft delete is enabled, local accounts are disabled on every AKS cluster, and Azure RBAC for Kubernetes Authorization is enabled on every AKS cluster |
+| Validation evidence | Evidence that public access is disabled by default, applicable TLS endpoints reject versions below 1.2, Key Vault purge protection is enabled, Storage Account soft delete is enabled, Storage Account container public access is disabled, local accounts are disabled on every AKS cluster, and Azure RBAC for Kubernetes Authorization is enabled on every AKS cluster |
 | Existing resources | Current compliance findings, any remediation work, and responsible owners |
 | Exceptions | Request channel, approval criteria, required evidence, implementation validation, expiration, renewal, revocation, and exception inventory |
 | Deletion-protection exceptions | Any approved exception criteria or process for Key Vault purge protection or Storage Account soft delete; none has been supplied for this documentation |
+| Storage container-public-access exceptions | Whether these requests can be approved, approval criteria, required evidence, implementation validation, expiration, renewal, revocation, and exception inventory; none has been supplied beyond the general public-access exemption workflow |
 | AKS local-account exceptions | Any approved exception criteria or process for enabling AKS local accounts; none has been supplied for this documentation |
 | AKS Azure RBAC exceptions | Any approved exception criteria or process for disabling Azure RBAC for Kubernetes Authorization; none has been supplied for this documentation |
 
-The entries above identify information to collect, not controls or processes already deployed. Service limitations do not establish an exception, and this page does not authorize public access, a lower TLS minimum, disabled Key Vault purge protection, disabled Storage Account soft delete, AKS local accounts to be enabled, or Azure RBAC for Kubernetes Authorization to be disabled.
+The entries above identify information to collect, not controls or processes already deployed. Service limitations do not establish an exception, and this page does not authorize public access, a lower TLS minimum, disabled Key Vault purge protection, disabled Storage Account soft delete, Storage Account container public access to be enabled, AKS local accounts to be enabled, or Azure RBAC for Kubernetes Authorization to be disabled.
 
 No Azure configuration has been changed by recording these requirements. Resource-specific implementation instructions and operational validation remain pending.
 

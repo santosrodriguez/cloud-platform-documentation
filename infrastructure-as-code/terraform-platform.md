@@ -39,7 +39,7 @@ Terraform state files are stored in Azure Storage Accounts.
 
 The subscriptions, resource groups, storage accounts, containers, state-key conventions, access controls, recovery settings, and operating procedures remain to be documented. State files, state contents, credentials, keys, and secrets must not be placed in this Wiki.
 
-The storage resources are subject to the [Resource Security Baseline](../security/resource-security-baseline.md): public access must be disabled by default, TLS 1.2 or later is required, and Storage Account soft delete must be enabled. This records the requirements; it does not verify that any storage account complies or define the applicable soft-delete settings and retention periods.
+The storage resources are subject to the [Resource Security Baseline](../security/resource-security-baseline.md): public access must be disabled by default, TLS 1.2 or later is required, Storage Account soft delete must be enabled, and Storage Account container public access must be disabled. This records the requirements; it does not verify that any Storage Account complies or define the applicable soft-delete, retention, or anonymous-access settings.
 
 ## GitHub Actions Workflows
 

@@ -12,7 +12,7 @@ Document shared platform services, including their confirmed implementation, own
 
 ## Documented Resource Requirements
 
-The [resource-specific Resource Security Baseline requirements](../security/resource-security-baseline.md#resource-specific-requirements) require purge protection for every Azure Key Vault, soft delete for every Azure Storage Account, disabled local accounts on every AKS cluster, and enabled Azure RBAC for Kubernetes Authorization on every AKS cluster. Service-specific settings, retention periods, recovery procedures, AKS access configuration, enforcement, ownership, and compliance remain to be documented.
+The [resource-specific Resource Security Baseline requirements](../security/resource-security-baseline.md#resource-specific-requirements) require purge protection for every Azure Key Vault, soft delete and disabled container public access for every Azure Storage Account, disabled local accounts on every AKS cluster, and enabled Azure RBAC for Kubernetes Authorization on every AKS cluster. Service-specific settings, retention periods, recovery procedures, Storage Account anonymous-access configuration, AKS access configuration, enforcement, ownership, and compliance remain to be documented.
 
 ## Documented Shared Management
 

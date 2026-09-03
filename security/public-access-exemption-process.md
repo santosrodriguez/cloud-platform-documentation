@@ -2,13 +2,15 @@
 
 **Status:** User-confirmed approval and implementation workflow. Request mechanics and lifecycle details remain to be documented.
 
-**Source:** Public-access exemption process supplied by the user on 2026-08-31.
+**Source:** Public-access exemption process supplied by the user on 2026-08-31 and Storage Account container-public-access requirement supplied by the user on 2026-09-03.
 
 **Process owner:** Not yet supplied.
 
 ## Purpose and Scope
 
 Public access must be disabled by default for all resources. This process applies when a requester needs a specific Azure resource to have public access and therefore requires an exemption from that default.
+
+For Azure Storage Accounts, a request to enable container public access falls under this process. The [Resource Security Baseline](resource-security-baseline.md#storage-container-public-access) requires container public access to be disabled and blob containers not to permit anonymous public access.
 
 This page records the confirmed review, approval, handoff, and implementation path. It does not establish a request channel, approval criteria, or exemption lifetime, and it does not verify any existing exemption.
 
@@ -49,6 +51,7 @@ These responsibilities are limited to the supplied workflow. They do not identif
 | Other decision paths | Rejection, revision, resubmission, emergency, and escalation procedures |
 | Azure Policy implementation | Applicable policy assignments, exemption configuration, naming, metadata, and implementation validation |
 | Resource configuration | Who enables public access, when the change may occur, and how the resource is validated after the exemption is created |
+| Storage container public access | Whether requests to enable it can be approved, any control-specific evidence and criteria, applicable Azure Policy assignments, configuration steps, and validation |
 | Exemption lifecycle | Effective date, expiration, renewal, periodic review, revocation, and removal procedures |
 | Audit and reporting | Evidence retention, exemption inventory, compliance reporting, monitoring, and notifications |
 

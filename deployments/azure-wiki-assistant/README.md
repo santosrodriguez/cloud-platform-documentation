@@ -209,7 +209,7 @@ Azure IDs and sizing values are not credentials, but the workflow keeps the comp
 - Public network access is disabled for App Service, Foundry, Search, Storage, and Key Vault.
 - Public ingestion and query access are disabled for Log Analytics and Application Insights.
 - TLS 1.2 is the minimum for App Service and Storage.
-- Storage shared-key authorization and anonymous blob access are disabled.
+- Storage shared-key authorization and container public access, meaning anonymous blob access, are disabled.
 - Blob, container, and Key Vault soft delete are enabled; Key Vault purge protection is enabled.
 - Foundry and Search local key authentication are disabled.
 - App Service FTP and Web Deploy basic authentication are disabled.
