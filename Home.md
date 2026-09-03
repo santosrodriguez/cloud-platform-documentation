@@ -12,6 +12,7 @@ This knowledge base brings together Azure platform architecture, standards, shar
 | --- | --- |
 | Understand the platform and this knowledge base | [Getting Started](getting-started/README.md) |
 | Onboard a workload or request a platform capability | [Using Azure](using-azure/README.md) |
+| Find a common request form | [Requests and Forms](using-azure/requests-and-forms.md) |
 | Find an answer to a recurring question | [FAQ](faq/README.md) |
 | Follow an operational procedure | [Runbooks](runbooks/README.md) |
 | Diagnose a problem | [Troubleshooting](troubleshooting/README.md) |

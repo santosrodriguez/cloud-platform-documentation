@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-09-03: Customer Task Navigation and Request Forms
+
+[PR #31](https://github.com/santosrodriguez/cloud-platform-documentation/pull/31) reorganizes [Using Azure](../using-azure/README.md) into task-based customer journeys and adds a [Requests and Forms](../using-azure/requests-and-forms.md) directory for the Firewall Request, Cloud Platform Request, and ICETA Request. The directory records only the confirmed form names and practical preparation guidance; authoritative links, complete purposes, owners, approvals, fulfillment workflows, support paths, and service expectations remain to be supplied. No form is submitted and no request, approval, firewall rule, Azure resource, DNS change, policy exemption, or production change is created.
+
 ## 2026-09-03: Platform Operations, Troubleshooting, and Runbooks
 
 [PR #30](https://github.com/santosrodriguez/cloud-platform-documentation/pull/30) documents [DEV, INT, CRT, and PRD environment isolation](../architecture/environment-isolation.md), the [Private Endpoint](../networking/private-endpoints.md) recommendation, [Azure Monitor Private Link Scope](../monitoring-and-observability/azure-monitor-private-link-scope.md), [Azure API Management](../platform-services/api-management.md), AKS system and user node-pool separation, and the Cloud Platform team's reusable Terraform module publishing responsibility. It also records the mandatory [ServiceNow and Change Board approval](../governance/production-change-management.md) for production-impacting changes and adds read-only troubleshooting guides and draft runbooks for private connectivity, AKS, Terraform, APIM, and production change preparation. Inventory, detailed implementation, request paths, ownership, support, enforcement, and current compliance remain unverified; no Azure, network, firewall, DNS, APIM, AKS, Terraform, ServiceNow, monitoring, or production configuration is changed.

@@ -5,6 +5,7 @@
   "Contributing.md": "Contributing.md",
   "getting-started/README.md": "Getting-Started.md",
   "using-azure/README.md": "Using-Azure.md",
+  "using-azure/requests-and-forms.md": "Requests-and-Forms.md",
   "faq/README.md": "FAQ.md",
   "architecture/README.md": "Architecture.md",
   "architecture/hub-and-spoke-network.md": "Hub-and-Spoke-Network.md",

@@ -5,6 +5,7 @@
 - [Home](Home.md)
 - [Getting Started](getting-started/README.md)
 - [Using Azure](using-azure/README.md)
+- [Requests and Forms](using-azure/requests-and-forms.md)
 - [FAQ](faq/README.md)
 
 ## Architecture and Networking
