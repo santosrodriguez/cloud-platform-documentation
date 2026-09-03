@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-09-03: Platform Operations, Troubleshooting, and Runbooks
+
+[PR #30](https://github.com/santosrodriguez/cloud-platform-documentation/pull/30) documents [DEV, INT, CRT, and PRD environment isolation](../architecture/environment-isolation.md), the [Private Endpoint](../networking/private-endpoints.md) recommendation, [Azure Monitor Private Link Scope](../monitoring-and-observability/azure-monitor-private-link-scope.md), [Azure API Management](../platform-services/api-management.md), AKS system and user node-pool separation, and the Cloud Platform team's reusable Terraform module publishing responsibility. It also records the mandatory [ServiceNow and Change Board approval](../governance/production-change-management.md) for production-impacting changes and adds read-only troubleshooting guides and draft runbooks for private connectivity, AKS, Terraform, APIM, and production change preparation. Inventory, detailed implementation, request paths, ownership, support, enforcement, and current compliance remain unverified; no Azure, network, firewall, DNS, APIM, AKS, Terraform, ServiceNow, monitoring, or production configuration is changed.
+
 ## 2026-09-03: Storage Account Container Public Access
 
 [PR #29](https://github.com/santosrodriguez/cloud-platform-documentation/pull/29) adds a mandatory [Storage Account container-public-access requirement](../security/resource-security-baseline.md#storage-container-public-access): container public access must be disabled on every Azure Storage Account, and blob containers must not permit anonymous public access. The baseline distinguishes this control from public network access and routes requests to enable it through the existing public-access exemption process. Current compliance, enforcement, exact settings, validation evidence, approval criteria, and whether such requests can be approved remain unverified; no Storage Account, Azure Policy, public-access, network, or Azure configuration is changed.
