@@ -44,6 +44,14 @@
 - [Runbooks](runbooks/README.md)
 - [Troubleshooting](troubleshooting/README.md)
 
+## Command Cheat Sheets
+
+- [Command Cheat Sheets](command-cheat-sheets/README.md)
+- [Terraform](command-cheat-sheets/terraform.md)
+- [Bash](command-cheat-sheets/bash.md)
+- [Azure CLI](command-cheat-sheets/azure-cli.md)
+- [PowerShell](command-cheat-sheets/powershell.md)
+
 ## Reference and Maintenance
 
 - [Reference](reference/README.md)
