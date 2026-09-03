@@ -28,6 +28,12 @@ We use Azure ExpressRoute through AT&T NetBond for on-premises access. ExpressRo
 
 The platform has DEV, INT, CRT, and PRD environments. They are not cross-connected, so designs must not depend on direct network connectivity between environments. Full environment definitions, subscriptions, topology, and enforcement remain to be documented. See [Environment Isolation](../architecture/environment-isolation.md).
 
+## Requests and Forms
+
+### Where do I find common request forms?
+
+Use [Requests and Forms](../using-azure/requests-and-forms.md) for the Firewall Request, Cloud Platform Request, and ICETA Request directory. The form names are confirmed, but their authoritative links, complete purposes, ownership, approvals, and fulfillment processes still need to be supplied.
+
 ## Application Ingress
 
 ### What fronts our application environments?
@@ -144,6 +150,7 @@ Use the [Troubleshooting](../troubleshooting/README.md) decision table for priva
 
 - Getting started
 - Environments
+- Requests and forms
 - Networking
 - DNS
 - Identity and access

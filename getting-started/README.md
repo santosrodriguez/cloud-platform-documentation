@@ -15,6 +15,7 @@ Start here to understand the platform, its audiences, and how to find documentat
 | Audience or task | Section |
 | --- | --- |
 | Application teams consuming Azure | [Using Azure](../using-azure/README.md) |
+| Firewall, Cloud Platform, and ICETA request forms | [Requests and Forms](../using-azure/requests-and-forms.md) |
 | Common platform questions | [FAQ](../faq/README.md) |
 | Platform design and dependencies | [Architecture](../architecture/README.md) |
 | DEV, INT, CRT, and PRD boundaries | [Environment Isolation](../architecture/environment-isolation.md) |
