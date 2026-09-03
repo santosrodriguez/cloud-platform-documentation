@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-09-03: Storage Account Container Public Access
+
+[PR #29](https://github.com/santosrodriguez/cloud-platform-documentation/pull/29) adds a mandatory [Storage Account container-public-access requirement](../security/resource-security-baseline.md#storage-container-public-access): container public access must be disabled on every Azure Storage Account, and blob containers must not permit anonymous public access. The baseline distinguishes this control from public network access and routes requests to enable it through the existing public-access exemption process. Current compliance, enforcement, exact settings, validation evidence, approval criteria, and whether such requests can be approved remain unverified; no Storage Account, Azure Policy, public-access, network, or Azure configuration is changed.
+
 ## 2026-09-03: AKS Azure RBAC Requirement
 
 [PR #28](https://github.com/santosrodriguez/cloud-platform-documentation/pull/28) adds a mandatory [AKS Azure RBAC requirement](../platform-services/aks.md#mandatory-azure-rbac-requirement): Azure RBAC for Kubernetes Authorization must be enabled on every AKS cluster. The existing requirement to disable local accounts remains mandatory, and the Resource Security Baseline diagram and customer summaries now show both cumulative AKS access controls. Current compliance, Microsoft Entra integration, Azure role definitions, assignments and scopes, privileged-access workflow, any remaining Kubernetes RBAC usage, enforcement, exceptions, and validation evidence remain unverified; no AKS, identity, authorization, role-assignment, or Azure configuration is changed.
