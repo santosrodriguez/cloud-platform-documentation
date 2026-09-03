@@ -22,7 +22,7 @@ This reference explains the security model; it does not confirm which identity, 
 
 Use Zero Trust as the stated security policy when documenting workload access needs. Connectivity through [ExpressRoute](../networking/expressroute-connectivity.md) is not, by itself, evidence that an access request is approved or that the required controls are implemented.
 
-The [Azure Identity and Access Requirements](identity-and-access-requirements.md), [Resource Security Baseline](resource-security-baseline.md), and [workload VNet routing and inspection model](../architecture/hub-and-spoke-network.md) record separately confirmed requirements and architecture. The identity standard requires MFA for Azure user access and designated administrative accounts for elevated permissions. These pages are not a complete inventory of Zero Trust controls.
+The [Azure Identity and Access Requirements](identity-and-access-requirements.md), [Resource Security Baseline](resource-security-baseline.md), [Private Endpoint guidance](../networking/private-endpoints.md), [Environment Isolation](../architecture/environment-isolation.md), and [workload VNet routing and inspection model](../architecture/hub-and-spoke-network.md) record separately confirmed requirements, recommendations, and architecture. The identity standard requires MFA for Azure user access and designated administrative accounts for elevated permissions. These pages are not a complete inventory of Zero Trust controls.
 
 ## Policy Details to Confirm
 
@@ -40,6 +40,8 @@ These entries are documentation gaps, not claims that particular products or con
 
 - [Security](README.md)
 - [Azure Identity and Access Requirements](identity-and-access-requirements.md)
+- [Private Endpoints](../networking/private-endpoints.md)
+- [Environment Isolation](../architecture/environment-isolation.md)
 - [Standards and Guidelines](../standards-and-guidelines/README.md)
 - [Governance](../governance/README.md)
 - [Using Azure](../using-azure/README.md)

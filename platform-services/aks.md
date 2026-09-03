@@ -1,10 +1,24 @@
 # Azure Kubernetes Service (AKS)
 
-**Status:** User-confirmed ingress technologies, local-account requirement, and Azure RBAC requirement. Cluster architecture, configuration, ownership, and operations remain to be documented.
+**Status:** User-confirmed node-pool separation, ingress technologies, local-account requirement, and Azure RBAC requirement. Remaining cluster architecture, configuration, ownership, and operations are not verified.
 
 **Source:** AKS requirements and application-ingress descriptions supplied by the user on 2026-08-31, 2026-09-01, and 2026-09-03.
 
 **Service owner:** Not yet supplied.
+
+## Confirmed Node-Pool Separation
+
+Our documented AKS design separates the **system node pool** from the **user node pool**.
+
+```mermaid
+flowchart TB
+    cluster["AKS cluster"] --> system["Separate system node pool"]
+    cluster --> user["Separate user node pool"]
+```
+
+The diagram records the confirmed pool separation. It does not define pool names, counts, virtual machine sizes, availability zones, autoscaling, labels, taints, tolerations, upgrade settings, or workload-placement rules.
+
+Applications should use the user-pool capacity defined by the approved cluster design. The exact scheduling controls and any permitted exceptions remain to be documented and verified for each cluster.
 
 ## Confirmed Ingress Implementation
 
@@ -46,7 +60,7 @@ This is a mandatory authorization requirement, not a claim that existing cluster
 
 ## Security and Network Requirements
 
-AKS and Application Gateway resources are subject to the [Resource Security Baseline](../security/resource-security-baseline.md): public access must be disabled by default, and TLS 1.2 or later is required for applicable TLS endpoints.
+AKS and Application Gateway resources are subject to the [Resource Security Baseline](../security/resource-security-baseline.md): public access must be disabled by default, Private Endpoints should be used where supported and applicable, and TLS 1.2 or later is required for applicable TLS endpoints.
 
 This page does not confirm whether any Application Gateway frontend is public. A resource that requires public access must follow the [Public Access Exemption Process](../security/public-access-exemption-process.md). That process applies only to public access and does not authorize AKS local accounts to be enabled or Azure RBAC for Kubernetes Authorization to be disabled.
 
@@ -56,7 +70,8 @@ Fastly configuration, TLS termination points, certificate sources, frontend and 
 
 | Area | Details still needed |
 | --- | --- |
-| AKS architecture | Cluster inventory, subscriptions, regions, versions, node pools, availability, API access, and network model |
+| AKS architecture | Cluster inventory, subscriptions, regions, versions, availability, API access, and network model |
+| Node pools | System and user pool inventory, names, sizes, counts, zones, autoscaling, labels, taints, tolerations, upgrades, workload placement, and validation evidence |
 | Fastly integration | Service and environment mapping, origin configuration, domains, routing, security features, health checks, and ownership |
 | AGIC deployment | Add-on or Helm deployment, versions, release process, watched namespaces, ingress classes, and update strategy |
 | Application Gateway topology | Gateway inventory, shared or dedicated model, SKU, WAF mode, frontend addresses, listeners, backend pools, and probes |
@@ -73,6 +88,10 @@ The entries above identify information to collect. They do not describe configur
 ## Related Documentation
 
 - [Application Ingress](application-ingress.md)
+- [Environment Isolation](../architecture/environment-isolation.md)
+- [Private Endpoints](../networking/private-endpoints.md)
+- [Troubleshoot Azure Kubernetes Service](../troubleshooting/aks.md)
+- [Triage an AKS Workload Runbook](../runbooks/triage-aks-workload.md)
 - [Microsoft: Application Gateway Ingress Controller overview](https://learn.microsoft.com/en-us/azure/application-gateway/ingress-controller-overview)
 - [Platform Services](README.md)
 - [Azure Services](../azure-services/README.md)

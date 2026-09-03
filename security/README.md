@@ -6,7 +6,8 @@ Authoritative Azure platform security standards, requirements, and implementatio
 
 - [Zero Trust Policy](zero-trust-policy.md): the platform's confirmed security policy, with detailed controls and enforcement still to be documented.
 - [Azure Identity and Access Requirements](identity-and-access-requirements.md): MFA required for Azure user access and designated administrative accounts required when exercising elevated permissions.
-- [Resource Security Baseline](resource-security-baseline.md): general public-access and minimum TLS requirements, plus resource-specific Key Vault purge protection, Storage Account soft delete, disabled Storage Account container public access, disabled AKS local accounts, and enabled Azure RBAC for Kubernetes Authorization.
+- [Resource Security Baseline](resource-security-baseline.md): general public-access and minimum TLS requirements, a Private Endpoint recommendation, and resource-specific Key Vault purge protection, Storage Account soft delete, disabled Storage Account container public access, disabled AKS local accounts, and enabled Azure RBAC for Kubernetes Authorization.
+- [Private Endpoints](../networking/private-endpoints.md): Private Endpoints should be used where supported and applicable, with public access disabled by default.
 - [Public Access Exemption Process](public-access-exemption-process.md): the Cyber Defense team in Security reviews resource-specific public-access exemption requests, and Cloud Platform creates the Azure Policy exemption after approval.
 
 These requirements and the exemption workflow are confirmed by the user. Request mechanics, service-specific configuration, enforcement, exemption lifecycle, and compliance evidence remain to be documented.

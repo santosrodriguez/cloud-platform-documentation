@@ -40,7 +40,9 @@ Read-only commands can still expose sensitive names, identifiers, configuration,
 - Use workload identity for automation instead of embedding a human username, password, access key, or client secret.
 - Do not place secrets in command history, source files, Terraform variable files, plan files, logs, or Wiki examples.
 - Use Terraform through the reviewed GitHub Actions workflow for infrastructure changes unless an approved procedure explicitly authorizes another method.
-- Keep public access disabled by default and maintain TLS 1.2 or later. A public-access requirement must follow the [Public Access Exemption Process](../security/public-access-exemption-process.md).
+- Keep public access disabled by default, use Private Endpoints where supported and applicable, and maintain TLS 1.2 or later. A public-access requirement must follow the [Public Access Exemption Process](../security/public-access-exemption-process.md).
+- Preserve separation between DEV, INT, CRT, and PRD; do not create cross-environment connectivity as a command-line workaround.
+- Do not implement a production-impacting change until its ServiceNow change request is approved by the Change Board.
 - Do not change Palo Alto firewall rules or centrally managed Private DNS zones unless the responsible team has authorized the work.
 
 ## Placeholder Convention

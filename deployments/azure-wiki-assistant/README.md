@@ -18,7 +18,7 @@ Terraform creates:
 - A Linux App Service plan and private Linux web app
 - User-assigned identities for the app runtime, application deployment, and content synchronization
 - Least-privilege Azure role assignments for those identities
-- Private endpoints for App Service, Foundry, Search, Blob Storage, Key Vault, and Azure Monitor
+- Private endpoints for App Service, Foundry, Search, Blob Storage, Key Vault, and Azure Monitor Private Link Scope
 - Log Analytics, Application Insights, and Azure diagnostic settings
 
 Terraform does not create or change:
@@ -73,6 +73,8 @@ The organization-level network relationships consumed by this package are:
 
 The existing route table on the integration subnet remains responsible for routing workload egress through the Palo Alto firewall in the hub VNet. The template enables App Service route-all behavior but does not create or modify AT&T NetBond service, ExpressRoute, Virtual WAN resources, VNet connections, VNet peerings, routes, or firewall configuration.
 
+Deploy the stack independently into the intended DEV, INT, CRT, or PRD environment. The four environments are not cross-connected, and stack inputs must not introduce a resource dependency, network path, or shared state that connects them.
+
 Any required outbound destinations must be allowed by the existing Palo Alto policy. The Cyber Defense Engineering team remains responsible for firewall administration and rule review; this template does not assume or create a request path that has not been documented.
 
 The GitHub runner that applies `platform/` must be able to resolve and reach the private Key Vault and Search endpoints. A GitHub-hosted runner is not sufficient after public access is disabled. Use an approved self-hosted runner in, or connected to, the existing network.
@@ -97,7 +99,7 @@ The Cloud Platform Solutions and Services team continues to own the zones and VN
 
 If central DNS does not permit automatic zone-group association, set `manage_private_dns_zone_groups = false` and coordinate a staged rollout. Service private endpoints must exist before their addresses can be registered; Key Vault and Search data-plane resources cannot be completed until those names resolve privately. The App Service private endpoint record is registered after the web app can be created. Do not expect a single full apply to complete in manual-DNS mode.
 
-Azure Monitor Private Link uses multiple addresses and shared monitoring DNS names. The central DNS and monitoring owners must review that association and confirm sufficient private-endpoint subnet capacity before deployment.
+The platform stack creates an Azure Monitor Private Link Scope (AMPLS), associates its Log Analytics workspace and Application Insights resource, configures private-only ingestion and query modes, and creates the AMPLS Private Endpoint. Azure Monitor Private Link uses multiple addresses and shared monitoring DNS names. The central DNS and monitoring owners must review that association and confirm sufficient private-endpoint subnet capacity before deployment.
 
 ## Stacks
 
@@ -148,6 +150,8 @@ For service-principal execution, the identity stack generally requires Microsoft
 ## Provider Registry and State
 
 Provider source addresses stay canonical in `required_providers`; Terraform CLI installation configuration controls the Artifactory mirror. Start from [`terraform/terraform.rc.example`](terraform/terraform.rc.example) and replace every placeholder with the approved Artifactory values outside source control.
+
+The Cloud Platform team builds reusable Terraform modules and publishes them to the Artifactory Terraform registry. This package can adopt those modules only after their approved source addresses, versions, inputs, outputs, and migration impact are verified.
 
 No approved organization-specific module coordinates were supplied, so this package uses native provider resources rather than inventing Artifactory module names. Approved modules can replace those resources through a reviewed future change.
 
@@ -203,6 +207,8 @@ The platform workflow expects these protected environment values:
 | Secret | `TERRAFORM_TFVARS` | Reviewed platform variable file content, excluding `entra_client_secret` |
 
 Azure IDs and sizing values are not credentials, but the workflow keeps the complete environment configuration protected to avoid exposing internal topology in logs or source changes.
+
+A production-impacting deployment requires a ServiceNow change request approved by the Change Board before implementation. GitHub environment approval, pull-request review, and a successful Terraform plan do not replace that requirement.
 
 ## Security Controls
 

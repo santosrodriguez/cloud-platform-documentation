@@ -8,7 +8,7 @@
 
 **Last reviewed:** 2026-09-03.
 
-Terraform in this organization uses Artifactory as the registry, Azure Storage Accounts for state, and GitHub Actions for workflows. Use the versions pinned by the repository and follow its reviewed workflow.
+Terraform in this organization uses reusable modules built by the Cloud Platform team and published to Artifactory, Azure Storage Accounts for state, and GitHub Actions for workflows. Use the versions pinned by the repository and follow its reviewed workflow. DEV, INT, CRT, and PRD are not cross-connected, so confirm the target environment and state before every plan.
 
 > A saved Terraform plan can contain sensitive values. Store it only as a protected, short-lived artifact and never commit it.
 
@@ -39,13 +39,17 @@ flowchart TD
     format["Format"] --> init["Initialize"]
     init --> validate["Validate"]
     validate --> plan["Create saved plan"]
-    plan --> review{"Plan approved?"}
-    review -->|"Yes"| apply["Apply the reviewed plan"]
+    plan --> review{"Plan reviewed?"}
+    review -->|"Yes"| production{"Production-impacting?"}
     review -->|"No"| revise["Revise configuration"]
+    production -->|"No"| apply["Apply through the reviewed workflow"]
+    production -->|"Yes"| change{"ServiceNow change approved by Change Board?"}
+    change -->|"Yes"| apply
+    change -->|"No"| stop["Do not apply"]
     revise --> format
 ```
 
-The diagram summarizes the routine command sequence. Formatting changes local files, initialization prepares the working directory and backend, planning creates a sensitive review artifact, and applying the approved plan can change Azure resources and Terraform state.
+The diagram summarizes the routine command sequence and production approval gate. Formatting changes local files, initialization prepares the working directory and backend, planning creates a sensitive review artifact, and applying through the reviewed workflow can change Azure resources and Terraform state.
 
 ### Format
 
@@ -215,4 +219,4 @@ These operations need a documented reason, impact analysis, backup or recovery m
 - [`terraform fmt`](https://developer.hashicorp.com/terraform/cli/commands/fmt)
 - [`terraform validate`](https://developer.hashicorp.com/terraform/cli/commands/validate)
 
-[Command Cheat Sheets](README.md) | [Terraform Platform](../infrastructure-as-code/terraform-platform.md) | [Home](../Home.md)
+[Command Cheat Sheets](README.md) | [Terraform Platform](../infrastructure-as-code/terraform-platform.md) | [Validate a Terraform Change](../runbooks/validate-terraform-change.md) | [Home](../Home.md)

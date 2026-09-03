@@ -12,6 +12,10 @@ The **Virtual WAN vHub** and **hub VNet** are separate components: the vHub is t
 
 [Application Ingress](../platform-services/application-ingress.md) documents the confirmed application traffic sequence from Fastly to Azure Application Gateway to the applications. The exposure model, DNS, TLS termination, detailed routing, and interaction with the Palo Alto inspection path remain unconfirmed.
 
+## Private Service Access
+
+[Private Endpoints](private-endpoints.md) records the mandatory public-access default and the recommendation to use Private Endpoints where supported and applicable. Service coverage, endpoint inventory, request procedures, routing, and compliance remain unverified.
+
 ## Documented Management Model
 
 The **Cyber Defense Engineering** team manages the Palo Alto firewall and its rules. See [Firewall Management](../architecture/hub-and-spoke-network.md#firewall-management) for the confirmed responsibility and remaining procedural details.
@@ -35,6 +39,7 @@ Address ranges, resource names, DNS configuration, firewall rules, routing imple
 ## Related Sections
 
 - [Architecture](../architecture/README.md)
+- [Private Endpoints](private-endpoints.md)
 - [Zero Trust Policy](../security/zero-trust-policy.md)
 - [Resource Security Baseline](../security/resource-security-baseline.md)
 - [Design Patterns](../design-patterns/README.md)

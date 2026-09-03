@@ -2,13 +2,15 @@
 
 **Status:** User-confirmed approval and implementation workflow. Request mechanics and lifecycle details remain to be documented.
 
-**Source:** Public-access exemption process supplied by the user on 2026-08-31 and Storage Account container-public-access requirement supplied by the user on 2026-09-03.
+**Source:** Public-access exemption process supplied by the user on 2026-08-31 and Private Endpoint and Storage Account container-public-access requirements supplied by the user on 2026-09-03.
 
 **Process owner:** Not yet supplied.
 
 ## Purpose and Scope
 
 Public access must be disabled by default for all resources. This process applies when a requester needs a specific Azure resource to have public access and therefore requires an exemption from that default.
+
+Private Endpoints should be used where supported and applicable. Whether a Private Endpoint suitability assessment or supporting evidence is required in an exemption request remains to be documented.
 
 For Azure Storage Accounts, a request to enable container public access falls under this process. The [Resource Security Baseline](resource-security-baseline.md#storage-container-public-access) requires container public access to be disabled and blob containers not to permit anonymous public access.
 
@@ -47,6 +49,7 @@ These responsibilities are limited to the supplied workflow. They do not identif
 | Area | Details still needed |
 | --- | --- |
 | Request submission | Request system or channel, request template, required fields, and supporting evidence |
+| Private-access assessment | Whether the request must document Private Endpoint support, applicability, attempted design, or constraints |
 | Cyber Defense review | Approval criteria, authorized reviewers, decision record, review target, and notification process |
 | Other decision paths | Rejection, revision, resubmission, emergency, and escalation procedures |
 | Azure Policy implementation | Applicable policy assignments, exemption configuration, naming, metadata, and implementation validation |
@@ -67,6 +70,7 @@ The entries above identify information to collect; they are not additional requi
 ## Related Documentation
 
 - [Resource Security Baseline](resource-security-baseline.md)
+- [Private Endpoints](../networking/private-endpoints.md)
 - [Security](README.md)
 - [Zero Trust Policy](zero-trust-policy.md)
 - [Governance](../governance/README.md)

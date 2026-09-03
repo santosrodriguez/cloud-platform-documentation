@@ -24,6 +24,8 @@ Our Azure network combines Azure Virtual WAN with a hub-and-spoke VNet topology.
 
 AT&T NetBond is the confirmed provider for our ExpressRoute connections. The **Virtual WAN vHub** and **hub VNet** are separate components. The vHub provides the confirmed ExpressRoute attachment relationship and connects to the hub VNet. The hub VNet provides shared transit to the VNet-peered spokes, and its Palo Alto firewall provides the routing and inspection point for workload VNet traffic. The additional business and design rationale has not yet been captured.
 
+The platform has DEV, INT, CRT, and PRD environments, and those [environments are not cross-connected](environment-isolation.md). The mapping of Virtual WAN, vHubs, hub VNets, firewalls, and spokes to each environment remains to be documented; this page must not be read as proof that the four environment boundaries share direct connectivity.
+
 ## Logical Topology
 
 ```mermaid
@@ -90,6 +92,8 @@ These details must come from platform records or owner confirmation. This page d
 - [Architecture](README.md)
 - [Networking](../networking/README.md)
 - [Private DNS Zone Management](../networking/private-dns-zone-management.md)
+- [Private Endpoints](../networking/private-endpoints.md)
+- [Environment Isolation](environment-isolation.md)
 - [Using Azure](../using-azure/README.md)
 - [FAQ](../faq/README.md)
 
