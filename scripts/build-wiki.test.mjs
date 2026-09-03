@@ -46,7 +46,7 @@ test("leaves code examples, external URLs, and same-page fragments unchanged", (
 });
 
 test("rejects links to unpublished source material and missing pages", () => {
-  assert.throws(() => rewriteLinks("[Prompt](azure-wiki-prompt.md)", "Home.md", pages), /unpublished or missing/);
+  assert.throws(() => rewriteLinks("[Prompt](prompts/azure-wiki-prompt-v2.md)", "Home.md", pages), /unpublished or missing/);
   assert.throws(() => rewriteLinks("[Missing](missing.md)", "Home.md", pages), /unpublished or missing/);
 });
 

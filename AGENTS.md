@@ -7,11 +7,12 @@ The directory containing this file (`github-wiki`) is the working root for this 
 - Do not modify files in the parent directory or sibling projects as part of this work.
 - This directory has its own Git repository connected to `santosrodriguez/cloud-platform-documentation`. Do not use the parent repository for this project.
 
-The original prompt imported from the "Write Azure Wiki Prompt" task is `azure-wiki-prompt.md`. The current authoring prompt is `azure-wiki-prompt-v2.md`.
+The original prompt imported from the "Write Azure Wiki Prompt" task is `prompts/azure-wiki-prompt-v1.md`. The current authoring prompt is `prompts/azure-wiki-prompt-v2.md`. Prompt releases and their changes are tracked in `prompts/README.md`.
 
 ## Documentation Workflow
 
-- Read `azure-wiki-prompt-v2.md` before writing or restructuring wiki content.
+- Read `prompts/azure-wiki-prompt-v2.md` before writing or restructuring Wiki content.
+- Preserve released prompts as immutable versions. Create the next version in `prompts/` and update `prompts/README.md` and the active prompt reference here.
 - Keep reusable prompt instructions separate from the documentation pages.
 - Use branches and pull requests for changes. `main` is the reviewed source of truth; do not publish unmerged documentation.
 - Preserve the repository's private visibility. Do not change visibility or purchase a plan to enable a feature without the user's explicit instruction.
