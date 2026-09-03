@@ -2,46 +2,52 @@
 
 **Status:** Recorded architecture baseline. Detailed configuration and operational validation are pending.
 
-**Source:** Platform descriptions and clarifications supplied by the user on 2026-08-31.
+**Source:** Platform descriptions and clarifications supplied by the user on 2026-08-31 and 2026-09-03.
 
 ## Confirmed Architecture
 
-Our Azure network uses a hub-and-spoke topology. The hub is the transit network for all spokes.
+Our Azure network combines Azure Virtual WAN with a hub-and-spoke VNet topology. ExpressRoute connects to a virtual hub (vHub) in our Virtual WAN. The vHub has a VNet connection to the hub virtual network (hub VNet), which contains the Palo Alto firewall and is VNet peered to all spokes.
 
 **All workload VNet traffic is routed through and inspected by the Palo Alto firewall.**
 
 | Component or scope | Confirmed role |
 | --- | --- |
-| Network topology | Hub and spoke |
-| Hub | Transit network for all spokes |
-| Palo Alto firewall | Routing and traffic inspection |
+| Network topology | Azure Virtual WAN connected to a hub-and-spoke VNet topology |
+| ExpressRoute | Connects to the vHub in our Virtual WAN for on-premises access |
+| Virtual WAN vHub | Has a VNet connection to the hub VNet |
+| Hub VNet | Transit network that contains the Palo Alto firewall |
+| Spoke connectivity | The hub VNet is VNet peered to all spokes |
+| Palo Alto firewall | Located in the hub VNet and provides routing and traffic inspection |
 | Traffic scope | All workload VNet traffic |
 | Firewall and rule management | Cyber Defense Engineering team |
 
-The hub provides shared transit, and the firewall provides the routing and inspection point for workload VNet traffic. The additional business and design rationale has not yet been captured.
+The **Virtual WAN vHub** and **hub VNet** are separate components. The vHub provides the confirmed ExpressRoute attachment relationship and connects to the hub VNet. The hub VNet provides shared transit to the VNet-peered spokes, and its Palo Alto firewall provides the routing and inspection point for workload VNet traffic. The additional business and design rationale has not yet been captured.
 
 ## Logical Topology
 
 ```mermaid
 flowchart TD
-    hub["Hub: transit network for all spokes"]
-    spokeA["Spoke A"] --- hub
-    spokeB["Spoke B"] --- hub
+    onPrem["On-premises environment"] --- expressRoute["ExpressRoute"]
+    expressRoute --- vhub["Virtual WAN virtual hub (vHub)"]
+    vhub ---|"VNet connection"| hubVnet["Hub virtual network (hub VNet)"]
+    hubVnet -->|"Contains"| firewall["Palo Alto firewall"]
+    hubVnet ---|"VNet peering"| spokes["All spoke VNets"]
+    spokes -->|"Workload VNet traffic routed for inspection"| firewall
 ```
 
-Spoke A and Spoke B are illustrative labels, not an inventory. These connections show logical relationships; the hub resource type and spoke connection mechanism have not yet been documented.
+The solid undirected lines show confirmed connectivity relationships; the directional arrows show containment and the confirmed workload-routing requirement. **All spoke VNets** is a scope statement, not a resource inventory. The diagram does not infer gateway resource types, BGP settings, route tables, addresses, resiliency, or return-path behavior.
 
 ## Workload VNet Traffic Routing and Inspection
 
 ```mermaid
 flowchart TD
-    workload["All workload VNet traffic"] -->|"Routed through"| firewall["Palo Alto firewall: traffic inspection"]
+    workload["All workload VNet traffic"] -->|"Routed through for inspection"| firewall["Palo Alto firewall in the hub VNet"]
     firewall -.-> onward["Onward path: details pending"]
 ```
 
-The diagram summarizes the confirmed routing and inspection model for all workload VNet traffic, rather than only traffic leaving a spoke. Detailed paths and inspection configuration still need to be documented and validated.
+The diagram summarizes the confirmed routing and inspection model for all workload VNet traffic. For traffic egressing a workload spoke, the Palo Alto firewall is the first hop. Detailed destination paths and inspection configuration still need to be documented and validated.
 
-The firewall is shown separately to describe its role in the flow. Its physical placement, deployment product, and forwarding endpoint have not been confirmed. The dashed path represents onward routing that still needs documentation.
+The firewall's placement in the hub VNet is confirmed. Its specific Palo Alto product, deployment model, forwarding endpoint, and high-availability configuration have not been confirmed. The dashed path represents destination-specific onward routing that still needs documentation.
 
 ## Firewall Management
 
@@ -57,7 +63,7 @@ For a concise answer to common questions, see the [networking FAQ](../faq/README
 
 ## On-Premises Connectivity
 
-We use [ExpressRoute](../networking/expressroute-connectivity.md) for access to the on-premises environment. The specific circuit attachment, gateway placement, and end-to-end routing path remain to be documented.
+We use [ExpressRoute](../networking/expressroute-connectivity.md) for access to the on-premises environment. ExpressRoute connects to the Virtual WAN vHub, and that vHub has a VNet connection to the hub VNet. The specific circuits, gateway resources, peerings, route propagation, and end-to-end forward and return paths remain to be documented.
 
 The platform follows a [Zero Trust policy](../security/zero-trust-policy.md). Connectivity does not by itself establish which application flows or access requests are approved.
 
@@ -65,9 +71,10 @@ The platform follows a [Zero Trust policy](../security/zero-trust-policy.md). Co
 
 | Area | Information needed |
 | --- | --- |
-| Network inventory | Hub and spoke resource types, connection mechanism, subscriptions, regions, subnets, and address spaces |
-| Firewall deployment | Palo Alto product, location, instance count, availability design, and failover behavior |
-| Routing | Route configuration, next-hop values, and workload subnet coverage that direct workload VNet traffic through Palo Alto |
+| Network inventory | Virtual WAN, vHub, hub VNet, spoke VNet, ExpressRoute, gateway, connection, subscription, region, subnet, and address-space inventory |
+| Connectivity configuration | vHub-to-hub-VNet connection and hub-VNet-to-spoke peering names, settings, status, and resiliency |
+| Firewall deployment | Palo Alto product, subnet and forwarding endpoints, instance count, availability design, and failover behavior |
+| Routing | VNet and vHub route tables, route propagation, user-defined routes, next-hop values, BGP configuration, and workload subnet coverage |
 | Inspection | Applied inspection policies and features, and any decryption configuration |
 | Destination paths | Onward paths to applicable destinations, such as other spokes, the internet, on-premises networks, or private services |
 | Return traffic and NAT | Return-path routing and any address translation performed |

@@ -2,13 +2,13 @@
 
 **Status:** User-confirmed connectivity. Detailed configuration and operational validation are pending.
 
-**Source:** Platform description supplied by the user on 2026-08-31.
+**Source:** Platform descriptions and clarifications supplied by the user on 2026-08-31 and 2026-09-03.
 
 **Owner:** Not yet supplied.
 
 ## Confirmed Use
 
-We use Azure ExpressRoute for access to our on-premises environment.
+We use Azure ExpressRoute for access to our on-premises environment. ExpressRoute connects to a virtual hub (vHub) in our Azure Virtual WAN. The vHub has a VNet connection to the hub virtual network (hub VNet).
 
 This confirms ExpressRoute is in use. It does not establish that it is the only connectivity path, which sites or destinations are reachable, or which application flows are permitted.
 
@@ -20,11 +20,17 @@ The service overview is reference context, not a description of our specific cir
 
 ## Relationship to the Platform
 
-The [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md) remains the documented network model: the hub provides transit for all spokes, and all workload VNet traffic is routed through and inspected by the Palo Alto firewall.
+The [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md) documents the connected architecture:
+
+- ExpressRoute connects to the vHub in our Virtual WAN.
+- The vHub has a VNet connection to the hub VNet.
+- The hub VNet contains the Palo Alto firewall.
+- The hub VNet is VNet peered to all spokes.
+- All workload VNet traffic is routed through and inspected by the Palo Alto firewall.
 
 For the firewall and rule-management responsibility, see [Firewall Management](../architecture/hub-and-spoke-network.md#firewall-management). The ExpressRoute service owner remains unconfirmed.
 
-The detailed path connecting workload VNets, the hub, Palo Alto, ExpressRoute, and on-premises destinations still needs to be documented. No gateway placement or hop sequence is inferred here.
+These statements establish the component relationships, not the complete packet path. Exact circuit, gateway, peering, BGP, route-table, route-propagation, and forward and return-path details still need to be documented.
 
 See the [Zero Trust Policy](../security/zero-trust-policy.md) and [Resource Security Baseline](../security/resource-security-baseline.md) for the recorded security policy and requirements. Connectivity alone is not an access approval or evidence that security requirements are met.
 
@@ -32,21 +38,23 @@ See the [Zero Trust Policy](../security/zero-trust-policy.md) and [Resource Secu
 
 ```mermaid
 flowchart TD
-    workload["Workload VNets"] -->|"All workload traffic is routed and inspected"| firewall["Palo Alto firewall"]
-    firewall -.-> attachment["Azure attachment and hop sequence: pending"]
-    attachment -.-> expressRoute["ExpressRoute"]
-    expressRoute -->|"Confirmed access purpose"| onPrem["On-premises environment"]
+    onPrem["On-premises environment"] --- expressRoute["ExpressRoute"]
+    expressRoute --- vhub["Virtual WAN virtual hub (vHub)"]
+    vhub ---|"VNet connection"| hubVnet["Hub virtual network (hub VNet)"]
+    hubVnet -->|"Contains"| firewall["Palo Alto firewall"]
+    hubVnet ---|"VNet peering"| spokes["All spoke VNets"]
 ```
 
-The diagram combines the separately confirmed workload inspection model and ExpressRoute purpose without asserting an undocumented gateway placement or complete hop sequence. Solid arrows show confirmed relationships. Dashed arrows show the Azure attachment and routing details that still require validated platform records.
+The diagram shows confirmed logical connectivity and distinguishes the Virtual WAN vHub from the hub VNet. It is not a packet-flow diagram and does not assert undocumented gateway resources, routes, permitted destinations, or forward and return paths. See [Workload VNet Traffic Routing and Inspection](../architecture/hub-and-spoke-network.md#workload-vnet-traffic-routing-and-inspection) for the separately confirmed firewall requirement.
 
 ## Implementation Details to Confirm
 
 | Area | Information needed |
 | --- | --- |
 | Circuit inventory | Circuit count, resource locations, provider or connectivity model, peering locations, bandwidth, and SKU |
-| Connection architecture | Azure connection and gateway resources, attachment to the hub-and-spoke topology, and on-premises sites and network devices |
-| Routing and access | Peering configuration, advertised and accepted prefixes, route controls, allowed flows, and forward and return paths through Palo Alto |
+| Virtual WAN attachment | Virtual WAN and vHub resource inventory, ExpressRoute gateway resources and configuration, and connection status |
+| VNet connectivity | vHub-to-hub-VNet connection and hub-VNet-to-spoke peering inventory, configuration, status, and resiliency |
+| Routing and access | ExpressRoute peering configuration, advertised and accepted prefixes, BGP settings, route tables and propagation, allowed flows, and forward and return paths through Palo Alto |
 | Transport protection | Encryption configuration and evidence of the protection provided for applicable traffic |
 | Name resolution | DNS resolution paths and forwarding configuration; [private DNS zones are centrally managed](private-dns-zone-management.md) |
 | Availability and recovery | Redundancy, any backup connectivity, failover behavior, and recovery validation |
