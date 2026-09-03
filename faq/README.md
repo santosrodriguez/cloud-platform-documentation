@@ -8,7 +8,7 @@ FAQ answers should be concise and link to authoritative documentation rather tha
 
 ### What does the hub network do?
 
-The hub is the transit network for all spokes in our hub-and-spoke architecture. See [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md).
+The hub VNet is the transit network for all spokes. It contains the Palo Alto firewall and is VNet peered to every spoke. A separate Virtual WAN vHub connects to the hub VNet through a VNet connection. See [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md).
 
 ### How is workload VNet traffic routed and inspected?
 
@@ -22,7 +22,7 @@ The **Cyber Defense Engineering** team manages the Palo Alto firewall and its ru
 
 ### How do we access the on-premises environment?
 
-We use Azure ExpressRoute for on-premises access. Specific destinations, allowed flows, and routing configuration still need to be documented. See [ExpressRoute Connectivity](../networking/expressroute-connectivity.md).
+We use Azure ExpressRoute for on-premises access. ExpressRoute connects to a vHub in our Virtual WAN, and the vHub has a VNet connection to the hub VNet. The hub VNet contains Palo Alto and is VNet peered to all spokes. Specific circuits, gateways, destinations, allowed flows, and routing configuration still need to be documented. See [ExpressRoute Connectivity](../networking/expressroute-connectivity.md).
 
 ## DNS
 
