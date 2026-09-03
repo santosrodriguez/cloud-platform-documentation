@@ -18,6 +18,7 @@ See [Wiki Setup](WIKI-SETUP.md) for initialization requirements and publication 
 github-wiki/
 |-- AGENTS.md
 |-- azure-wiki-prompt.md
+|-- azure-wiki-prompt-v2.md
 |-- Home.md
 |-- _Sidebar.md
 |-- _Footer.md
@@ -55,7 +56,7 @@ github-wiki/
 
 Section indexes describe the intended coverage. They do not claim that a service, configuration, or procedure is already deployed or approved.
 
-The prompt and `AGENTS.md` guide authoring. Original source material belongs in `sources/`; diagram and image files belong in `assets/`. Only pages explicitly listed in `wiki-pages.json` are exported for the native Wiki.
+`azure-wiki-prompt-v2.md` is the current authoring prompt. The original `azure-wiki-prompt.md` is retained as version 1. The prompts and `AGENTS.md` guide authoring and are not published to the Wiki. Original source material belongs in `sources/`; diagram and image files belong in `assets/`. Only pages explicitly listed in `wiki-pages.json` are exported for the native Wiki.
 
 ## Validate and Build
 
