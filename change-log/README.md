@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-09-03: Fastly and Application Gateway Ingress
+
+[PR #27](https://github.com/santosrodriguez/cloud-platform-documentation/pull/27) adds the published [Application Ingress](../platform-services/application-ingress.md) architecture: Fastly fronts application environments and forwards traffic to Azure Application Gateway, which fronts the applications. It adds a focused Mermaid flow, updates the AKS ingress view without claiming every Fastly route targets AKS, and exposes the new page through customer navigation and the FAQ. Public or private exposure, DNS, TLS termination, WAF behavior, application mappings, ownership, support, and detailed network routing remain unverified; no Fastly, Application Gateway, AKS, Azure, network, security, DNS, or application configuration is changed.
+
 ## 2026-09-03: AT&T NetBond ExpressRoute Provider
 
 [PR #26](https://github.com/santosrodriguez/cloud-platform-documentation/pull/26) records AT&T NetBond as the confirmed connectivity provider for our [ExpressRoute connections](../networking/expressroute-connectivity.md). The hub-and-spoke and ExpressRoute Mermaid diagrams show NetBond as a provider relationship rather than a packet hop, and the architecture, networking, FAQ, and source-only Azure Wiki assistant deployment summaries now use consistent wording. NetBond service configuration, ExpressRoute circuit mapping, contractual and support responsibilities, escalation, and resiliency remain unverified; no NetBond, Azure, network, firewall, or deployment configuration is changed.
