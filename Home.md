@@ -27,6 +27,7 @@ This knowledge base brings together Azure platform architecture, standards, shar
 - [ExpressRoute Connectivity](networking/expressroute-connectivity.md)
 - [Private DNS Zone Management](networking/private-dns-zone-management.md)
 - [Platform Services](platform-services/README.md)
+- [Application Ingress](platform-services/application-ingress.md)
 - [Azure Kubernetes Service (AKS)](platform-services/aks.md)
 - [Design Patterns](design-patterns/README.md)
 - [Architecture Decisions](adr/README.md)

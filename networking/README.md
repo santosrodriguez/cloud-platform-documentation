@@ -10,6 +10,8 @@ Start with the [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md)
 
 The **Virtual WAN vHub** and **hub VNet** are separate components: the vHub is the confirmed ExpressRoute connection point, while the hub VNet contains the firewall and peers with the spokes.
 
+[Application Ingress](../platform-services/application-ingress.md) documents the confirmed application traffic sequence from Fastly to Azure Application Gateway to the applications. The exposure model, DNS, TLS termination, detailed routing, and interaction with the Palo Alto inspection path remain unconfirmed.
+
 ## Documented Management Model
 
 The **Cyber Defense Engineering** team manages the Palo Alto firewall and its rules. See [Firewall Management](../architecture/hub-and-spoke-network.md#firewall-management) for the confirmed responsibility and remaining procedural details.
@@ -26,6 +28,7 @@ The **Cloud Platform Solutions and Services** team centrally manages all private
 - Onward destination paths, return routing, and address translation
 - IP addressing and network security controls
 - Private connectivity and DNS resolution paths
+- Fastly-to-Application-Gateway connectivity, exposure, routing, and return paths
 
 Address ranges, resource names, DNS configuration, firewall rules, routing implementation, and operational status must come from verified platform records. The documented topology does not by itself confirm those implementation details.
 

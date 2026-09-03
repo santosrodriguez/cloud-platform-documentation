@@ -14,6 +14,7 @@
 - [Networking](networking/README.md)
 - [ExpressRoute Connectivity](networking/expressroute-connectivity.md)
 - [Private DNS Zone Management](networking/private-dns-zone-management.md)
+- [Application Ingress](platform-services/application-ingress.md)
 - [Design Patterns](design-patterns/README.md)
 - [Architecture Decisions](adr/README.md)
 

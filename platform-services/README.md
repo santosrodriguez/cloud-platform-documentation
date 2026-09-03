@@ -4,6 +4,8 @@ Document shared platform services, including their confirmed implementation, own
 
 ## Documented Services
 
+[Application Ingress](application-ingress.md) records the confirmed traffic path: Fastly fronts our application environments and forwards traffic to Azure Application Gateway, which fronts the applications. Exposure, DNS, TLS termination, WAF behavior, environment mappings, ownership, and operations remain to be documented.
+
 [Azure Kubernetes Service (AKS)](aks.md) records Application Gateway Ingress Controller (AGIC) as the confirmed ingress controller and requires local accounts to be disabled on every AKS cluster. Current compliance, cluster architecture, Application Gateway topology, configuration, ownership, and operations remain to be documented.
 
 [Monitoring and Observability](../monitoring-and-observability/README.md) records Dynatrace as the standard monitoring platform, with Azure-native monitoring solutions used as needed or where appropriate. Detailed architecture, integrations, service inventory, ownership, and operations remain to be documented.
@@ -21,7 +23,6 @@ The [resource-specific Resource Security Baseline requirements](../security/reso
 - Detailed AKS architecture, operations, and recovery guidance
 - API Management
 - Key Vault and Storage implementation guidance
-- Application Gateway
 - Detailed Dynatrace and Azure-native monitoring integrations
 - Other shared platform services
 

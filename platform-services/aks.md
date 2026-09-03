@@ -1,8 +1,8 @@
 # Azure Kubernetes Service (AKS)
 
-**Status:** User-confirmed ingress implementation and local-account security requirement. Cluster architecture, configuration, ownership, and operations remain to be documented.
+**Status:** User-confirmed ingress technologies and local-account security requirement. Cluster architecture, configuration, ownership, and operations remain to be documented.
 
-**Source:** AKS requirements supplied by the user on 2026-08-31 and 2026-09-01.
+**Source:** AKS and application-ingress descriptions supplied by the user on 2026-08-31, 2026-09-01, and 2026-09-03.
 
 **Service owner:** Not yet supplied.
 
@@ -17,17 +17,20 @@ We use **Application Gateway Ingress Controller (AGIC)** for ingress to our AKS 
 
 This confirms the ingress controller technology in use. It does not establish the AKS or Application Gateway inventory, controller deployment mode, topology, configuration, or operating model. It also does not establish whether every cluster is configured identically or whether other ingress controllers or ingress paths are in use.
 
+The broader [Application Ingress](application-ingress.md) architecture confirms that Fastly fronts our application environments and forwards traffic to Azure Application Gateway. The mapping between that general ingress path and individual AKS clusters remains to be documented.
+
 ## Logical Ingress Relationship
 
 ```mermaid
 flowchart TD
-    source["Ingress source and exposure: pending"] -.-> gateway["Azure Application Gateway"]
+    source["Traffic source: details pending"] -.-> fastly["Fastly"]
+    fastly -->|"Forwards traffic"| gateway["Azure Application Gateway"]
     ingress["Kubernetes ingress configuration"] --> agic["Application Gateway Ingress Controller"]
     agic -->|"Updates Application Gateway configuration"| gateway
     gateway -.-> workload["AKS routing details: pending"]
 ```
 
-The solid arrows show the standard controller relationship used by the confirmed AGIC technology. Dashed arrows mark organization-specific traffic-path details that remain unverified, including whether the frontend is private or public, how TLS terminates, and how requests reach workloads. The diagram is logical and does not represent a deployed cluster inventory.
+The solid arrows show the confirmed Fastly-to-Application-Gateway flow and the standard controller relationship used by the confirmed AGIC technology. Dashed arrows mark traffic-path details that remain unverified, including the traffic source, whether the Application Gateway frontend is private or public, how TLS terminates, and how requests reach AKS workloads. The combined view does not establish that every Fastly route targets AKS, and it does not represent a deployed cluster inventory.
 
 ## Mandatory Local-Account Requirement
 
@@ -41,13 +44,14 @@ AKS and Application Gateway resources are subject to the [Resource Security Base
 
 This page does not confirm whether any Application Gateway frontend is public. A resource that requires public access must follow the [Public Access Exemption Process](../security/public-access-exemption-process.md). That process applies only to public access and does not authorize AKS local accounts to be enabled.
 
-TLS termination points, certificate sources, frontend and backend protocols, WAF configuration, network flows, DNS dependencies, and the interaction with the [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md) remain to be documented.
+Fastly configuration, TLS termination points, certificate sources, frontend and backend protocols, WAF configuration, network flows, DNS dependencies, and the interaction with the [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md) remain to be documented.
 
 ## Implementation Details to Document
 
 | Area | Details still needed |
 | --- | --- |
 | AKS architecture | Cluster inventory, subscriptions, regions, versions, node pools, availability, API access, and network model |
+| Fastly integration | Service and environment mapping, origin configuration, domains, routing, security features, health checks, and ownership |
 | AGIC deployment | Add-on or Helm deployment, versions, release process, watched namespaces, ingress classes, and update strategy |
 | Application Gateway topology | Gateway inventory, shared or dedicated model, SKU, WAF mode, frontend addresses, listeners, backend pools, and probes |
 | Ingress configuration | Host and path routing, annotations, backend protocols, health checks, redirects, and supported application patterns |
@@ -62,6 +66,7 @@ The entries above identify information to collect. They do not describe configur
 
 ## Related Documentation
 
+- [Application Ingress](application-ingress.md)
 - [Microsoft: Application Gateway Ingress Controller overview](https://learn.microsoft.com/en-us/azure/application-gateway/ingress-controller-overview)
 - [Platform Services](README.md)
 - [Azure Services](../azure-services/README.md)

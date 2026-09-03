@@ -6,6 +6,7 @@ Each service page should explain purpose, architecture, dependencies, networking
 
 ## Documented Services
 
+- [Application Ingress](../platform-services/application-ingress.md): Fastly fronts our application environments and forwards traffic to Azure Application Gateway, which fronts the applications; detailed configuration, ownership, and operations remain pending.
 - [Azure Kubernetes Service (AKS)](../platform-services/aks.md): Application Gateway Ingress Controller is the confirmed ingress controller, and local accounts must be disabled on every AKS cluster; current compliance, detailed architecture, and operations remain pending.
 
 ## Cross-Service Requirements

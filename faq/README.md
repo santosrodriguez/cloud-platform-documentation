@@ -24,6 +24,12 @@ The **Cyber Defense Engineering** team manages the Palo Alto firewall and its ru
 
 We use Azure ExpressRoute through AT&T NetBond for on-premises access. ExpressRoute connects to a vHub in our Virtual WAN, and the vHub has a VNet connection to the hub VNet. The hub VNet contains Palo Alto and is VNet peered to all spokes. NetBond service configuration, specific circuits, gateways, destinations, allowed flows, support procedures, and routing configuration still need to be documented. See [ExpressRoute Connectivity](../networking/expressroute-connectivity.md).
 
+## Application Ingress
+
+### What fronts our application environments?
+
+Fastly fronts our application environments and forwards traffic to Azure Application Gateway. Application Gateway then fronts the applications. Public or private exposure, DNS, TLS termination, WAF behavior, environment mappings, ownership, and support procedures remain to be documented. See [Application Ingress](../platform-services/application-ingress.md).
+
 ## DNS
 
 ### How are private DNS zones managed?
@@ -108,6 +114,7 @@ Dynatrace is our standard monitoring platform. Azure-native monitoring solutions
 - GitHub Actions
 - Azure DevOps
 - AKS
+- Application ingress
 - API Management
 - Monitoring
 - Disaster recovery
