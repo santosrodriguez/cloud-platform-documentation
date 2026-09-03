@@ -13,6 +13,7 @@ Use it to answer common questions about how to deploy, connect, secure, monitor,
 - [ExpressRoute access to on-premises](../networking/expressroute-connectivity.md)
 - Private Endpoints
 - [Private DNS zone management by Cloud Platform Solutions and Services](../networking/private-dns-zone-management.md)
+- [Application ingress through Fastly and Azure Application Gateway](../platform-services/application-ingress.md)
 - [Azure identity and access: MFA and administrative-account requirements](../security/identity-and-access-requirements.md)
 - [Certificates and Key Vault: purge protection requirement](../security/resource-security-baseline.md#resource-specific-requirements)
 - [Monitoring and logging: Dynatrace and Azure-native solutions](../monitoring-and-observability/README.md)
