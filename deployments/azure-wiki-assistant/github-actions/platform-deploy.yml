@@ -1,0 +1,98 @@
+name: Deploy Azure Wiki Assistant Platform
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Terraform operation
+        required: true
+        type: choice
+        default: plan
+        options:
+          - plan
+          - apply
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: azure-wiki-assistant-platform
+  cancel-in-progress: false
+
+jobs:
+  platform:
+    runs-on:
+      - self-hosted
+      - linux
+      - private-azure
+    environment: platform
+
+    env:
+      ARM_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
+      ARM_USE_OIDC: "true"
+      TF_IN_AUTOMATION: "true"
+      TF_ROOT: deployments/azure-wiki-assistant/terraform
+      TF_VAR_entra_client_secret: ${{ secrets.ENTRA_CLIENT_SECRET }}
+      TF_VAR_subscription_id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      TF_VAR_tenant_id: ${{ vars.AZURE_TENANT_ID }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Configure the approved Artifactory provider mirror
+        env:
+          TERRAFORM_CLI_CONFIG: ${{ secrets.TERRAFORM_CLI_CONFIG }}
+        run: |
+          if [ -z "$TERRAFORM_CLI_CONFIG" ]; then
+            echo "TERRAFORM_CLI_CONFIG is required; refusing a public-registry fallback."
+            exit 1
+          fi
+          printf '%s' "$TERRAFORM_CLI_CONFIG" > "$RUNNER_TEMP/terraform.rc"
+          echo "TF_CLI_CONFIG_FILE=$RUNNER_TEMP/terraform.rc" >> "$GITHUB_ENV"
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.6.6"
+
+      - name: Sign in to Azure with GitHub OIDC
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Initialize platform state
+        run: |
+          terraform -chdir="$TF_ROOT/platform" init -input=false \
+            -backend-config="resource_group_name=${{ vars.TF_STATE_RESOURCE_GROUP }}" \
+            -backend-config="storage_account_name=${{ vars.TF_STATE_STORAGE_ACCOUNT }}" \
+            -backend-config="container_name=${{ vars.TF_STATE_CONTAINER }}" \
+            -backend-config="key=azure-wiki-assistant/platform.tfstate" \
+            -backend-config="use_azuread_auth=true" \
+            -backend-config="use_oidc=true"
+
+      - name: Write protected platform configuration
+        env:
+          TERRAFORM_TFVARS: ${{ secrets.TERRAFORM_TFVARS }}
+        run: |
+          if [ -z "$TERRAFORM_TFVARS" ]; then
+            echo "TERRAFORM_TFVARS is required."
+            exit 1
+          fi
+          printf '%s' "$TERRAFORM_TFVARS" > "$RUNNER_TEMP/platform.tfvars"
+
+      - name: Create reviewed plan
+        run: terraform -chdir="$TF_ROOT/platform" plan -input=false -lock-timeout=5m -var-file="$RUNNER_TEMP/platform.tfvars" -out=platform.tfplan
+
+      - name: Apply reviewed plan
+        if: ${{ inputs.operation == 'apply' }}
+        run: terraform -chdir="$TF_ROOT/platform" apply -input=false -auto-approve platform.tfplan
+
+      - name: Remove temporary sensitive files
+        if: ${{ always() }}
+        run: rm -f "$RUNNER_TEMP/platform.tfvars" "$RUNNER_TEMP/terraform.rc" "$TF_ROOT/platform/platform.tfplan"

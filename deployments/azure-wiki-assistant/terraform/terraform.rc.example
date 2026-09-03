@@ -1,0 +1,11 @@
+# Store the populated file outside source control and set TF_CLI_CONFIG_FILE to it.
+credentials "REPLACE_WITH_ARTIFACTORY_HOST" {
+  token = "REPLACE_WITH_ARTIFACTORY_ACCESS_TOKEN"
+}
+
+provider_installation {
+  network_mirror {
+    url     = "https://REPLACE_WITH_ARTIFACTORY_HOST/artifactory/api/terraform/REPLACE_WITH_VIRTUAL_REPOSITORY/providers/"
+    include = ["registry.terraform.io/*/*"]
+  }
+}

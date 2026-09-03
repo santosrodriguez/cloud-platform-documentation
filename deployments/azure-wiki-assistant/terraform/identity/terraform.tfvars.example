@@ -1,0 +1,23 @@
+tenant_id                = "00000000-0000-0000-0000-000000000000"
+application_display_name = "Azure Wiki Assistant"
+web_app_name             = "app-wiki-prod-001"
+
+# Add approved Entra groups or users only. Prefer group assignments.
+app_role_assignments = {
+  readers = {
+    principal_object_id = "00000000-0000-0000-0000-000000000000"
+    role                = "Wiki.Reader"
+  }
+  authors = {
+    principal_object_id = "00000000-0000-0000-0000-000000000000"
+    role                = "Wiki.Author"
+  }
+  administrators = {
+    principal_object_id = "00000000-0000-0000-0000-000000000000"
+    role                = "Wiki.Administrator"
+  }
+}
+
+owner_object_ids           = []
+additional_redirect_uris   = []
+client_secret_validity_days = 180

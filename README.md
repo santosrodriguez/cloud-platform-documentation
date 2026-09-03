@@ -52,6 +52,9 @@ github-wiki/
 |   |-- azure-wiki-prompt-v1.md
 |   `-- azure-wiki-prompt-v2.md
 |-- sources/
+|-- deployments/
+|   |-- README.md
+|   `-- azure-wiki-assistant/
 |-- scripts/
 `-- wiki-pages.json
 ```
@@ -59,6 +62,8 @@ github-wiki/
 Section indexes describe the intended coverage. They do not claim that a service, configuration, or procedure is already deployed or approved.
 
 The [prompt version register](prompts/README.md) identifies the current authoring prompt and records what changed in each release. Versioned prompts and `AGENTS.md` guide authoring and are not published to the Wiki. Original source material belongs in `sources/`; diagram and image files belong in `assets/`. Only pages explicitly listed in `wiki-pages.json` are exported for the native Wiki.
+
+Infrastructure templates are kept under `deployments/`. They are source-only project material and are not exported to the native Wiki.
 
 ## Validate and Build
 
