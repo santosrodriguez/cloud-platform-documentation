@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-09-03: AKS Azure RBAC Requirement
+
+[PR #28](https://github.com/santosrodriguez/cloud-platform-documentation/pull/28) adds a mandatory [AKS Azure RBAC requirement](../platform-services/aks.md#mandatory-azure-rbac-requirement): Azure RBAC for Kubernetes Authorization must be enabled on every AKS cluster. The existing requirement to disable local accounts remains mandatory, and the Resource Security Baseline diagram and customer summaries now show both cumulative AKS access controls. Current compliance, Microsoft Entra integration, Azure role definitions, assignments and scopes, privileged-access workflow, any remaining Kubernetes RBAC usage, enforcement, exceptions, and validation evidence remain unverified; no AKS, identity, authorization, role-assignment, or Azure configuration is changed.
+
 ## 2026-09-03: Fastly and Application Gateway Ingress
 
 [PR #27](https://github.com/santosrodriguez/cloud-platform-documentation/pull/27) adds the published [Application Ingress](../platform-services/application-ingress.md) architecture: Fastly fronts application environments and forwards traffic to Azure Application Gateway, which fronts the applications. It adds a focused Mermaid flow, updates the AKS ingress view without claiming every Fastly route targets AKS, and exposes the new page through customer navigation and the FAQ. Public or private exposure, DNS, TLS termination, WAF behavior, application mappings, ownership, support, and detailed network routing remain unverified; no Fastly, Application Gateway, AKS, Azure, network, security, DNS, or application configuration is changed.
