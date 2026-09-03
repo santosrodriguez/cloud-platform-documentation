@@ -22,6 +22,19 @@ The requirements apply to Azure user access and to any person exercising elevate
 
 These requirements are cumulative. When a person exercises elevated permissions in Azure, that person must use the designated administrative account and satisfy the MFA requirement. Completing MFA with a regular user account does not authorize that account to exercise elevated permissions.
 
+## Azure User Access Decision
+
+```mermaid
+flowchart TD
+    access["Person accesses Azure"] --> mfa["MFA is required"]
+    mfa --> elevated{"Will elevated permissions be exercised?"}
+    elevated -->|"Yes"| admin["Use the designated administrative account"]
+    elevated -->|"No"| regular["Regular account must remain within non-elevated permissions"]
+    admin --> privileged["Perform only the authorized elevated activity"]
+```
+
+The diagram summarizes the cumulative account and MFA requirements. It is not an access-request or privileged-role activation procedure; role definitions, approvals, activation, session controls, and account lifecycle details remain to be documented.
+
 ## Interpretation Boundaries
 
 - **Elevated permissions:** The roles, actions, scopes, and access states that qualify as elevated have not yet been defined in this documentation.

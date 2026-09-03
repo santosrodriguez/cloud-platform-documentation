@@ -17,6 +17,18 @@ We use **Application Gateway Ingress Controller (AGIC)** for ingress to our AKS 
 
 This confirms the ingress controller technology in use. It does not establish the AKS or Application Gateway inventory, controller deployment mode, topology, configuration, or operating model. It also does not establish whether every cluster is configured identically or whether other ingress controllers or ingress paths are in use.
 
+## Logical Ingress Relationship
+
+```mermaid
+flowchart TD
+    source["Ingress source and exposure: pending"] -.-> gateway["Azure Application Gateway"]
+    ingress["Kubernetes ingress configuration"] --> agic["Application Gateway Ingress Controller"]
+    agic -->|"Updates Application Gateway configuration"| gateway
+    gateway -.-> workload["AKS routing details: pending"]
+```
+
+The solid arrows show the standard controller relationship used by the confirmed AGIC technology. Dashed arrows mark organization-specific traffic-path details that remain unverified, including whether the frontend is private or public, how TLS terminates, and how requests reach workloads. The diagram is logical and does not represent a deployed cluster inventory.
+
 ## Mandatory Local-Account Requirement
 
 Local accounts **MUST** be disabled on every AKS cluster.
@@ -50,6 +62,7 @@ The entries above identify information to collect. They do not describe configur
 
 ## Related Documentation
 
+- [Microsoft: Application Gateway Ingress Controller overview](https://learn.microsoft.com/en-us/azure/application-gateway/ingress-controller-overview)
 - [Platform Services](README.md)
 - [Azure Services](../azure-services/README.md)
 - [Networking](../networking/README.md)

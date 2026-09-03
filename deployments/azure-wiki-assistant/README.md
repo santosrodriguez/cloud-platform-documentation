@@ -34,6 +34,26 @@ Terraform does not create or change:
 
 Public network access remains disabled for every supported application resource. This template has no public-access exception switch.
 
+## Logical Deployment Architecture
+
+```mermaid
+flowchart TD
+    user["Authorized team user"] -.-> privatePath["Approved private network path"]
+    privatePath --> app["Private Linux App Service"]
+    entra["Microsoft Entra authentication"] --> app
+    app --> services["Foundry, AI Search, Storage, and Key Vault"]
+    app --> monitoring["Application Insights and Log Analytics"]
+    app -->|"Route-all egress"| integration["Existing App Service integration subnet"]
+    integration --> firewall["Existing Palo Alto inspection path"]
+    dns["Centrally managed Private DNS zones"] --> resolution["Private endpoint name resolution"]
+    resolution --> app
+    resolution --> services
+    resolution --> monitoring
+    runner["Approved private GitHub Actions runner"] --> resolution
+```
+
+The diagram shows the intended logical boundaries of the Terraform package. The dashed user path is deliberately unspecified because the end-user network path has not been supplied. Terraform creates the private application services and endpoints but consumes the existing subnets, routing, firewall path, ExpressRoute, and centrally managed Private DNS zones.
+
 ## Existing Network Contract
 
 Provide two existing subnet resource IDs:
@@ -80,6 +100,22 @@ Apply the stacks in this order. Each stack has a separate Azure Storage state ke
 3. `terraform/platform`: Creates the private application platform, runtime identities, service permissions, model deployments, private endpoints, index, and monitoring resources.
 
 The identity stack returns a client secret. Pass it to the platform stack through the protected `TF_VAR_entra_client_secret` environment variable. Do not place it in a `.tfvars` file or GitHub variable. Both identity and platform state contain this secret and therefore require tightly restricted state access.
+
+```mermaid
+flowchart TD
+    azureAdmin["Azure administrator with MFA"] --> bootstrap["1. bootstrap stack"]
+    entraAdmin["Entra administrator"] --> identity["2. identity stack"]
+    bootstrap --> deploymentIdentity["GitHub OIDC deployment identity"]
+    deploymentIdentity --> privateRunner["Approved private runner"]
+    identity --> protectedSecret["Protected Easy Auth secret transfer"]
+    privateRunner --> platform["3. platform stack"]
+    protectedSecret --> platform
+    bootstrap --> bootstrapState["Isolated bootstrap state container"]
+    identity --> identityState["Restricted identity state container"]
+    platform --> platformState["Restricted platform state container"]
+```
+
+The stack diagram shows the required order, operator boundaries, and state separation. It does not replace the permission table or authorize a deployment. The identity and platform state stores require tighter access because they contain the Easy Auth credential.
 
 ## Required Permissions
 

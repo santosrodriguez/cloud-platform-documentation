@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-09-03: Focused Mermaid Diagrams
+
+[PR #24](https://github.com/santosrodriguez/cloud-platform-documentation/pull/24) adds seven published Mermaid diagrams covering ExpressRoute connectivity, Private DNS management, Azure user access, resource security requirements, AKS ingress, the Terraform platform, and the Terraform review workflow. It also adds two source-only diagrams to the Azure Wiki assistant deployment guide and reflows the existing workload-inspection and public-access exemption diagrams for normal Wiki width. Solid lines identify documented relationships and dashed lines identify pending implementation details; no Azure, network, firewall, DNS, identity, workflow, or security configuration is changed.
+
 ## 2026-09-03: Command Cheat Sheets
 
 [PR #23](https://github.com/santosrodriguez/cloud-platform-documentation/pull/23) adds a published [Command Cheat Sheets](../command-cheat-sheets/README.md) section with separate Terraform, Bash, Azure CLI, and PowerShell references. The pages distinguish read-only, local, Azure, and Terraform state-changing actions; reinforce the documented admin-account, MFA, private-access, and no-secret requirements; and direct infrastructure changes to reviewed Terraform and GitHub Actions workflows unless an approved runbook authorizes another method. The examples are general references and do not establish organization-specific procedures, grant access, run commands, or change Azure resources.
