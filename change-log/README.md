@@ -2,6 +2,10 @@
 
 Record meaningful changes to this documentation. Link entries to their pull request or decision record.
 
+## 2026-09-03: Virtual WAN and Hub VNet Topology
+
+[PR #25](https://github.com/santosrodriguez/cloud-platform-documentation/pull/25) records the confirmed [Hub-and-Spoke Network](../architecture/hub-and-spoke-network.md): ExpressRoute connects to a virtual hub in Azure Virtual WAN; that vHub has a VNet connection to the hub VNet; the hub VNet contains the Palo Alto firewall and is VNet peered to all spokes; and all workload VNet traffic is routed through and inspected by Palo Alto. The architecture, ExpressRoute, networking, FAQ, and source-only Azure Wiki assistant deployment pages now use the same terminology and revised Mermaid diagrams. Circuit and gateway inventory, BGP, route tables, route propagation, addresses, resiliency, and complete forward and return paths remain unverified; no Azure, network, firewall, or deployment configuration is changed.
+
 ## 2026-09-03: Focused Mermaid Diagrams
 
 [PR #24](https://github.com/santosrodriguez/cloud-platform-documentation/pull/24) adds seven published Mermaid diagrams covering ExpressRoute connectivity, Private DNS management, Azure user access, resource security requirements, AKS ingress, the Terraform platform, and the Terraform review workflow. It also adds two source-only diagrams to the Azure Wiki assistant deployment guide and reflows the existing workload-inspection and public-access exemption diagrams for normal Wiki width. Solid lines identify documented relationships and dashed lines identify pending implementation details; no Azure, network, firewall, DNS, identity, workflow, or security configuration is changed.
